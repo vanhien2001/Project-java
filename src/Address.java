@@ -1,7 +1,11 @@
 import java.util.Scanner;
 
 public class Address {
-    String so_nha, duong, phuong, quan, tinh;
+    private String so_nha;
+    private String duong;
+    private String phuong;
+    private String quan;
+    private String tinh;
     Scanner sc = new Scanner(System.in);
 
     public Address() {
