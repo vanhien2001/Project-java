@@ -2,8 +2,25 @@ public class Phong {
   private String maPhong;
   private String tenPhong;
   private String maLoai;
-  private String tinhTrang;
-  private String soKhachHangToiDa;
+  private boolean tinhTrang;
+  // true la cho thue, false la con trong
+  private int soKhachHangToiDa;
+
+  public Phong() {
+    maPhong = null;
+    tenPhong = null;
+    maLoai = null;
+    tinhTrang = false;
+    soKhachHangToiDa = 0;
+  }
+
+  public Phong(String maPhong, String tenPhong, String maLoai, boolean tinhTrang, int soKhachHang) {
+    this.maPhong = maPhong;
+    this.tenPhong = tenPhong;
+    this.maLoai = maLoai;
+    this.tinhTrang = tinhTrang;
+    this.soKhachHangToiDa = soKhachHang;
+  }
 
   public String getMaPhong() {
     return maPhong;
@@ -29,19 +46,19 @@ public class Phong {
     this.maLoai = maLoai;
   }
 
-  public String getTinhTrang() {
-    return tinhTrang;
-  }
-
-  public void setTinhTrang(String tinhTrang) {
+  public void setTinhTrang(boolean tinhTrang) {
     this.tinhTrang = tinhTrang;
   }
 
-  public String getSoKhachHangToiDa() {
+  public boolean isTinhTrang() {
+    return tinhTrang;
+  }
+
+  public int getSoKhachHangToiDa() {
     return soKhachHangToiDa;
   }
 
-  public void setSoKhachHangToiDa(String soKhachHangToiDa) {
+  public void setSoKhachHangToiDa(int soKhachHangToiDa) {
     this.soKhachHangToiDa = soKhachHangToiDa;
   }
 }
