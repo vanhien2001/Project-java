@@ -58,7 +58,7 @@ public class Room {
 
     public void setGia() {
         System.out.println("Gia :");
-        this.gia=sc.nextInt()
+        this.gia=sc.nextInt();
     }
 
     public void nhap_thontin() {
@@ -66,7 +66,7 @@ public class Room {
         setTenphong();
         setLoai();
         setSo_giuong();
-        setGia;
+        setGia();
     }
 
 }
