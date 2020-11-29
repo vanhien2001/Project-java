@@ -65,31 +65,31 @@ public class Address {
     }
 
     public void setDuong() {
-        System.out.println("Moi ban nhap duong :");
+        System.out.println("Duong :");
         this.duong = sc.nextLine();
     }
 
     public void setPhuong() {
-        System.out.println("Moi ban nhap phuong :");
+        System.out.println("Phuong :");
         this.phuong = sc.nextLine();
     }
 
     public void setQuan() {
-        System.out.println("Moi ban nhap quan :");
+        System.out.println("Quan :");
         this.quan = sc.nextLine();
     }
 
     public void setSo_nha() {
-        System.out.println("Moi ban nhap so nha :");
+        System.out.println("So nha :");
         this.so_nha = sc.nextLine();
     }
 
     public void setTinh() {
-        System.out.println("Moi ban nhap tinh :");
+        System.out.println("Tinh :");
         this.tinh = sc.nextLine();
     }
 
-    public void Nhap_dc() {
+    public void nhap_thontin() {
         System.out.println("Moi ban nhap dia chi :");
         setSo_nha();
         setDuong();
@@ -99,6 +99,6 @@ public class Address {
     }
 
     public String toString() {
-        return "Dia chi : " + so_nha + "/" + duong + "/" + phuong + "/" + quan + "/" + tinh;
+        return so_nha + "/" + duong + "/" + phuong + "/" + quan + "/" + tinh;
     }
 }
