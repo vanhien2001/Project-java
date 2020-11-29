@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class Time {
 
     private int day;
@@ -6,6 +8,8 @@ public class Time {
     private int second;
     private int minute;
     private int hour;
+
+    Scanner sc = new Scanner(System.in);
 
     public Time() {
         second = 0;
@@ -81,4 +85,65 @@ public class Time {
     public void setYear(int year) {
         this.year = year;
     }
+
+    public void setYear() {
+        System.out.println("nhap nam : ");
+        year = sc.nextInt();
+    }
+
+    public void setDay() {
+        do {
+            System.out.println("nhap ngay : ");
+            day = sc.nextInt();
+        } while (day > 30 || day < 1);
+    }
+
+    public void setMonth() {
+        do {
+            System.out.println("nhap thang : ");
+            month = sc.nextInt();
+        } while (month > 30 || month < 1);
+    }
+
+    public void setHour() {
+        do {
+            System.out.println("nhap thang : ");
+            hour = sc.nextInt();
+        } while (hour > 24 || hour < 1);
+    }
+
+    public void setMinute() {
+        do {
+            System.out.println("nhap phut : ");
+            minute = sc.nextInt();
+        } while (minute > 60 || hour < 1);
+    }
+
+    public void setSecond() {
+        do {
+            System.out.println("nhap giay : ");
+            second = sc.nextInt();
+        } while (second > 60 || hour < 1);
+    }
+
+    public void setAllTime() {
+        setYear();
+        setMonth();
+        setDay();
+        setHour();
+        setMinute();
+        setSecond();
+    }
+
+    public void setAllTimeWithoutSetHourAndSoOn() {
+        setYear();
+        setMonth();
+        setDay();
+    }
+
+    @Override
+    public String toString() {
+        return day + "/" + month + "/" + year + "   " + hour + ":" + minute + ":" + second;
+    }
+
 }
