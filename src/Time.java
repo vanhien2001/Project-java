@@ -147,4 +147,8 @@ public class Time {
                 + (minute >= 10 ? minute : ("0" + minute)) + ":" + (second >= 10 ? second : ("0" + second));
     }
 
+    public void print() {
+        System.out.println(toString());
+    }
+
 }
