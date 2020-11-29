@@ -1,3 +1,4 @@
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class listPerson {
@@ -29,12 +30,34 @@ public class listPerson {
     String id = sc.nextLine();
 
     for (Person person : arrPerson) {
-      if (id.equalsIgnoreCase(person.getId())) {
+      if (id.equalsIgnoreCase(person.getId()) && person instanceof Staff) {
         person.print();
         return;
       }
     }
     System.out.println("nhan vien ban tim hien khong co trong danh sach");
+  }
+
+  public void timKiemNhanVienBangTen() {
+    System.out.println("nhap ten nhan vien ban muon tim kiem");
+    String name = sc.nextLine();
+
+    for (Person person : arrPerson) {
+      if (name.equalsIgnoreCase(person.getName()) && person instanceof Staff) {
+        person.print();
+        return;
+      }
+    }
+    System.out.println("nhan vien ban tim hien khong co trong danh sach");
+  }
+
+  public void themNhanVien() {
+    System.out.println("nhap thong tinh nhan vien ban muon them: ");
+    Staff nv = new Staff();
+    nv.setAll();
+    arrPerson = Arrays.copyOf(arrPerson, arrPerson.length + 1);
+    arrPerson[amount] = nv;
+    amount++;
   }
 
 }
