@@ -3,7 +3,6 @@ import java.util.Scanner;
 public class Person {
   private String id;
   private String name;
-  private String position;
   private Time dayBegin;
 
   Scanner sc = new Scanner(System.in);
@@ -11,14 +10,12 @@ public class Person {
   public Person() {
     id = null;
     name = null;
-    position = null;
     dayBegin = new Time();
   }
 
-  public Person(String id, String name, String position, Time dayBegin) {
+  public Person(String id, String name, Time dayBegin) {
     this.id = id;
     this.name = name;
-    this.position = position;
     this.dayBegin = dayBegin;
   }
 
@@ -36,14 +33,6 @@ public class Person {
 
   public String getName() {
     return name;
-  }
-
-  public String getPosition() {
-    return position;
-  }
-
-  public void setPosition(String position) {
-    this.position = position;
   }
 
   public void setDayBegin(Time dayBegin) {
@@ -64,12 +53,18 @@ public class Person {
     name = sc.nextLine();
   }
 
-  public void setPosition() {
-    System.out.println("nhap chuc vu : ");
-    position = sc.nextLine();
-  }
-
   public void setDayBegin() {
     dayBegin.setAllTime();
+  }
+
+  @Override
+  public String toString() {
+    return name + "(ID : " + id + "dayBegin : " + dayBegin;
+  }
+
+  public void print() {
+    System.out.println("ho va ten : " + name);
+    System.out.println("ID : " + id);
+    System.out.println("ngay bat dau lam :" + dayBegin);
   }
 }
