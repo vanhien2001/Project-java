@@ -109,21 +109,21 @@ public class Time {
         do {
             System.out.println("nhap thang : ");
             hour = sc.nextInt();
-        } while (hour > 24 || hour < 1);
+        } while (hour > 24 || hour < 0);
     }
 
     public void setMinute() {
         do {
             System.out.println("nhap phut : ");
             minute = sc.nextInt();
-        } while (minute > 60 || hour < 1);
+        } while (minute > 60 || hour < 0);
     }
 
     public void setSecond() {
         do {
             System.out.println("nhap giay : ");
             second = sc.nextInt();
-        } while (second > 60 || hour < 1);
+        } while (second > 60 || hour < 0);
     }
 
     public void setAllTime() {
@@ -143,7 +143,8 @@ public class Time {
 
     @Override
     public String toString() {
-        return day + "/" + month + "/" + year + "   " + hour + ":" + minute + ":" + second;
+        return day + "/" + month + "/" + year + "   " + (hour >= 10 ? hour : ("0" + hour)) + ":"
+                + (minute >= 10 ? minute : ("0" + minute)) + ":" + (second >= 10 ? second : ("0" + second));
     }
 
 }
