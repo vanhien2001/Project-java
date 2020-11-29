@@ -62,11 +62,12 @@ public class Room {
     }
 
     public void nhap_thontin() {
-        System.out.println("Moi ban nhap thong tin phong :");
         setTenphong();
         setLoai();
         setSo_giuong();
         setGia();
     }
+
+    
 
 }
