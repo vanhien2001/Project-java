@@ -54,12 +54,19 @@ public class Person {
   }
 
   public void setDayBegin() {
+    System.out.println("nhap ngay lam viec : ");
     dayBegin.setAllTime();
+  }
+
+  public void setAll() {
+    setId();
+    setName();
+    setDayBegin();
   }
 
   @Override
   public String toString() {
-    return name + "(ID : " + id + "dayBegin : " + dayBegin;
+    return name + "(ID : " + id + "dayBegin : " + dayBegin + ")";
   }
 
   public void print() {

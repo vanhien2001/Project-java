@@ -49,6 +49,13 @@ public class Staff extends Person {
   }
 
   @Override
+  public void setAll() {
+    super.setAll();
+    setPosition();
+    setNote();
+  }
+
+  @Override
   public String toString() {
     return position + "(" + "(" + toString() + ")" + " ,note : " + note + ")";
   }
