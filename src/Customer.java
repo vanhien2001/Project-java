@@ -61,7 +61,6 @@ public class Customer {
 
     public void setDiachi() {
         address.nhap_thontin();
-        ;
     }
 
     public void nhap_thontin() {
