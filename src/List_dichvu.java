@@ -10,8 +10,8 @@ public class List_dichvu {
         n = 0;
     }
 
-    public void Nhapdsphong() {
-        System.out.println("Nhap vao so luong dich vu :");
+    public void Nhapdsdichvu() {
+        System.out.print("Nhap vao so luong dich vu :");
         n = Integer.parseInt(sc.nextLine());
         arrs = new Dichvu[n];
         for (int i = 0; i < n; i++) {

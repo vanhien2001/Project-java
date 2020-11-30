@@ -11,7 +11,7 @@ public class List_rooms {
     }
 
     public void Nhapdsphong() {
-        System.out.println("Nhap vao so luong phong :");
+        System.out.print("Nhap vao so luong phong :");
         n = Integer.parseInt(sc.nextLine());
         arrRooms = new Room[n];
         for (int i = 0; i < n; i++) {
@@ -31,7 +31,7 @@ public class List_rooms {
 
     public void Xuatdsphongtrong() {
         System.out.println("Danh sach phong trong:");
-        System.out.printf("%-15s%-14s%d%-15s%\n", "Ten phong", "So giuong", "Gia");
+        System.out.printf("Ten phong\tSo giuong\tGia");
         for (Room room : arrRooms) {
             if (!room.booked)
                 room.xuatthongtin();

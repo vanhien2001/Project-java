@@ -53,22 +53,22 @@ public class Room {
     }
 
     public void setTenphong() {
-        System.out.println("Ten phong :");
+        System.out.print("Ten phong :");
         this.tenphong = sc.nextLine();
     }
 
     public void setLoai() {
-        System.out.println("Loai :");
+        System.out.print("Loai :");
         this.loai = sc.nextInt();
     }
 
     public void setSo_giuong() {
-        System.out.println("So giuong :");
+        System.out.print("So giuong :");
         this.so_giuong = sc.nextInt();
     }
 
     public void setGia() {
-        System.out.println("Gia :");
+        System.out.print("Gia :");
         this.gia = sc.nextInt();
     }
 
