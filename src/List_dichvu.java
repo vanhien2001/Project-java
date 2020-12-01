@@ -23,7 +23,7 @@ public class List_dichvu {
 
     public void Xuatdsdichvu() {
         System.out.println("Danh sach dichvu :");
-        System.out.printf("%-15s%-14s%d\n", "Ten dichvu", "Gia");
+        System.out.printf("%-15s%15s\n", "Ten dichvu", "Gia");
         for (Dichvu arr : arrs) {
             arr.xuatthongtin();
         }

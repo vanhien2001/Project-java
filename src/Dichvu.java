@@ -48,8 +48,7 @@ public class Dichvu {
     }
 
     public void xuatthongtin() {
-        System.out.printf("%-15s%-14s%d%\n", tendichvu, gia);
-        System.out.println(tendichvu + " x " + solan + "\t");
+        System.out.printf("%-15s%10d000 d x %d\n", tendichvu, gia, solan);
     }
 
 }

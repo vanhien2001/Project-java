@@ -1,19 +1,25 @@
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class List_phieudatphong {
+    List_rooms arrRoom;
+    List_dichvu dichvu;
     Phieudatphong[] arrBooked;
     Scanner sc = new Scanner(System.in);
     Phieudatphong a;
+    int n=0;
 
-    public List_phieudatphong() {
-        arrBooked = new Phieudatphong[0];
+    public List_phieudatphong(List_rooms arrRoom, List_dichvu dichvu) {
+        this.arrRoom = arrRoom;
+        this.dichvu = dichvu;
+        arrBooked = new Phieudatphong[100];
     }
 
     public void Dat_phong(List_rooms arrRoom) {
-        arrBooked = Arrays.copyOf(arrBooked, arrBooked.length + 1);
+        a = new Phieudatphong(arrRoom, dichvu);
         a.Dat_phong(arrRoom);
-        arrBooked[arrBooked.length - 1] = a;
+        a.Su_dung_dichvu();
+        arrBooked[n] = a;
+        n++;
     }
 
     public void Xuatdsphieu(List_rooms arrRoom) {
