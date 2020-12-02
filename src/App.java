@@ -16,6 +16,10 @@ public class App {
         System.out.println("*------------------------------------------------------*");
     }
 
+    public static void cls() {
+        System.out.println("\033[H\033[2J");
+    }
+
     public static void main(String[] args) throws Exception {
         System.out.println("Hello, World!");
         System.out.println("\033[H\033[2J");
