@@ -33,6 +33,16 @@ public class Menu {
             case 2:
                 break;
             case 3:
+                System.out.println("*-------------------------Menu-------------------------*");
+                System.out.println("|   1 .Xem danh sach phong                             |");
+                System.out.println("|   2 .Xem phong con trong                             |");
+                System.out.println("|   3 .Xem thong tin cac phong                         |");
+                System.out.println("|   4 .Xem danh sach nhan vien                         |");
+                System.out.println("|   5 .Tim kiem va xem thong tin nhan vien             |");
+                System.out.println("|   6 .Them nhan vien                                  |");
+                System.out.println("|   7 .Xoa nhan vien                                   |");
+                System.out.println("|   8 .Xem danh sach khach hang                        |");
+                System.out.println("*------------------------------------------------------*");
                 break;
         }
     }
