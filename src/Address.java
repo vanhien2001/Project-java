@@ -65,27 +65,27 @@ public class Address {
     }
 
     public void setDuong() {
-        System.out.println("Duong :");
+        System.out.print("Duong : ");
         this.duong = sc.nextLine();
     }
 
     public void setPhuong() {
-        System.out.println("Phuong :");
+        System.out.print("Phuong : ");
         this.phuong = sc.nextLine();
     }
 
     public void setQuan() {
-        System.out.println("Quan :");
+        System.out.print("Quan : ");
         this.quan = sc.nextLine();
     }
 
     public void setSo_nha() {
-        System.out.println("So nha :");
+        System.out.print("So nha : ");
         this.so_nha = sc.nextLine();
     }
 
     public void setTinh() {
-        System.out.println("Tinh :");
+        System.out.print("Tinh : ");
         this.tinh = sc.nextLine();
     }
 

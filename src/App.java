@@ -21,9 +21,20 @@ public class App {
     }
 
     public static void main(String[] args) throws Exception {
+<<<<<<< HEAD
         System.out.println("Hello, World!");
         System.out.println("\033[H\033[2J");
         System.out.println("hello");
 
+=======
+        List_rooms a = new List_rooms();
+        List_dichvu b = new List_dichvu();
+        Hoadon f = new Hoadon();
+        a.Nhapdsphong();
+        b.Nhapdsdichvu();
+        List_phieudatphong d = new List_phieudatphong(a, b);
+        d.Dat_phong(a);
+        f.Xuat_hoa_don(d);
+>>>>>>> 233d230007d84cb33cb5ae585da8e85835650e82
     }
 }

@@ -53,22 +53,22 @@ public class Room {
     }
 
     public void setTenphong() {
-        System.out.println("Ten phong :");
+        System.out.print("Ten phong : ");
         this.tenphong = sc.nextLine();
     }
 
     public void setLoai() {
-        System.out.println("Loai :");
+        System.out.print("Loai : ");
         this.loai = sc.nextInt();
     }
 
     public void setSo_giuong() {
-        System.out.println("So giuong :");
+        System.out.print("So giuong : ");
         this.so_giuong = sc.nextInt();
     }
 
     public void setGia() {
-        System.out.println("Gia :");
+        System.out.print("Gia : ");
         this.gia = sc.nextInt();
     }
 
@@ -80,7 +80,7 @@ public class Room {
     }
 
     public void xuatthongtin() {
-        System.out.printf("%-15s%-14s%d%-15s%\n", tenphong, so_giuong, gia);
+        System.out.printf("%-15s%-15s%10d000 d\n", tenphong, so_giuong, gia);
     }
 
 }

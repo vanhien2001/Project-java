@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class Dichvu {
     String tendichvu;
-    int gia,solan;
+    int gia, solan;
     boolean booked = false;
     Scanner sc = new Scanner(System.in);
 
@@ -33,12 +33,12 @@ public class Dichvu {
     }
 
     public void settendichvu() {
-        System.out.println("Ten dich vu :");
+        System.out.print("Ten dich vu :");
         this.tendichvu = sc.nextLine();
     }
 
     public void setGia() {
-        System.out.println("Gia :");
+        System.out.print("Gia :");
         this.gia = sc.nextInt();
     }
 
@@ -48,7 +48,9 @@ public class Dichvu {
     }
 
     public void xuatthongtin() {
-        System.out.printf("%-15s%-14s%d%\n", tendichvu, gia);
+        System.out.printf("%-15s%10d000 d x %d\n", tendichvu, gia, solan);
     }
-
+    public int Tongtien() {
+        return gia*solan;
+    }
 }

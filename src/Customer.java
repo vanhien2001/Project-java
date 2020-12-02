@@ -45,17 +45,17 @@ public class Customer {
     }
 
     public void setName() {
-        System.out.println("Ho ten :");
+        System.out.print("Ho ten : ");
         this.name = sc.nextLine();
     }
 
     public void setSdt() {
-        System.out.println("Sdt :");
+        System.out.print("Sdt : ");
         this.sdt = sc.nextLine();
     }
 
     public void setCmnd() {
-        System.out.println("Cmnd :");
+        System.out.print("Cmnd : ");
         this.cmnd = sc.nextLine();
     }
 
@@ -64,7 +64,7 @@ public class Customer {
     }
 
     public void nhap_thontin() {
-        System.out.println("Moi ban nhap thong tin thue phong :");
+        System.out.println("Moi ban nhap thong tin thue phong : ");
         setName();
         setSdt();
         setCmnd();
@@ -72,6 +72,6 @@ public class Customer {
     }
 
     public void xuatthongtin() {
-        System.out.printf("%-20s%-15s%-15s%-40s\n", name, sdt, cmnd, address);
+        System.out.printf("%-20s%-15s%-15s%-40s\n", name, sdt, cmnd, address.toString());
     }
 }

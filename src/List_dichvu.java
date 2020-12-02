@@ -10,8 +10,8 @@ public class List_dichvu {
         n = 0;
     }
 
-    public void Nhapdsphong() {
-        System.out.println("Nhap vao so luong dich vu :");
+    public void Nhapdsdichvu() {
+        System.out.print("Nhap vao so luong dich vu :");
         n = Integer.parseInt(sc.nextLine());
         arrs = new Dichvu[n];
         for (int i = 0; i < n; i++) {
@@ -23,7 +23,7 @@ public class List_dichvu {
 
     public void Xuatdsdichvu() {
         System.out.println("Danh sach dichvu :");
-        System.out.printf("%-15s%-14s%d\n", "Ten dichvu", "Gia");
+        System.out.printf("%-15s%15s\n", "Ten dichvu", "Gia");
         for (Dichvu arr : arrs) {
             arr.xuatthongtin();
         }
