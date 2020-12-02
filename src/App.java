@@ -5,7 +5,7 @@ public class App {
         Hoadon f = new Hoadon();
         a.Nhapdsphong();
         b.Nhapdsdichvu();
-        List_phieudatphong d = new List_phieudatphong(a,b);
+        List_phieudatphong d = new List_phieudatphong(a, b);
         d.Dat_phong(a);
         f.Xuat_hoa_don(d);
     }

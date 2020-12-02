@@ -1,32 +1,24 @@
+import java.util.Scanner;
+
 public class Hotel {
-  private String id;
   private String name;
   private String boss;
-  private String starLevel;
+  private int starLevel;
   private Address address;
+  Scanner sc = new Scanner(System.in);
 
   public Hotel() {
-    id = null;
     name = null;
     boss = null;
-    starLevel = null;
+    starLevel = 0;
     address = new Address();
   }
 
-  public Hotel(String id, String name, String boss, String starLevel, Address address) {
-    this.id = id;
+  public Hotel(String name, String boss, int starLevel, Address address) {
     this.name = name;
     this.boss = boss;
     this.starLevel = starLevel;
     this.address = address;
-  }
-
-  public void setId(String id) {
-    this.id = id;
-  }
-
-  public String getId() {
-    return id;
   }
 
   public void setName(String name) {
@@ -45,11 +37,11 @@ public class Hotel {
     return boss;
   }
 
-  public void setStarLevel(String starLevel) {
+  public void setStarLevel(int starLevel) {
     this.starLevel = starLevel;
   }
 
-  public String getStarLevel() {
+  public int getStarLevel() {
     return starLevel;
   }
 
@@ -61,4 +53,32 @@ public class Hotel {
     this.address = address;
   }
 
+  public void setTenkhachsan() {
+    System.out.print("Ten khach san la : ");
+    this.name = sc.nextLine();
+  }
+
+  public void setLoai() {
+    System.out.print("Loai : ");
+    this.starLevel = sc.nextInt();
+  }
+
+  public void setBoss() {
+    System.out.print("Thuoc so huu cua : ");
+    this.boss = sc.nextLine();
+  }
+
+  public void setDiachi() {
+    address.nhap_thontin();
+  }
+
+  public void nhap_thontin() {
+    setTenkhachsan();
+    setBoss();
+    setLoai();
+    setDiachi();
+  }
+  public void xuatthongtin() {
+    System.out.printf("%-20s%-15s%-15d%-40s\n", name, boss, starLevel, address.toString());
+}
 }

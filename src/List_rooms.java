@@ -40,7 +40,7 @@ public class List_rooms {
 
     public Room Timkiemphong(String a) {
         for (Room room : arrRooms) {
-            if (room.tenphong == a)
+            if (room.tenphong.equalsIgnoreCase(a))
                 return room;
         }
         return null;

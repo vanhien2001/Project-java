@@ -1,11 +1,12 @@
 import java.util.Scanner;
+import java.util.Arrays;
 
 public class Phieudatphong {
     List_rooms arrRoom;
     List_dichvu dichvu;
     Customer customer;
     String tenphong, tendichvu;
-    int solan, n;
+    int solan;
     Dichvu[] arr_dichvu;
     int s = 0;
     Scanner sc = new Scanner(System.in);
@@ -17,7 +18,6 @@ public class Phieudatphong {
         tenphong = null;
         tendichvu = null;
         arr_dichvu = null;
-        n = 0;
     }
 
     public void ThongtinKhachhang() {
@@ -46,18 +46,18 @@ public class Phieudatphong {
     }
 
     public void Su_dung_dichvu() {
-        arr_dichvu = new Dichvu[100];
+        arr_dichvu = new Dichvu[0];
         dichvu.Xuatdsdichvu();
         System.out.print("Moi ban chon dich vu : ");
         tendichvu = sc.nextLine();
         while (!tendichvu.equalsIgnoreCase("")) {
             for (Dichvu arr : dichvu.arrs) {
                 if (arr.tendichvu.equalsIgnoreCase(tendichvu)) {
-                    arr_dichvu[n] = arr;
+                    arr_dichvu = Arrays.copyOf(arr_dichvu, arr_dichvu.length + 1);
+                    arr_dichvu[arr_dichvu.length-1] = arr;
                     System.out.print("So lan su dung : ");
                     solan = sc.nextInt();
-                    arr_dichvu[n].solan = solan;
-                    n++;
+                    arr_dichvu[arr_dichvu.length-1].solan = solan;
                 }
             }
             System.out.print("Moi ban chon tiep dich vu : ");
@@ -67,7 +67,7 @@ public class Phieudatphong {
 
     public int Tongtien() {
         for (Dichvu dv : arr_dichvu) {
-            s += (dv.gia * dv.solan);
+            s += dv.Tongtien();
         }
         s += arrRoom.Timkiemphong(tenphong).gia;
         return s;
