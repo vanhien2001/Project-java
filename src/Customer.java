@@ -72,6 +72,6 @@ public class Customer {
     }
 
     public void xuatthongtin() {
-        System.out.printf("%-20s%-15s%-15s%-40s\n", name, sdt, cmnd, address.toString());
+        System.out.printf("%-20s%-15s%-15s%-40s\n", name, sdt, cmnd, address);
     }
 }

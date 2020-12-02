@@ -1,9 +1,10 @@
 import java.util.Scanner;
 
-public class Person {
-  private String id;
-  private String name;
-  private Time dayBegin;
+public class Person implements Salary{
+  protected String id;
+  protected String name;
+  protected Time dayBegin;
+  protected double salary;
 
   Scanner sc = new Scanner(System.in);
 
@@ -44,34 +45,31 @@ public class Person {
   }
 
   public void setId() {
-    System.out.println("nhap ID : ");
+    System.out.println("Id : ");
     id = sc.nextLine();
   }
 
   public void setName() {
-    System.out.println("nhap ho va ten : ");
+    System.out.println("Ho va ten : ");
     name = sc.nextLine();
   }
 
   public void setDayBegin() {
-    System.out.println("nhap ngay lam viec : ");
-    dayBegin.setAllTime();
+    System.out.println("Thoi diem bat dau lam viec : ");
+    dayBegin.setTime();
   }
 
-  public void setAll() {
+  public void Nhapthongtin() {
     setId();
     setName();
     setDayBegin();
   }
 
-  @Override
-  public String toString() {
-    return name + "(ID : " + id + "dayBegin : " + dayBegin + ")";
+  public void Xuat_thong_tin() {
+    System.out.printf("%-15s%-20s%-15s%10d000 d\n", id, name, dayBegin,salary);
   }
 
-  public void print() {
-    System.out.println("ho va ten : " + name);
-    System.out.println("ID : " + id);
-    System.out.println("ngay bat dau lam :" + dayBegin);
+  public double Tinh_luong(){
+    return salary*30;
   }
 }
