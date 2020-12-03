@@ -12,11 +12,6 @@ public class App {
         c.Nhap_ds_nv();
         System.out.println("----------------------------------------------------------------");
     }
-
-    public void test() {
-
-    }
-
     public static void main(String[] args) throws Exception {
         Hotel hotel = new Hotel();
         List_rooms a = new List_rooms();

@@ -22,12 +22,14 @@ public class List_dichvu {
     }
 
     public void Xuatdsdichvu() {
-        System.out.println("Danh sach dichvu : ");
-        System.out.printf("%-20s%20s\n", "Ten dichvu", "Gia");
-        System.out.printf("|%-20s%15d000 d x %20s|\n", "Ten dichvu", "Gia", "");
+        System.out.println("\n*------------------------------------------------------------*");
+        System.out.println("|                     DANH SACH DICH VU                      |");
+        System.out.println("|                                                            |");
+        System.out.printf("|%-20s%20s%20s|\n", " Ten dichvu", "Gia", "");
         for (Dichvu arr : arrs) {
             arr.xuatthongtin();
         }
+        System.out.println("*------------------------------------------------------------*\n");
     }
 
     public Dichvu Timkiemdichvu(String a) {

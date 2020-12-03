@@ -34,6 +34,6 @@ public class Staff extends Person {
 
   @Override
   public void Xuat_thong_tin() {
-    System.out.printf("%-20s%-20s%-25s%-25s%-20s%15d000 d\n", "Nhan vien", id, name, position, dayBegin, salary);
+    System.out.printf("| %-10s%-9s%-25s%-25s%-15s%15d000 d |\n", "Nhan vien", id, name, position, dayBegin, salary);
   }
 }

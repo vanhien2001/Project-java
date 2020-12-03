@@ -22,20 +22,26 @@ public class List_rooms {
     }
 
     public void Xuatdsphong() {
-        System.out.println("Danh sach phong : ");
-        System.out.printf("%-20s%-20s%20s\n", "Ten phong", "So giuong", "Gia");
+        System.out.println("\n*------------------------------------------------------------*");
+        System.out.println("|                      DANH SACH PHONG                       |");
+        System.out.println("|                                                            |");
+        System.out.printf("|%-20s%-20s%19s |\n", " Ten phong", "So giuong","Gia");
         for (Room room : arrRooms) {
             room.xuatthongtin();
         }
+        System.out.println("*------------------------------------------------------------*\n");
     }
 
     public void Xuatdsphongtrong() {
-        System.out.println("Danh sach phong trong :");
-        System.out.printf("%-20s%-20s%20s\n", "Ten phong", "So giuong", "Gia");
+        System.out.println("\n*------------------------------------------------------------*");
+        System.out.println("|                   DANH SACH PHONG TRONG                    |");
+        System.out.println("|                                                            |");
+        System.out.printf("|%-20s%-20s%19s |\n", " Ten phong", "So giuong","Gia");
         for (Room room : arrRooms) {
             if (!room.booked)
                 room.xuatthongtin();
         }
+        System.out.println("*------------------------------------------------------------*\n");
     }
 
     public Room Timkiemphong(String a) {

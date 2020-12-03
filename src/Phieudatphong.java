@@ -8,7 +8,7 @@ public class Phieudatphong {
     String tenphong, tendichvu;
     int solan;
     Dichvu[] arr_dichvu = new Dichvu[0];;
-    int s = 0,x;
+    int s = 0, x;
     Scanner sc = new Scanner(System.in);
 
     public Phieudatphong(List_rooms arrRoom, List_dichvu dichvu) {
@@ -38,7 +38,7 @@ public class Phieudatphong {
             }
         }
         if (!kt) {
-            System.out.println("Ten phong khong dung vui long nhap lai : " + kt);
+            System.out.println("Ten phong khong dung vui long nhap lai !");
             this.Dat_phong(arrRoom);
         }
         this.arrRoom = arrRoom;
@@ -90,8 +90,12 @@ public class Phieudatphong {
     }
 
     public void Xuat_thong_tin() {
-        Xuat_thong_tin_khachhang();
-        System.out.println("Phong :" + getTenphong());
+        System.out.println("|                                                            |");
+        System.out.printf("|%-40s%-20s|\n", " Khach hang : " + customer.name, "cmnd: " + customer.cmnd);
+        System.out.printf("|%-60s|\n", " Dia chi : " + customer.address);
+        System.out.printf("|%-60s|\n", " Da dat phong : " + tenphong);
+        System.out.printf("|%-60s|\n", " Su dung cac dich vu : ");
+        System.out.printf("|%-20s%20s%20s|\n", " Ten dichvu", "Gia", "");
         Xuat_thong_tin_dichvu();
     }
 }

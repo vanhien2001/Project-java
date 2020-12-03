@@ -60,7 +60,7 @@ public class Person implements Salary {
   }
 
   public void setSalary() {
-    System.out.println("Luong : ");
+    System.out.print("Luong : ");
     salary = sc.nextInt();
   }
 

@@ -17,7 +17,7 @@ public class Manager extends Person {
 
     @Override
     public void Xuat_thong_tin() {
-        System.out.printf("%-20s%-20s%-25s%-25s%-20s%15d000 d\n", "Quan ly", id, name, "quan ly khac san", dayBegin,
+        System.out.printf("| %-10s%-9s%-25s%-25s%-15s%15d000 d |\n", "Quan ly", id, name, "Quan ly khach san", dayBegin,
                 salary);
     }
 }

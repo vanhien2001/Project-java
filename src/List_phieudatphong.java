@@ -19,12 +19,16 @@ public class List_phieudatphong {
         a.Dat_phong(arrRoom);
         a.Su_dung_dichvu();
         arrBooked = Arrays.copyOf(arrBooked, arrBooked.length + 1);
-        arrBooked[arrBooked.length-1] = a;
+        arrBooked[arrBooked.length - 1] = a;
     }
 
     public void Xuatdsphieu(List_rooms arrRoom) {
+        System.out.println("\n*------------------------------------------------------------*");
+        System.out.println("|                    DANH SACH KHACH HANG                    |");
+        System.out.println("|                                                            |");
         for (Phieudatphong booked : arrBooked) {
             booked.Xuat_thong_tin();
         }
+        System.out.println("\n*------------------------------------------------------------*");
     }
 }
