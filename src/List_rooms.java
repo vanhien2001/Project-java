@@ -23,7 +23,7 @@ public class List_rooms {
 
     public void Xuatdsphong() {
         System.out.println("Danh sach phong : ");
-        System.out.printf("%-15s%-15s%15s\n", "Ten phong", "So giuong", "Gia");
+        System.out.printf("%-20s%-20s%20s\n", "Ten phong", "So giuong", "Gia");
         for (Room room : arrRooms) {
             room.xuatthongtin();
         }
@@ -31,7 +31,7 @@ public class List_rooms {
 
     public void Xuatdsphongtrong() {
         System.out.println("Danh sach phong trong :");
-        System.out.printf("%-15s%-15s%15s\n", "Ten phong", "So giuong", "Gia");
+        System.out.printf("%-20s%-20s%20s\n", "Ten phong", "So giuong", "Gia");
         for (Room room : arrRooms) {
             if (!room.booked)
                 room.xuatthongtin();

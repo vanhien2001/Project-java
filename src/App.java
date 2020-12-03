@@ -1,7 +1,7 @@
 public class App {
-    public static void Setup(Hotel hotel,List_rooms a,List_dichvu b,listPerson c) {
-        System.out.println("----------------------------------------------------------------");
-        System.out.println("                        CAI DAT KHACH SAN\n\n");
+    public static void Setup(Hotel hotel, List_rooms a, List_dichvu b, listPerson c) {
+        System.out.println("\n----------------------------------------------------------------\n");
+        System.out.println("                        CAI DAT KHACH SAN\n");
         System.out.println("Nhap thong tin khach san :");
         hotel.nhap_thontin();
         System.out.println("Nhap thong tin cac phong :");
@@ -12,11 +12,13 @@ public class App {
         c.Nhap_ds_nv();
         System.out.println("----------------------------------------------------------------");
     }
-    public void test(){
+
+    public void test() {
 
     }
+
     public static void main(String[] args) throws Exception {
-        Hotel hotel=new Hotel();
+        Hotel hotel = new Hotel();
         List_rooms a = new List_rooms();
         List_dichvu b = new List_dichvu();
         Hoadon f = new Hoadon();

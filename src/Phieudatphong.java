@@ -33,8 +33,8 @@ public class Phieudatphong {
             if (arrRoom.arrRooms[i].tenphong.equalsIgnoreCase(tenphong) && !arrRoom.arrRooms[i].booked) {
                 arrRoom.arrRooms[i].booked = true;
                 kt = true;
-                System.out.println("Dat phong thanh cong");
                 ThongtinKhachhang();
+                System.out.println("Dat phong thanh cong");
                 break;
             }
         }
@@ -48,20 +48,21 @@ public class Phieudatphong {
     public void Su_dung_dichvu() {
         arr_dichvu = new Dichvu[0];
         dichvu.Xuatdsdichvu();
-        System.out.print("Moi ban chon dich vu : ");
-        tendichvu = sc.nextLine();
-        while (!tendichvu.equalsIgnoreCase("")) {
+        System.out.print("Ban co muon chon tiep dich vu (Nhan 1 de su dung them dich vu, nhan so bat ki de bo qua) ");
+        int x = sc.nextInt();
+        if (x == 1) {
+            System.out.print("Moi ban chon dich vu : ");
+            tendichvu = sc.nextLine();
             for (Dichvu arr : dichvu.arrs) {
                 if (arr.tendichvu.equalsIgnoreCase(tendichvu)) {
                     arr_dichvu = Arrays.copyOf(arr_dichvu, arr_dichvu.length + 1);
-                    arr_dichvu[arr_dichvu.length-1] = arr;
+                    arr_dichvu[arr_dichvu.length - 1] = arr;
                     System.out.print("So lan su dung : ");
                     solan = sc.nextInt();
-                    arr_dichvu[arr_dichvu.length-1].solan = solan;
+                    arr_dichvu[arr_dichvu.length - 1].solan = solan;
                 }
             }
-            System.out.print("Moi ban chon tiep dich vu : ");
-            tendichvu = sc.nextLine();
+            Su_dung_dichvu();
         }
     }
 

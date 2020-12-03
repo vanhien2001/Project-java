@@ -1,3 +1,3 @@
 public interface Salary{
-    public double Tinh_luong();
+    public int Tinh_luong();
 }

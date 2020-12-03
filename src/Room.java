@@ -80,7 +80,7 @@ public class Room {
     }
 
     public void xuatthongtin() {
-        System.out.printf("%-15s%-15s%10d000 d\n", tenphong, so_giuong, gia);
+        System.out.printf("%-20s%-20s%15d000 d\n", tenphong, so_giuong, gia);
     }
 
 }

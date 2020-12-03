@@ -11,19 +11,19 @@ public class List_dichvu {
     }
 
     public void Nhapdsdichvu() {
-        System.out.print("Nhap vao so luong dich vu :");
+        System.out.print("Nhap vao so luong dich vu : ");
         n = Integer.parseInt(sc.nextLine());
         arrs = new Dichvu[n];
         for (int i = 0; i < n; i++) {
-            System.out.println("Nhap thong tin dich vu thu :" + (i + 1));
+            System.out.println("Nhap thong tin dich vu thu " + (i + 1));
             arrs[i] = new Dichvu();
             arrs[i].nhap_thontin();
         }
     }
 
     public void Xuatdsdichvu() {
-        System.out.println("Danh sach dichvu :");
-        System.out.printf("%-15s%15s\n", "Ten dichvu", "Gia");
+        System.out.println("Danh sach dichvu : ");
+        System.out.printf("%-20s%20s\n", "Ten dichvu", "Gia");
         for (Dichvu arr : arrs) {
             arr.xuatthongtin();
         }

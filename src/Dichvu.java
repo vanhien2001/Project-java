@@ -33,12 +33,12 @@ public class Dichvu {
     }
 
     public void settendichvu() {
-        System.out.print("Ten dich vu :");
+        System.out.print("Ten dich vu : ");
         this.tendichvu = sc.nextLine();
     }
 
     public void setGia() {
-        System.out.print("Gia :");
+        System.out.print("Gia : ");
         this.gia = sc.nextInt();
     }
 
@@ -48,7 +48,7 @@ public class Dichvu {
     }
 
     public void xuatthongtin() {
-        System.out.printf("%-15s%10d000 d x %d\n", tendichvu, gia, solan);
+        System.out.printf("%-20s%15d000 d x %d\n", tendichvu, gia, solan);
     }
     public int Tongtien() {
         return gia*solan;

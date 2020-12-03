@@ -79,6 +79,9 @@ public class Hotel {
     setDiachi();
   }
   public void xuatthongtin() {
-    System.out.printf("%-20s%-15s%-15d%-40s\n", name, boss, starLevel, address.toString());
-}
+    System.out.println("\nKhach san : "+name);
+    System.out.println("La 1 khach san : "+starLevel+" sao");
+    System.out.println("Nam o dia chi : "+address);
+    System.out.println("Thuoc su huu cua : "+boss+"\n");
+  }
 }

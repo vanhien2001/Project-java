@@ -46,7 +46,7 @@ public class Time {
     }
 
     public void setYear() {
-        System.out.println("Nam : ");
+        System.out.print("Nam : ");
         year = sc.nextInt();
     }
 

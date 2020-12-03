@@ -16,7 +16,7 @@ public class Hoadon {
                 System.out.println("Khach hang : " + arr.customer.name);
                 System.out.println("Da dat phong : " + arr.tenphong);
                 System.out.println("Su dung cac dich vu : ");
-                System.out.printf("%-15s%15s\n", "Ten dichvu", "Gia");
+                System.out.printf("%-20s%20s\n", "Ten dichvu", "Gia");
                 arr.Xuat_thong_tin_dichvu();
                 s = arr.Tongtien();
                 System.out.println("Tong tien la : " + s + "000 d");
