@@ -20,6 +20,7 @@ public class Hoadon {
                 arr.Xuat_thong_tin_dichvu();
                 s = arr.Tongtien();
                 System.out.println("Tong tien la : " + s + "000 d");
+                arr.arrRoom.Timkiemphong(arr.tenphong).booked=false;
             }
         }
     }
