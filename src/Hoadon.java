@@ -13,13 +13,19 @@ public class Hoadon {
         String cmnd = sc.nextLine();
         for (Phieudatphong arr : arrs.arrBooked) {
             if (arr.customer.cmnd.equalsIgnoreCase(cmnd)) {
-                System.out.println("Khach hang : " + arr.customer.name);
-                System.out.println("Da dat phong : " + arr.tenphong);
-                System.out.println("Su dung cac dich vu : ");
-                System.out.printf("%-20s%20s\n", "Ten dichvu", "Gia");
+                System.out.println("*------------------------------------------------------------*");
+                System.out.println("|                          HOA DON                           |");
+                System.out.println("|                                                            |");
+                System.out.printf("|%-60s|\n"," Khach hang : " + arr.customer.name+"    cmnd: "+arr.customer.cmnd);
+                System.out.printf("|%-60s|\n"," Dia chi : "+arr.customer.address);
+                System.out.printf("|%-60s|\n"," Da dat phong : " + arr.tenphong);
+                System.out.printf("|%-60s|\n"," Dia chi : "+arr.customer.address);
+                System.out.printf("|%-60s|\n"," Da dat phong : " + arr.tenphong);
+                System.out.printf("|%-60s|\n"," Su dung cac dich vu : ");
+                System.out.printf("|%-20s%20s%20s|\n", " Ten dichvu", "Gia","");
                 arr.Xuat_thong_tin_dichvu();
                 s = arr.Tongtien();
-                System.out.println("Tong tien la : " + s + "000 d");
+                System.out.printf("|%-60s|\n"," Tong tien la : " + s + "000 d");
                 arr.arrRoom.Timkiemphong(arr.tenphong).booked=false;
             }
         }

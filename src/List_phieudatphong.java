@@ -27,5 +27,4 @@ public class List_phieudatphong {
             booked.Xuat_thong_tin();
         }
     }
-
 }

@@ -48,7 +48,7 @@ public class Dichvu {
     }
 
     public void xuatthongtin() {
-        System.out.printf("%-20s%15d000 d x %d\n", tendichvu, gia, solan);
+        System.out.printf("|%-20s%15d000 d x %d%19s|\n", tendichvu, gia, solan,"");
     }
     public int Tongtien() {
         return gia*solan;

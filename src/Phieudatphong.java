@@ -7,8 +7,8 @@ public class Phieudatphong {
     Customer customer;
     String tenphong, tendichvu;
     int solan;
-    Dichvu[] arr_dichvu;
-    int s = 0;
+    Dichvu[] arr_dichvu = new Dichvu[0];;
+    int s = 0,x;
     Scanner sc = new Scanner(System.in);
 
     public Phieudatphong(List_rooms arrRoom, List_dichvu dichvu) {
@@ -17,7 +17,6 @@ public class Phieudatphong {
         customer = new Customer();
         tenphong = null;
         tendichvu = null;
-        arr_dichvu = null;
     }
 
     public void ThongtinKhachhang() {
@@ -46,10 +45,9 @@ public class Phieudatphong {
     }
 
     public void Su_dung_dichvu() {
-        arr_dichvu = new Dichvu[0];
         dichvu.Xuatdsdichvu();
         System.out.print("Ban co muon chon tiep dich vu (Nhan 1 de su dung them dich vu, nhan so bat ki de bo qua) ");
-        int x = sc.nextInt();
+        x = Integer.parseInt(sc.nextLine());
         if (x == 1) {
             System.out.print("Moi ban chon dich vu : ");
             tendichvu = sc.nextLine();
@@ -62,7 +60,6 @@ public class Phieudatphong {
                     arr_dichvu[arr_dichvu.length - 1].solan = solan;
                 }
             }
-            Su_dung_dichvu();
         }
     }
 
