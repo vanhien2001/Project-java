@@ -44,8 +44,8 @@ public class Menu {
     }
 
     public void menu1(Hotel hotel, List_rooms a, List_dichvu b, listPerson c, List_phieudatphong d, Hoadon f) {
-        System.out.print("Id cua ban la : ");
         int kt = 0;
+        System.out.print("Id cua ban la : ");
         String id = sc.nextLine();
         for (Person ql : c.arrPerson) {
             if (ql.id.equalsIgnoreCase(id) && ql instanceof Manager) {
