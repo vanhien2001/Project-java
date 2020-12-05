@@ -3,9 +3,6 @@ import java.util.Scanner;
 public class Menu {
     Scanner sc = new Scanner(System.in);
 
-    public Menu() {
-
-    }
 
     public void menu(Hotel hotel, List_rooms a, List_dichvu b, listPerson c, List_phieudatphong d, Hoadon f) {
         System.out.println();
@@ -38,13 +35,14 @@ public class Menu {
                 menu1(hotel, a, b, c, d, f);
                 break;
             default:
-                System.out.println("Da thoat chuong trinh");
+                System.out.println("\nDa thoat chuong trinh\n\n");
                 break;
         }
     }
 
     public void menu1(Hotel hotel, List_rooms a, List_dichvu b, listPerson c, List_phieudatphong d, Hoadon f) {
         int kt = 0;
+        sc.nextLine();
         System.out.print("Id cua ban la : ");
         String id = sc.nextLine();
         for (Person ql : c.arrPerson) {

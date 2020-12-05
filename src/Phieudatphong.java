@@ -38,17 +38,17 @@ public class Phieudatphong {
             }
         }
         if (!kt) {
-            System.out.println("Ten phong khong dung vui long nhap lai !");
-            this.Dat_phong(arrRoom);
+            System.out.println("Ten phong khong dung !");
         }
         this.arrRoom = arrRoom;
     }
 
     public void Su_dung_dichvu() {
+        boolean kt = false;
         dichvu.Xuatdsdichvu();
-        System.out.print("Ban co muon chon tiep dich vu (Nhan 1 de su dung them dich vu, nhan so bat ki de bo qua) ");
-        x = Integer.parseInt(sc.nextLine());
-        if (x == 1) {
+        System.out.print("Moi ban chon dich vu : ");
+        tendichvu = sc.nextLine();
+        while (!tendichvu.equalsIgnoreCase("")) {
             System.out.print("Moi ban chon dich vu : ");
             tendichvu = sc.nextLine();
             for (Dichvu arr : dichvu.arrs) {
@@ -58,8 +58,14 @@ public class Phieudatphong {
                     System.out.print("So lan su dung : ");
                     solan = sc.nextInt();
                     arr_dichvu[arr_dichvu.length - 1].solan = solan;
+                    kt = true;
                 }
             }
+            if (!kt) {
+                System.out.println("Ten dich vu khong dung !");
+            }
+            System.out.print("Moi ban chon dich vu : ");
+            tendichvu = sc.nextLine();
         }
     }
 
@@ -95,7 +101,7 @@ public class Phieudatphong {
         System.out.printf("|%-60s|\n", " Dia chi : " + customer.address);
         System.out.printf("|%-60s|\n", " Da dat phong : " + tenphong);
         System.out.printf("|%-60s|\n", " Su dung cac dich vu : ");
-        System.out.printf("|%-20s%20s%20s|\n", " Ten dichvu", "Gia", "");
+        System.out.printf("|%-20s%20s%20s|\n", " Ten dich vu", "Gia", "");
         Xuat_thong_tin_dichvu();
     }
 }
