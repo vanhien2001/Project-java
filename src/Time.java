@@ -28,7 +28,6 @@ public class Time {
         this.day = day;
     }
 
-
     public int getMonth() {
         return month;
     }
@@ -61,7 +60,7 @@ public class Time {
         do {
             System.out.print("Thang : ");
             month = sc.nextInt();
-        } while (month > 30 || month < 1);
+        } while (month > 12 || month < 1);
     }
 
     public void setTime() {
@@ -71,6 +70,6 @@ public class Time {
     }
 
     public String toString() {
-        return day + "/" + month + "/" + year ;
+        return day + "/" + month + "/" + year;
     }
 }
