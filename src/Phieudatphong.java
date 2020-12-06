@@ -3,17 +3,15 @@ import java.util.Arrays;
 
 public class Phieudatphong {
     List_rooms arrRoom;
-    List_dichvu dichvu;
     Customer customer;
     String tenphong, tendichvu;
     int solan;
     Dichvu[] arr_dichvu = new Dichvu[0];;
-    int s = 0, x;
+    int s = 0, x, n = 0;
     Scanner sc = new Scanner(System.in);
 
     public Phieudatphong(List_rooms arrRoom, List_dichvu dichvu) {
         this.arrRoom = arrRoom;
-        this.dichvu = dichvu;
         customer = new Customer();
         tenphong = null;
         tendichvu = null;
@@ -43,28 +41,28 @@ public class Phieudatphong {
         this.arrRoom = arrRoom;
     }
 
-    public void Su_dung_dichvu() {
+    public void Su_dung_dichvu( List_dichvu dichvu) {
         boolean kt = false;
         dichvu.Xuatdsdichvu();
         System.out.print("Moi ban chon dich vu : ");
         tendichvu = sc.nextLine();
-        while (!tendichvu.equalsIgnoreCase("")) {
-            System.out.print("Moi ban chon dich vu : ");
-            tendichvu = sc.nextLine();
+        while (!tendichvu.isEmpty()) {
             for (Dichvu arr : dichvu.arrs) {
                 if (arr.tendichvu.equalsIgnoreCase(tendichvu)) {
-                    arr_dichvu = Arrays.copyOf(arr_dichvu, arr_dichvu.length + 1);
-                    arr_dichvu[arr_dichvu.length - 1] = arr;
+                    arr_dichvu = Arrays.copyOf(arr_dichvu, n + 1);
+                    arr_dichvu[n] = arr;
                     System.out.print("So lan su dung : ");
                     solan = sc.nextInt();
-                    arr_dichvu[arr_dichvu.length - 1].solan = solan;
+                    arr_dichvu[n].solan = solan;
                     kt = true;
+                    n++;
                 }
             }
             if (!kt) {
                 System.out.println("Ten dich vu khong dung !");
             }
-            System.out.print("Moi ban chon dich vu : ");
+            sc.nextLine();
+            System.out.print("Moi ban chon tiep dich vu : ");
             tendichvu = sc.nextLine();
         }
     }

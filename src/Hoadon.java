@@ -16,15 +16,15 @@ public class Hoadon {
                 System.out.println("\n*------------------------------------------------------------*");
                 System.out.println("|                          HOA DON                           |");
                 System.out.println("|                                                            |");
-                System.out.printf("|%-40s%-20s|\n"," Khach hang : " + arr.customer.name,"cmnd: "+arr.customer.cmnd);
-                System.out.printf("|%-60s|\n"," Dia chi : "+arr.customer.address);
-                System.out.printf("|%-60s|\n"," Da dat phong : " + arr.tenphong);
-                System.out.printf("|%-60s|\n"," Su dung cac dich vu : ");
-                System.out.printf("|%-20s%-20s%20s|\n", " Ten dichvu", "Gia","");
+                System.out.printf("|%-40s%-20s|\n", " Khach hang : " + arr.customer.name, "cmnd: " + arr.customer.cmnd);
+                System.out.printf("|%-60s|\n", " Dia chi : " + arr.customer.address);
+                System.out.printf("|%-60s|\n", " Da dat phong : " + arr.tenphong);
+                System.out.printf("|%-60s|\n", " Su dung cac dich vu : ");
+                System.out.printf("|%-20s%20s%20s|\n", " Ten dich vu", "Gia", "");
                 arr.Xuat_thong_tin_dichvu();
                 s = arr.Tongtien();
-                System.out.printf("|%-60s|\n"," Tong tien la : " + s + "000 d");
-                arr.arrRoom.Timkiemphong(arr.tenphong).booked=false;
+                System.out.printf("|%-60s|\n", " Tong tien la : " + s + "000 d");
+                arr.arrRoom.Timkiemphong(arr.tenphong).booked = false;
                 System.out.println("*------------------------------------------------------------*\n");
             }
         }

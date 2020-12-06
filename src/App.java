@@ -12,12 +12,13 @@ public class App {
         c.Nhap_ds_nv();
         System.out.println("----------------------------------------------------------------");
     }
+
     public static void main(String[] args) throws Exception {
         Hotel hotel = new Hotel();
         List_rooms a = new List_rooms();
         List_dichvu b = new List_dichvu();
         Hoadon f = new Hoadon();
-        List_phieudatphong d = new List_phieudatphong(a, b);
+        List_phieudatphong d = new List_phieudatphong();
         listPerson c = new listPerson();
         Menu g = new Menu();
         Setup(hotel, a, b, c);
