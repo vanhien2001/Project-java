@@ -25,7 +25,7 @@ public class List_rooms {
         System.out.println("\n*------------------------------------------------------------*");
         System.out.println("|                      DANH SACH PHONG                       |");
         System.out.println("|                                                            |");
-        System.out.printf("|%-20s%-20s%19s |\n", " Ten phong", "So giuong","Gia");
+        System.out.printf("|%-20s%-20s%19s |\n", " Ten phong", "So giuong", "Gia");
         for (Room room : arrRooms) {
             room.xuatthongtin();
         }
@@ -36,7 +36,7 @@ public class List_rooms {
         System.out.println("\n*------------------------------------------------------------*");
         System.out.println("|                   DANH SACH PHONG TRONG                    |");
         System.out.println("|                                                            |");
-        System.out.printf("|%-20s%-20s%19s |\n", " Ten phong", "So giuong","Gia");
+        System.out.printf("|%-20s%-20s%19s |\n", " Ten phong", "So giuong", "Gia");
         for (Room room : arrRooms) {
             if (!room.booked)
                 room.xuatthongtin();
