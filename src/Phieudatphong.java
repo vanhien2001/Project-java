@@ -11,7 +11,7 @@ public class Phieudatphong implements Serializable{
     Customer customer;
     String tenphong, tendichvu;
     int solan;
-    Dichvu[] arr_dichvu = new Dichvu[0];;
+    Dichvu[] arr_dichvu = new Dichvu[0];
     int s = 0, x, n = 0;
     Scanner sc = new Scanner(System.in);
 
@@ -46,7 +46,7 @@ public class Phieudatphong implements Serializable{
         this.arrRoom = arrRoom;
     }
 
-    public void Su_dung_dichvu( List_dichvu dichvu) {
+    public void Su_dung_dichvu(List_dichvu dichvu) {
         boolean kt = false;
         dichvu.Xuatdsdichvu();
         System.out.print("Moi ban chon dich vu : ");
