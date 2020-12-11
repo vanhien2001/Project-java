@@ -25,6 +25,7 @@ public class Hoadon {
                 s = arr.Tongtien();
                 System.out.printf("|%-60s|\n", " Tong tien la : " + s + "000 d");
                 arr.arrRoom.Timkiemphong(arr.tenphong).booked = false;
+                System.out.println("|                                                            |");
                 System.out.println("*------------------------------------------------------------*\n");
             }
         }

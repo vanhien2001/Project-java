@@ -60,8 +60,8 @@ public class listPerson {
             "|                                           DANH SACH NHAN VIEN                                            |");
         System.out.println(
             "|                                                                                                          |");
-        System.out.printf("\n| %-10s%-9s%-25s%-25s%-15s%20s |\n", "Chuc vu", "Id", "Ho ten", "Cong viec",
-            "Ngay vao lam", "Luong");
+        System.out.printf("| %-10s%-9s%-25s%-25s%-15s%20s |\n", "Chuc vu", "Id", "Ho ten", "Cong viec", "Ngay vao lam",
+            "Luong");
         for (int i = 0; i < arrPerson.length; i++) {
           if (arrPerson[i].getName().equalsIgnoreCase(name)) {
             arrPerson[i].Xuat_thong_tin();
@@ -83,8 +83,8 @@ public class listPerson {
             "|                                           DANH SACH NHAN VIEN                                            |");
         System.out.println(
             "|                                                                                                          |");
-        System.out.printf("\n| %-10s%-9s%-25s%-25s%-15s%20s |\n", "Chuc vu", "Id", "Ho ten", "Cong viec",
-            "Ngay vao lam", "Luong");
+        System.out.printf("| %-10s%-9s%-25s%-25s%-15s%20s |\n", "Chuc vu", "Id", "Ho ten", "Cong viec", "Ngay vao lam",
+            "Luong");
         for (int i = 0; i < arrPerson.length; i++) {
           if (arrPerson[i].getId().equalsIgnoreCase(id)) {
             arrPerson[i].Xuat_thong_tin();

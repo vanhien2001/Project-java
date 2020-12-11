@@ -29,6 +29,7 @@ public class List_dichvu {
         for (Dichvu arr : arrs) {
             arr.xuatthongtin();
         }
+        System.out.println("|                                                            |");
         System.out.println("*------------------------------------------------------------*\n");
     }
 
