@@ -78,10 +78,16 @@ public class Hotel {
     setLoai();
     setDiachi();
   }
+
   public void xuatthongtin() {
-    System.out.println("\nKhach san : "+name);
-    System.out.println("La 1 khach san : "+starLevel+" sao");
-    System.out.println("Nam o dia chi : "+address);
-    System.out.println("Thuoc su huu cua : "+boss+"\n");
+    System.out.println("\n*------------------------------------------------------------*");
+    System.out.println("|                    THONG TIN KHACH SAN                     |");
+    System.out.println("|                                                            |");
+    System.out.printf("|%-60s|\n", "Khach san : " + name);
+    System.out.printf("|%-60s|\n", "La 1 khach san " + starLevel + " sao");
+    System.out.printf("|%-60s|\n", "Nam o dia chi : " + address);
+    System.out.printf("|%-60s|\n", "Thuoc su huu cua : " + boss);
+    System.out.println("|                                                            |");
+    System.out.println("*------------------------------------------------------------*\n");
   }
 }

@@ -1,9 +1,11 @@
+import java.io.IOException;
 import java.util.Scanner;
 
 public class Menu {
+    List_phieudatphong d = new List_phieudatphong();
     Scanner sc = new Scanner(System.in);
 
-    public void menu(Hotel hotel, List_rooms a, List_dichvu b, listPerson c, List_phieudatphong d, Hoadon f) {
+    public void menu(Hotel hotel, List_rooms a, List_dichvu b, listPerson c, Hoadon f) throws IOException {
         System.out.println();
         System.out.println("*------------------------------------------------------------*");
         System.out.println("|                 KHACH SAN XIN CHA0 QUY KHACH               |");
@@ -20,15 +22,15 @@ public class Menu {
         switch (x) {
             case 1:
                 hotel.xuatthongtin();
-                menu(hotel, a, b, c, d, f);
+                menu(hotel, a, b, c, f);
                 break;
             case 2:
                 d.Dat_phong(a, b);
-                menu(hotel, a, b, c, d, f);
+                menu(hotel, a, b, c, f);
                 break;
             case 3:
                 f.Xuat_hoa_don(d);
-                menu(hotel, a, b, c, d, f);
+                menu(hotel, a, b, c, f);
                 break;
             case 4:
                 int kt = 0;
@@ -42,10 +44,10 @@ public class Menu {
                     }
                 }
                 if (kt == 1) {
-                    menu1(hotel, a, b, c, d, f);
+                    menu1(hotel, a, b, c, f);
                 } else {
                     System.out.println("Ban khong phai la quan ly !");
-                    menu(hotel, a, b, c, d, f);
+                    menu(hotel, a, b, c, f);
                 }
                 break;
             default:
@@ -54,7 +56,7 @@ public class Menu {
         }
     }
 
-    public void menu1(Hotel hotel, List_rooms a, List_dichvu b, listPerson c, List_phieudatphong d, Hoadon f) {
+    public void menu1(Hotel hotel, List_rooms a, List_dichvu b, listPerson c, Hoadon f) throws IOException {
         System.out.println();
         System.out.println("*------------------------------------------------------------*");
         System.out.println("|                     XIN CHAO QUAN LY                       |");
@@ -74,34 +76,34 @@ public class Menu {
         switch (x) {
             case 1:
                 a.Xuatdsphong();
-                menu1(hotel, a, b, c, d, f);
+                menu1(hotel, a, b, c, f);
                 break;
             case 2:
                 a.Xuatdsphongtrong();
-                menu1(hotel, a, b, c, d, f);
+                menu1(hotel, a, b, c, f);
                 break;
             case 3:
                 c.Xuat_ds_nv();
-                menu1(hotel, a, b, c, d, f);
+                menu1(hotel, a, b, c, f);
                 break;
             case 4:
                 c.Tim_nv();
-                menu1(hotel, a, b, c, d, f);
+                menu1(hotel, a, b, c, f);
                 break;
             case 5:
                 c.Them_nv();
-                menu1(hotel, a, b, c, d, f);
+                menu1(hotel, a, b, c, f);
                 break;
             case 6:
                 c.Xoa_nv();
-                menu1(hotel, a, b, c, d, f);
+                menu1(hotel, a, b, c, f);
                 break;
             case 7:
                 d.Xuatdsphieu(a);
-                menu1(hotel, a, b, c, d, f);
+                menu1(hotel, a, b, c, f);
                 break;
             default:
-                menu(hotel, a, b, c, d, f);
+                menu(hotel, a, b, c, f);
                 break;
         }
     }

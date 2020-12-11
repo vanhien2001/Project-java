@@ -1,6 +1,8 @@
+import java.io.Serializable;
 import java.util.Scanner;
 
-public class Room {
+public class Room implements Serializable{
+    private static final long serialVersionUID = 1L;
     String tenphong;
     int loai, so_giuong, gia;
     boolean booked = false;

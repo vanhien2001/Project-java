@@ -1,5 +1,7 @@
+import java.io.IOException;
+
 public class App {
-    public static void Setup(Hotel hotel, List_rooms a, List_dichvu b, listPerson c) {
+    public static void Setup(Hotel hotel, List_rooms a, List_dichvu b, listPerson c) throws IOException {
         System.out.println("\n----------------------------------------------------------------\n");
         System.out.println("                        CAI DAT KHACH SAN\n");
         System.out.println("Nhap thong tin khach san :");
@@ -18,10 +20,9 @@ public class App {
         List_rooms a = new List_rooms();
         List_dichvu b = new List_dichvu();
         Hoadon f = new Hoadon();
-        List_phieudatphong d = new List_phieudatphong();
         listPerson c = new listPerson();
         Menu g = new Menu();
         Setup(hotel, a, b, c);
-        g.menu(hotel, a, b, c, d, f);
+        g.menu(hotel, a, b, c, f);
     }
 }

@@ -1,7 +1,12 @@
 import java.util.Scanner;
+import java.io.Serializable;
 import java.util.Arrays;
 
-public class Phieudatphong {
+public class Phieudatphong implements Serializable{
+    /**
+     *
+     */
+    private static final long serialVersionUID = 1L;
     List_rooms arrRoom;
     Customer customer;
     String tenphong, tendichvu;
