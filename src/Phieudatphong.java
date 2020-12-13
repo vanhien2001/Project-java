@@ -28,10 +28,8 @@ public class Phieudatphong implements Serializable {
         try {
             arrRoom.Timkiemphong(tenphong).booked = true;
             arrRoom.write();
-            System.out.println("work");
         } catch (IOException e) {
             e.printStackTrace();
-            System.out.println("hello");
         }
     }
 
