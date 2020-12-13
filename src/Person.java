@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class Person implements Salary {
   protected String id;
-  protected String name;
+  protected String name, pass;
   protected Time dayBegin;
   protected int salary;
 
@@ -14,10 +14,12 @@ public class Person implements Salary {
     dayBegin = new Time();
   }
 
-  public Person(String id, String name, Time dayBegin) {
+  public Person(String id, String name, String pass, Time dayBegin, int salary) {
     this.id = id;
     this.name = name;
+    this.pass = pass;
     this.dayBegin = dayBegin;
+    this.salary = salary;
   }
 
   public String getId() {
@@ -60,13 +62,46 @@ public class Person implements Salary {
   }
 
   public void setSalary() {
-    System.out.print("Luong : ");
-    salary = sc.nextInt();
+    while (true) {
+      try {
+        System.out.print("Luong : ");
+        salary = Integer.parseInt(sc.nextLine());
+        break;
+      } catch (Exception ex) {
+        System.out.println("Cu phap ko chinh xac moi ban nhap lai !!! \n");
+      }
+    }
+  }
+
+  public String getPass() {
+    return pass;
+  }
+
+  public void setPass(String pass) {
+    this.pass = pass;
+  }
+
+  public void setPass() {
+    while (true) {
+      System.out.print("Nhap mat khau : ");
+      String a = sc.nextLine();
+      if (pass.equals(a)) {
+        System.out.print("Nhap mat khau moi : ");
+        String b = sc.nextLine();
+        this.pass = b;
+        break;
+      } else if (!pass.equals(a) && !a.isEmpty()) {
+        System.out.println("Mat khau khong chinh xac !!!");
+      } else {
+        break;
+      }
+    }
   }
 
   public void Nhapthongtin() {
     setId();
     setName();
+    setPass();
     setDayBegin();
     setSalary();
   }

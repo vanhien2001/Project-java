@@ -1,21 +1,16 @@
 import java.util.Scanner;
-import java.io.Serializable;
 import java.util.Arrays;
 
-public class Phieudatphong implements Serializable{
-    /**
-     *
-     */
-    private static final long serialVersionUID = 1L;
+public class Phieudatphong {
     List_rooms arrRoom;
     Customer customer;
     String tenphong, tendichvu;
     int solan;
-    Dichvu[] arr_dichvu = new Dichvu[0];
+    Dichvu[] arr_dichvu = new Dichvu[0];;
     int s = 0, x, n = 0;
     Scanner sc = new Scanner(System.in);
 
-    public Phieudatphong(List_rooms arrRoom, List_dichvu dichvu) {
+    public Phieudatphong(List_rooms arrRoom) {
         this.arrRoom = arrRoom;
         customer = new Customer();
         tenphong = null;
@@ -26,22 +21,27 @@ public class Phieudatphong implements Serializable{
         customer.nhap_thontin();
     }
 
-    public void Dat_phong(List_rooms arrRoom) {
+    public void Dat_phong(List_rooms arrRoom, List_dichvu dichvu) {
         boolean kt = false;
         arrRoom.Xuatdsphongtrong();
-        System.out.print("Moi ban chon phong : ");
-        tenphong = sc.nextLine();
-        for (int i = 0; i < arrRoom.arrRooms.length; i++) {
-            if (arrRoom.arrRooms[i].tenphong.equalsIgnoreCase(tenphong) && !arrRoom.arrRooms[i].booked) {
-                arrRoom.arrRooms[i].booked = true;
-                kt = true;
-                ThongtinKhachhang();
-                System.out.println("Dat phong thanh cong");
+        while (true) {
+            System.out.print("Moi ban chon phong : ");
+            tenphong = sc.nextLine();
+            for (int i = 0; i < arrRoom.arrRooms.length; i++) {
+                if (arrRoom.arrRooms[i].tenphong.equalsIgnoreCase(tenphong) && !arrRoom.arrRooms[i].booked) {
+                    arrRoom.arrRooms[i].booked = true;
+                    kt = true;
+                    ThongtinKhachhang();
+                    Su_dung_dichvu(dichvu);
+                    System.out.println("\nDat phong thanh cong !");
+                    break;
+                }
+            }
+            if (!kt) {
+                System.out.println("Ten phong khong dung moi ban nhap lai !");
+            } else {
                 break;
             }
-        }
-        if (!kt) {
-            System.out.println("Ten phong khong dung !");
         }
         this.arrRoom = arrRoom;
     }
@@ -56,9 +56,6 @@ public class Phieudatphong implements Serializable{
                 if (arr.tendichvu.equalsIgnoreCase(tendichvu)) {
                     arr_dichvu = Arrays.copyOf(arr_dichvu, n + 1);
                     arr_dichvu[n] = arr;
-                    System.out.print("So lan su dung : ");
-                    solan = sc.nextInt();
-                    arr_dichvu[n].solan = solan;
                     kt = true;
                     n++;
                 }
@@ -74,7 +71,7 @@ public class Phieudatphong implements Serializable{
 
     public int Tongtien() {
         for (Dichvu dv : arr_dichvu) {
-            s += dv.Tongtien();
+            s += dv.gia;
         }
         s += arrRoom.Timkiemphong(tenphong).gia;
         return s;
@@ -99,12 +96,15 @@ public class Phieudatphong implements Serializable{
     }
 
     public void Xuat_thong_tin() {
-        System.out.println("|                                                            |");
-        System.out.printf("|%-40s%-20s|\n", " Khach hang : " + customer.name, "cmnd: " + customer.cmnd);
-        System.out.printf("|%-60s|\n", " Dia chi : " + customer.address);
-        System.out.printf("|%-60s|\n", " Da dat phong : " + tenphong);
-        System.out.printf("|%-60s|\n", " Su dung cac dich vu : ");
-        System.out.printf("|%-20s%20s%20s|\n", " Ten dich vu", "Gia", "");
-        Xuat_thong_tin_dichvu();
+        String a = "";
+        for (int i = 0; i < arr_dichvu.length; i++) {
+            if (i == arr_dichvu.length - 1) {
+                a += arr_dichvu[i].tendichvu;
+            } else {
+                a += arr_dichvu[i].tendichvu + ",";
+            }
+        }
+        System.out.printf("| %-25s%-15s%-60s%-15s%-60s |\n", customer.name, customer.cmnd, customer.address, tenphong,
+                a);
     }
 }

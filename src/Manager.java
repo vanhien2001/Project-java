@@ -5,10 +5,11 @@ public class Manager extends Person {
 
     public Manager() {
         super();
+        pass = "123";
     }
 
-    public Manager(String id, String name, Time dayBegin) {
-        super(id, name, dayBegin);
+    public Manager(String id, String name, String pass, Time dayBegin, int salary) {
+        super(id, name, pass, dayBegin, salary);
     }
 
     public void Nhapthongtin() {
@@ -17,7 +18,7 @@ public class Manager extends Person {
 
     @Override
     public void Xuat_thong_tin() {
-        System.out.printf("| %-10s%-9s%-25s%-25s%-15s%15d000 d |\n", "Quan ly", id, name, "Quan ly khach san", dayBegin,
+        System.out.printf("| %-15s%-15s%-25s%-25s%-15s%15d000d |\n", "Quan ly", id, name, "Quan ly khach san", dayBegin,
                 salary);
     }
 }

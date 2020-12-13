@@ -46,20 +46,20 @@ public class Time {
 
     public void setYear() {
         System.out.print("Nam : ");
-        year = sc.nextInt();
+        year = Integer.parseInt(sc.nextLine());
     }
 
     public void setDay() {
         do {
             System.out.print("Ngay : ");
-            day = sc.nextInt();
+            day = Integer.parseInt(sc.nextLine());
         } while (day > 30 || day < 1);
     }
 
     public void setMonth() {
         do {
             System.out.print("Thang : ");
-            month = sc.nextInt();
+            month = Integer.parseInt(sc.nextLine());
         } while (month > 12 || month < 1);
     }
 
