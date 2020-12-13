@@ -21,7 +21,7 @@ public class listPerson implements Filehandle {
   public void read() throws IOException {
     ObjectInputStream oi = null;
     try {
-      oi = new ObjectInputStream(new FileInputStream(file_serv));
+      oi = new ObjectInputStream(new FileInputStream(file_staff));
       arrPerson = (Person[]) oi.readObject();
 
     } catch (IOException ex) {
@@ -37,7 +37,7 @@ public class listPerson implements Filehandle {
   public void write() throws IOException {
     ObjectOutputStream oo = null;
     try {
-      oo = new ObjectOutputStream(new FileOutputStream(file_serv));
+      oo = new ObjectOutputStream(new FileOutputStream(file_staff));
       oo.writeObject(arrPerson);
     } catch (IOException ex) {
       ex.printStackTrace();
