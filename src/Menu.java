@@ -39,12 +39,15 @@ public class Menu {
             }
             switch (x) {
                 case 1:
+                    System.out.print("\033[H\033[2J");
                     hotel.xuatthongtin();
                     break;
                 case 2:
+                    System.out.print("\033[H\033[2J");
                     d.Dat_phong(a, b);
                     break;
                 case 3:
+                    System.out.print("\033[H\033[2J");
                     f.Xuat_hoa_don(d);
                     break;
                 case 4:
@@ -58,6 +61,7 @@ public class Menu {
                     for (Person ql : c.arrPerson) {
                         if (ql.id.equalsIgnoreCase(id) && ql instanceof Manager && ql.pass.equals(pass)) {
                             kt = 1;
+                            System.out.print("\033[H\033[2J");
                             menu1(ql);
                             break;
                         }
@@ -82,6 +86,7 @@ public class Menu {
     }
 
     public void menu1(Person ql) throws IOException {
+        System.out.print("\033[H\033[2J");
         while (true) {
             System.out.println();
             System.out.println("*------------------------------------------------------------*");
@@ -116,9 +121,11 @@ public class Menu {
             }
             switch (x) {
                 case 1:
+                    System.out.print("\033[H\033[2J");
                     a.Xuatdsphong();
                     break;
                 case 2:
+                    System.out.print("\033[H\033[2J");
                     a.Xuatdsphongtrong();
                     break;
                 case 3:
@@ -131,6 +138,7 @@ public class Menu {
                     a.Xoa_room(e);
                     break;
                 case 5:
+                    System.out.print("\033[H\033[2J");
                     b.Xuatdsdichvu();
                     break;
                 case 6:
@@ -146,6 +154,7 @@ public class Menu {
                     b.Xoa_dv(g);
                     break;
                 case 9:
+                    System.out.print("\033[H\033[2J");
                     c.Xuat_ds_nv();
                     break;
                 case 10:
@@ -161,6 +170,7 @@ public class Menu {
                     c.Xoa_nv_id(id);
                     break;
                 case 13:
+                    System.out.print("\033[H\033[2J");
                     d.Xuatdsphieu(a);
                     break;
                 case 14:
@@ -179,6 +189,7 @@ public class Menu {
     }
 
     public void Tim_nv() throws IOException {
+        System.out.print("\033[H\033[2J");
         while (true) {
             System.out.println();
             System.out.println("*------------------------------------------------------------*");
@@ -225,6 +236,7 @@ public class Menu {
     }
 
     public void Them_nv() throws IOException {
+        System.out.print("\033[H\033[2J");
         while (true) {
             System.out.println();
             System.out.println("*------------------------------------------------------------*");
@@ -267,6 +279,7 @@ public class Menu {
     }
 
     public void Sua_dv() throws IOException {
+        System.out.print("\033[H\033[2J");
         while (true) {
             System.out.println();
             System.out.println("*------------------------------------------------------------*");
