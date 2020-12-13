@@ -99,6 +99,6 @@ public class Address {
     }
 
     public String toString() {
-        return so_nha + "/" + duong + "/" + phuong + "/" + quan + "/" + tinh;
+        return so_nha + " " + duong + ",Phuong " + phuong + ",Quan " + quan + "," + tinh;
     }
 }

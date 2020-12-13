@@ -9,8 +9,8 @@ public class Staff extends Person {
     position = null;
   }
 
-  public Staff(String id, String name, Time dayBegin, String position) {
-    super(id, name, dayBegin);
+  public Staff(String id, String name, String pass, Time dayBegin, int salary, String position) {
+    super(id, name, pass, dayBegin, salary);
     this.position = position;
   }
 
@@ -34,6 +34,6 @@ public class Staff extends Person {
 
   @Override
   public void Xuat_thong_tin() {
-    System.out.printf("| %-10s%-9s%-25s%-25s%-15s%15d000 d |\n", "Nhan vien", id, name, position, dayBegin, salary);
+    System.out.printf("| %-15s%-15s%-25s%-25s%-15s%15d000d |\n", "Nhan vien", id, name, position, dayBegin, salary);
   }
 }

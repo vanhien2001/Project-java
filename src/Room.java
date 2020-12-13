@@ -1,21 +1,20 @@
-import java.io.Serializable;
 import java.util.Scanner;
 
-public class Room implements Serializable{
-    private static final long serialVersionUID = 1L;
+public class Room {
     String tenphong;
-    int loai, so_giuong, gia;
+    String loai;
+    int so_giuong, gia;
     boolean booked = false;
     Scanner sc = new Scanner(System.in);
 
     public Room() {
         tenphong = null;
-        loai = 0;
+        loai = null;
         so_giuong = 0;
         gia = 0;
     }
 
-    public Room(String tenphong, int loai, int so_giuong, int gia) {
+    public Room(String tenphong, String loai, int so_giuong, int gia) {
         this.tenphong = tenphong;
         this.loai = loai;
         this.so_giuong = so_giuong;
@@ -30,11 +29,11 @@ public class Room implements Serializable{
         this.gia = gia;
     }
 
-    public int getLoai() {
+    public String getLoai() {
         return loai;
     }
 
-    public void setLoai(int loai) {
+    public void setLoai(String loai) {
         this.loai = loai;
     }
 
@@ -61,17 +60,31 @@ public class Room implements Serializable{
 
     public void setLoai() {
         System.out.print("Loai : ");
-        this.loai = sc.nextInt();
+        this.loai = sc.nextLine();
     }
 
     public void setSo_giuong() {
-        System.out.print("So giuong : ");
-        this.so_giuong = sc.nextInt();
+        while (true) {
+            try {
+                System.out.print("So giuong : ");
+                this.so_giuong = Integer.parseInt(sc.nextLine());
+                break;
+            } catch (Exception ex) {
+                System.out.println("Cu phap ko chinh xac moi ban nhap lai !!! \n");
+            }
+        }
     }
 
     public void setGia() {
-        System.out.print("Gia : ");
-        this.gia = sc.nextInt();
+        while (true) {
+            try {
+                System.out.print("Gia : ");
+                this.gia = Integer.parseInt(sc.nextLine());
+                break;
+            } catch (Exception ex) {
+                System.out.println("Cu phap ko chinh xac moi ban nhap lai !!! \n");
+            }
+        }
     }
 
     public void nhap_thontin() {
@@ -82,7 +95,7 @@ public class Room implements Serializable{
     }
 
     public void xuatthongtin() {
-        System.out.printf("| %-20s%-20s%13d000 d |\n", tenphong, so_giuong, gia);
+        System.out.printf("| %-20s%-20s%-15s%15d000d |\n", tenphong, loai, so_giuong, gia);
     }
 
 }

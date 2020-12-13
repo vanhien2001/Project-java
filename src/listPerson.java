@@ -13,13 +13,28 @@ public class listPerson {
   }
 
   public void Nhap_ds_nv() {
-    System.out.print("Nhap so luong nhan vien : ");
-    n = Integer.parseInt(sc.nextLine());
+    while (true) {
+      try {
+        System.out.print("Nhap so luong nhan vien : ");
+        n = Integer.parseInt(sc.nextLine());
+        break;
+      } catch (Exception ex) {
+        System.out.println("Cu phap ko chinh xac moi ban nhap lai !!! \n");
+      }
+    }
     arrPerson = new Person[n];
     for (int i = 0; i < n; i++) {
-      System.out
-          .print("Nhap thong tin nhan vien thu " + (i + 1) + " (Nhan 1 de them quan ly, nhan 2 de them nhan vien) : ");
-      int x = Integer.parseInt(sc.nextLine());
+      int x;
+      while (true) {
+        try {
+          System.out.print(
+              "Nhap thong tin nhan vien thu " + (i + 1) + " (Nhan 1 de them quan ly, nhan 2 de them nhan vien) : ");
+          x = Integer.parseInt(sc.nextLine());
+          break;
+        } catch (Exception ex) {
+          System.out.println("Cu phap ko chinh xac moi ban nhap lai !!! \n");
+        }
+      }
       if (x <= 1) {
         arrPerson[i] = new Manager();
         arrPerson[i].Nhapthongtin();
@@ -32,108 +47,126 @@ public class listPerson {
 
   public void Xuat_ds_nv() {
     System.out.println(
-        "\n*----------------------------------------------------------------------------------------------------------*");
+        "\n*--------------------------------------------------------------------------------------------------------------------*");
     System.out.println(
-        "|                                           DANH SACH NHAN VIEN                                            |");
+        "|                                              DANH SACH NHAN VIEN                                                   |");
     System.out.println(
-        "|                                                                                                          |");
-    System.out.printf("| %-10s%-9s%-25s%-25s%-15s%20s |\n", "Chuc vu", "Id", "Ho ten", "Cong viec", "Ngay vao lam",
+        "|                                                                                                                    |");
+    System.out.printf("| %-15s%-15s%-25s%-25s%-15s%19s |\n", "Chuc vu", "Id", "Ho ten", "Cong viec", "Ngay vao lam",
         "Luong");
-    for (int i = 0; i < n; i++) {
+    for (int i = 0; i < arrPerson.length; i++) {
       arrPerson[i].Xuat_thong_tin();
     }
     System.out.println(
-        "*----------------------------------------------------------------------------------------------------------*\n");
+        "|                                                                                                                    |");
+    System.out.println(
+        "*--------------------------------------------------------------------------------------------------------------------*\n");
   }
 
-  public void Tim_nv() {
+  public void Tim_nv_name(String name) {
     int kt = 0;
-    System.out.println("Nhan 1 de kiem nhan vien bang ten.\nNhan 2 de kiem nhan vien bang id.");
-    int s = Integer.parseInt(sc.nextLine());
-    switch (s) {
-      case 1:
-        System.out.print("Ten nhan vien ban muon tim kiem : ");
-        String name = sc.nextLine();
-        System.out.println(
-            "\n*----------------------------------------------------------------------------------------------------------*");
-        System.out.println(
-            "|                                           DANH SACH NHAN VIEN                                            |");
-        System.out.println(
-            "|                                                                                                          |");
-        System.out.printf("| %-10s%-9s%-25s%-25s%-15s%20s |\n", "Chuc vu", "Id", "Ho ten", "Cong viec", "Ngay vao lam",
-            "Luong");
-        for (int i = 0; i < arrPerson.length; i++) {
-          if (arrPerson[i].getName().equalsIgnoreCase(name)) {
-            arrPerson[i].Xuat_thong_tin();
-            kt = 1;
-          }
+    for (int i = 0; i < arrPerson.length; i++) {
+      if (arrPerson[i].getName().equalsIgnoreCase(name)) {
+        kt = 1;
+      }
+    }
+    if (kt == 1) {
+      System.out.println(
+          "\n*--------------------------------------------------------------------------------------------------------------------*");
+      System.out.println(
+          "|                                              DANH SACH NHAN VIEN                                                   |");
+      System.out.println(
+          "|                                                                                                                    |");
+      System.out.printf("| %-15s%-15s%-25s%-25s%-15s%19s |\n", "Chuc vu", "Id", "Ho ten", "Cong viec", "Ngay vao lam",
+          "Luong");
+      for (int i = 0; i < arrPerson.length; i++) {
+        if (arrPerson[i].getName().equalsIgnoreCase(name)) {
+          arrPerson[i].Xuat_thong_tin();
         }
-        System.out.println(
-            "*----------------------------------------------------------------------------------------------------------*\n");
-        if (kt == 0) {
-          System.out.println("Khong tim thay nhan vien !");
+      }
+      System.out.println(
+          "|                                                                                                                    |");
+      System.out.println(
+          "*--------------------------------------------------------------------------------------------------------------------*\n");
+    } else if (kt == 0) {
+      System.out.println("Khong tim thay nhan vien !");
+    }
+  }
+
+  public void Tim_nv_id(String id) {
+    int kt = 0;
+    for (int i = 0; i < arrPerson.length; i++) {
+      if (arrPerson[i].getId().equalsIgnoreCase(id)) {
+        kt = 1;
+      }
+    }
+    if (kt == 1) {
+      System.out.println(
+          "\n*--------------------------------------------------------------------------------------------------------------------*");
+      System.out.println(
+          "|                                              DANH SACH NHAN VIEN                                                   |");
+      System.out.println(
+          "|                                                                                                                    |");
+      System.out.printf("| %-15s%-15s%-25s%-25s%-15s%19s |\n", "Chuc vu", "Id", "Ho ten", "Cong viec", "Ngay vao lam",
+          "Luong");
+      for (int i = 0; i < arrPerson.length; i++) {
+        if (arrPerson[i].getId().equalsIgnoreCase(id)) {
+          arrPerson[i].Xuat_thong_tin();
         }
-        break;
-      case 2:
-        System.out.print("Id nhan vien ban muon tim kiem : ");
-        String id = sc.nextLine();
-        System.out.println(
-            "\n*----------------------------------------------------------------------------------------------------------*");
-        System.out.println(
-            "|                                           DANH SACH NHAN VIEN                                            |");
-        System.out.println(
-            "|                                                                                                          |");
-        System.out.printf("| %-10s%-9s%-25s%-25s%-15s%20s |\n", "Chuc vu", "Id", "Ho ten", "Cong viec", "Ngay vao lam",
-            "Luong");
-        for (int i = 0; i < arrPerson.length; i++) {
-          if (arrPerson[i].getId().equalsIgnoreCase(id)) {
-            arrPerson[i].Xuat_thong_tin();
-            kt = 1;
-          }
-        }
-        System.out.println(
-            "*----------------------------------------------------------------------------------------------------------*\n");
-        if (kt == 0) {
-          System.out.println("Khong tim thay nhan vien !");
-        }
-        break;
-      default:
-        System.out.println("Luc chon khong hop le !");
+      }
+      System.out.println(
+          "|                                                                                                                    |");
+      System.out.println(
+          "*--------------------------------------------------------------------------------------------------------------------*\n");
+    } else if (kt == 0) {
+      System.out.println("Khong tim thay nhan vien !");
     }
   }
 
   public void Them_nv() {
-    Person nv = new Person();
-    System.out.print("Nhap thong tin nhan vien can them (Nhan 1 de them quan ly, nhan 2 de them nhan vien) : ");
-    int x = Integer.parseInt(sc.nextLine());
-    if (x == 1) {
-      nv = new Manager();
-    } else if (x == 2) {
-      nv = new Staff();
-    }
+    Person nv = new Staff();
     nv.Nhapthongtin();
-    arrPerson = Arrays.copyOf(arrPerson, n + 1);
-    arrPerson[n] = nv;
+    arrPerson = Arrays.copyOf(arrPerson, arrPerson.length + 1);
+    arrPerson[arrPerson.length - 1] = nv;
     n++;
   }
 
-  public void Xoa_nv() {
+  public void Them_quanly() {
+    Person nv = new Manager();
+    nv.Nhapthongtin();
+    arrPerson = Arrays.copyOf(arrPerson, arrPerson.length + 1);
+    arrPerson[arrPerson.length - 1] = nv;
+    n++;
+  }
+
+  public void Xoa_nv_id(String a) {
     int kt = 0;
-    System.out.print("Nhap id nhan vien can xoa : ");
-    String a = sc.nextLine();
-    for (int i = 0; i < n; i++) {
-      if (arrPerson[i].getId().equalsIgnoreCase(a)) {
-        for (int j = i; j < n - 1; j++) {
-          arrPerson[j] = arrPerson[j + 1];
+    Person[] arr = new Person[arrPerson.length - 1];
+    for (int i = 0; i <= arr.length; i++) {
+      if (arrPerson[i].id.equalsIgnoreCase(a)) {
+        for (int j = i; j < arrPerson.length - 1; j++) {
+          arr[i] = arrPerson[j + 1];
+          i++;
         }
         kt = 1;
-        System.out.println("Sv da duoc xoa !");
-        n--;
+        System.out.println("Nhan vien da duoc xoa !");
         break;
       }
+      arr[i] = arrPerson[i];
     }
     if (kt == 0) {
       System.out.println("Ko tim thay nhan vien !");
+    } else if (kt == 1) {
+      arrPerson = new Person[arr.length];
+      arrPerson = arr;
     }
+  }
+
+  public void setup() {
+    arrPerson = new Person[4];
+    arrPerson[0] = new Manager("3119560017", "Nguyen Van Hien", "vanhien2001", new Time(1, 12, 2020), 50000);
+    arrPerson[1] = new Staff("3119560007", "Huynh Lam Khanh Duy", "123", new Time(1, 12, 2020), 20000, "Lao cong");
+    arrPerson[2] = new Staff("3119560029", "Phung Duy Khang", "123", new Time(1, 12, 2020), 30000, "Tiep tan");
+    arrPerson[3] = new Staff("3119560018", "Nguyen Thai Phuong", "123", new Time(1, 12, 2020), 25000, "Bao ve");
   }
 }

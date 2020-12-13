@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class Dichvu {
     String tendichvu;
-    int gia, solan;
+    int gia;
     boolean booked = false;
     Scanner sc = new Scanner(System.in);
 
@@ -38,8 +38,15 @@ public class Dichvu {
     }
 
     public void setGia() {
-        System.out.print("Gia : ");
-        this.gia = sc.nextInt();
+        while (true) {
+            try {
+                System.out.print("Gia : ");
+                this.gia = Integer.parseInt(sc.nextLine());
+                break;
+            } catch (Exception ex) {
+                System.out.println("Cu phap ko chinh xac moi ban nhap lai !!! \n");
+            }
+        }
     }
 
     public void nhap_thontin() {
@@ -48,10 +55,6 @@ public class Dichvu {
     }
 
     public void xuatthongtin() {
-        System.out.printf("| %-19s%15d000 d x %2d%15s|\n", tendichvu, gia, solan, "");
-    }
-
-    public int Tongtien() {
-        return gia * solan;
+        System.out.printf("|  %-30s%15d000d |\n", tendichvu, gia);
     }
 }
