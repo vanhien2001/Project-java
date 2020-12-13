@@ -1,11 +1,12 @@
+import java.io.Serializable;
 import java.util.Scanner;
 
-public class Room {
+public class Room implements Serializable {
     String tenphong;
     String loai;
     int so_giuong, gia;
     boolean booked = false;
-    Scanner sc = new Scanner(System.in);
+    transient Scanner sc = new Scanner(System.in);
 
     public Room() {
         tenphong = null;

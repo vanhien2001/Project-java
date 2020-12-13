@@ -1,17 +1,49 @@
 import java.util.Arrays;
 import java.util.Scanner;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 
-public class List_dichvu {
+public class List_dichvu implements Filehandle {
     Dichvu[] arrs;
     private int n;
-    Scanner sc = new Scanner(System.in);
+    transient Scanner sc = new Scanner(System.in);
 
     public List_dichvu() {
         arrs = null;
         n = 0;
     }
 
-    public void setup() {
+    public void read() throws IOException {
+        ObjectInputStream oi = null;
+        try {
+            oi = new ObjectInputStream(new FileInputStream(file_serv));
+            arrs = (Dichvu[]) oi.readObject();
+
+        } catch (IOException ex) {
+            System.out.println(ex.toString());
+        } catch (ClassNotFoundException ex) {
+            System.out.println(ex.toString());
+        } finally {
+            oi.close();
+        }
+    }
+
+    public void write() throws IOException {
+        ObjectOutputStream oo = null;
+        try {
+            oo = new ObjectOutputStream(new FileOutputStream(file_serv));
+            oo.writeObject(arrs);
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        } finally {
+            oo.close();
+        }
+    }
+
+    public void setup() throws IOException {
         arrs = new Dichvu[8];
         arrs[0] = new Dichvu("Nha hang", 200);
         arrs[1] = new Dichvu("Bar", 200);
@@ -21,9 +53,10 @@ public class List_dichvu {
         arrs[5] = new Dichvu("Fitness center", 200);
         arrs[6] = new Dichvu("Casino", 200);
         arrs[7] = new Dichvu("Trong tre", 200);
+        write();
     }
 
-    public void Nhapdsdichvu() {
+    public void Nhapdsdichvu() throws IOException {
         while (true) {
             try {
                 System.out.print("Nhap vao so luong dich vu : ");
@@ -39,9 +72,11 @@ public class List_dichvu {
             arrs[i] = new Dichvu();
             arrs[i].nhap_thontin();
         }
+        write();
     }
 
-    public void Xuatdsdichvu() {
+    public void Xuatdsdichvu() throws IOException {
+        read();
         System.out.println("\n*----------------------------------------------------*");
         System.out.println("|                  DANH SACH DICH VU                 |");
         System.out.println("|                                                    |");
@@ -53,7 +88,8 @@ public class List_dichvu {
         System.out.println("*----------------------------------------------------*\n");
     }
 
-    public Dichvu Timkiemdichvu(String a) {
+    public Dichvu Timkiemdichvu(String a) throws IOException {
+        read();
         for (Dichvu arr : arrs) {
             if (arr.tendichvu == a)
                 return arr;
@@ -61,15 +97,18 @@ public class List_dichvu {
         return null;
     }
 
-    public void Them_dv() {
+    public void Them_dv() throws IOException {
+        read();
         Dichvu dv = new Dichvu();
         dv.nhap_thontin();
         arrs = Arrays.copyOf(arrs, arrs.length + 1);
         arrs[arrs.length - 1] = dv;
         System.out.println("Them dich vu thanh cong");
+        write();
     }
 
-    public void Xoa_dv(String a) {
+    public void Xoa_dv(String a) throws IOException {
+        read();
         int kt = 0;
         Dichvu[] arr = new Dichvu[arrs.length - 1];
         for (int i = 0; i <= arr.length; i++) {
@@ -90,9 +129,11 @@ public class List_dichvu {
             arrs = new Dichvu[arr.length];
             arrs = arr;
         }
+        write();
     }
 
-    public void Suaten_dv(String a, String b) {
+    public void Suaten_dv(String a, String b) throws IOException {
+        read();
         int kt = 0;
         for (Dichvu dv : arrs) {
             if (dv.tendichvu.equalsIgnoreCase(a)) {
@@ -105,9 +146,11 @@ public class List_dichvu {
         if (kt == 0) {
             System.out.println("Ko tim thay dich vu !");
         }
+        write();
     }
 
-    public void Suagia_dv(String a, int b) {
+    public void Suagia_dv(String a, int b) throws IOException {
+        read();
         int kt = 0;
         for (Dichvu dv : arrs) {
             if (dv.tendichvu.equalsIgnoreCase(a)) {
@@ -120,5 +163,6 @@ public class List_dichvu {
         if (kt == 0) {
             System.out.println("Ko tim thay dich vu !");
         }
+        write();
     }
 }

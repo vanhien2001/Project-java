@@ -1,12 +1,13 @@
+import java.io.Serializable;
 import java.util.Scanner;
 
-public class Address {
+public class Address implements Serializable {
     private String so_nha;
     private String duong;
     private String phuong;
     private String quan;
     private String tinh;
-    Scanner sc = new Scanner(System.in);
+    transient Scanner sc = new Scanner(System.in);
 
     public Address() {
         so_nha = null;

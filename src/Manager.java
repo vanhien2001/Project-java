@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 public class Manager extends Person {
-    Scanner sc = new Scanner(System.in);
+    transient Scanner sc = new Scanner(System.in);
 
     public Manager() {
         super();

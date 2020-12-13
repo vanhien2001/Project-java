@@ -1,12 +1,13 @@
+import java.io.Serializable;
 import java.util.Scanner;
 
-public class Time {
+public class Time implements Serializable {
 
     private int day;
     private int month;
     private int year;
 
-    Scanner sc = new Scanner(System.in);
+    transient Scanner sc = new Scanner(System.in);
 
     public Time() {
         day = 0;

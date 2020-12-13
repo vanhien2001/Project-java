@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class Staff extends Person {
   private String position;
-  Scanner sc = new Scanner(System.in);
+  transient Scanner sc = new Scanner(System.in);
 
   public Staff() {
     super();

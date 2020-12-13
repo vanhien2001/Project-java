@@ -1,9 +1,10 @@
+import java.io.Serializable;
 import java.util.Scanner;
 
-public class Customer {
+public class Customer implements Serializable {
     String name, sdt, cmnd;
     Address address;
-    Scanner sc = new Scanner(System.in);
+    transient Scanner sc = new Scanner(System.in);
 
     public Customer() {
         name = null;

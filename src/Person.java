@@ -1,12 +1,13 @@
+import java.io.Serializable;
 import java.util.Scanner;
 
-public class Person implements Salary {
+public class Person implements Serializable {
   protected String id;
   protected String name, pass;
   protected Time dayBegin;
   protected int salary;
 
-  Scanner sc = new Scanner(System.in);
+  transient Scanner sc = new Scanner(System.in);
 
   public Person() {
     id = null;
@@ -101,7 +102,6 @@ public class Person implements Salary {
   public void Nhapthongtin() {
     setId();
     setName();
-    setPass();
     setDayBegin();
     setSalary();
   }
