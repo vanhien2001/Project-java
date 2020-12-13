@@ -19,6 +19,16 @@ public class Phieudatphong implements Serializable {
         tendichvu = null;
     }
 
+    public Phieudatphong(List_rooms arrRoom, Customer customer, String tenphong, Dichvu a, Dichvu b)
+            throws IOException {
+        this.customer = customer;
+        this.tenphong = tenphong;
+        arr_dichvu = new Dichvu[2];
+        arr_dichvu[0] = a;
+        arr_dichvu[1] = b;
+        arrRoom.Timkiemphong(tenphong).booked = true;
+    }
+
     public void ThongtinKhachhang() {
         customer.nhap_thontin();
     }

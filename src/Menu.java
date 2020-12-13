@@ -321,5 +321,6 @@ public class Menu {
         a.setup();
         b.setup();
         c.setup();
+        d.setup(a);
     }
 }

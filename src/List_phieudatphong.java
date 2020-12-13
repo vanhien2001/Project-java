@@ -73,4 +73,18 @@ public class List_phieudatphong implements Filehandle {
         System.out.println(
                 "*---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*\n");
     }
+
+    public void setup(List_rooms arrRoom) throws IOException {
+        arrBooked = new Phieudatphong[3];
+        arrBooked[0] = new Phieudatphong(arrRoom,
+                new Customer("Nguyen Van A", "0969696969", "145784602148", "27", "Au co", "1", "Tan Phu", "Tp.HCM"),
+                "102", new Dichvu("Spa", 300), new Dichvu("Casino", 200));
+        arrBooked[1] = new Phieudatphong(arrRoom,
+                new Customer("Le Thi B", "0969696969", "451258746231", "25", "Au co", "1", "Tan Phu", "Tp.HCM"), "103",
+                new Dichvu("Nha hang", 200), new Dichvu("Fitness center", 200));
+        arrBooked[2] = new Phieudatphong(arrRoom,
+                new Customer("Phung Duy C", "0969696969", "784513548965", "29", "Au co", "1", "Tan Phu", "Tp.HCM"),
+                "104", new Dichvu("Bar", 200), new Dichvu("Trong tre", 200));
+        write();
+    }
 }
