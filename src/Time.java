@@ -46,22 +46,43 @@ public class Time implements Serializable {
     }
 
     public void setYear() {
-        System.out.print("Nam : ");
-        year = Integer.parseInt(sc.nextLine());
+        while (true) {
+            try {
+                System.out.print("Nam : ");
+                year = Integer.parseInt(sc.nextLine());
+                break;
+            } catch (Exception ex) {
+                System.out.println("Cu phap ko chinh xac moi ban nhap lai !!! ");
+            }
+        }
     }
 
     public void setDay() {
-        do {
-            System.out.print("Ngay : ");
-            day = Integer.parseInt(sc.nextLine());
-        } while (day > 30 || day < 1);
+        while (true) {
+            try {
+                do {
+                    System.out.print("Ngay : ");
+                    day = Integer.parseInt(sc.nextLine());
+                } while (day > 30 || day < 1);
+                break;
+            } catch (Exception ex) {
+                System.out.println("Cu phap ko chinh xac moi ban nhap lai !!! ");
+            }
+        }
     }
 
     public void setMonth() {
-        do {
-            System.out.print("Thang : ");
-            month = Integer.parseInt(sc.nextLine());
-        } while (month > 12 || month < 1);
+        while (true) {
+            try {
+                do {
+                    System.out.print("Thang : ");
+                    month = Integer.parseInt(sc.nextLine());
+                } while (month > 12 || month < 1);
+                break;
+            } catch (Exception ex) {
+                System.out.println("Cu phap ko chinh xac moi ban nhap lai !!! ");
+            }
+        }
     }
 
     public void setTime() {

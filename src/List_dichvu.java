@@ -118,7 +118,7 @@ public class List_dichvu implements Filehandle {
                     i++;
                 }
                 kt = 1;
-                System.out.println("Phong da duoc xoa !");
+                System.out.println("Dich vu da duoc xoa !");
                 break;
             }
             arr[i] = arrs[i];
@@ -132,8 +132,12 @@ public class List_dichvu implements Filehandle {
         write();
     }
 
-    public void Suaten_dv(String a, String b) throws IOException {
+    public void Suaten_dv() throws IOException {
         read();
+        System.out.print("Nhap ten dich vu muon sua : ");
+        String a = sc.nextLine();
+        System.out.print("Ten moi cua dich vu la : ");
+        String b = sc.nextLine();
         int kt = 0;
         for (Dichvu dv : arrs) {
             if (dv.tendichvu.equalsIgnoreCase(a)) {
@@ -149,8 +153,12 @@ public class List_dichvu implements Filehandle {
         write();
     }
 
-    public void Suagia_dv(String a, int b) throws IOException {
+    public void Suagia_dv() throws IOException {
         read();
+        System.out.print("Nhap ten dich vu muon sua : ");
+        String a = sc.nextLine();
+        System.out.print("Gia moi cua dich vu la : ");
+        int b = Integer.parseInt(sc.nextLine());
         int kt = 0;
         for (Dichvu dv : arrs) {
             if (dv.tendichvu.equalsIgnoreCase(a)) {

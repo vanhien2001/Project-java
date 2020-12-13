@@ -302,20 +302,10 @@ public class Menu {
             }
             switch (x) {
                 case 1:
-                    System.out.print("Nhap ten dich vu muon sua : ");
-                    sc.nextLine();
-                    String e = sc.nextLine();
-                    System.out.print("Ten moi cua dich vu la : ");
-                    String j = sc.nextLine();
-                    b.Suaten_dv(e, j);
+                    b.Suaten_dv();
                     break;
                 case 2:
-                    System.out.print("Nhap ten dich vu muon sua : ");
-                    sc.nextLine();
-                    String g = sc.nextLine();
-                    System.out.print("Gia moi cua dich vu la : ");
-                    int h = Integer.parseInt(sc.nextLine());
-                    b.Suagia_dv(g, h);
+                    b.Suagia_dv();
                     break;
                 case 3:
                     break;
