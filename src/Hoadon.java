@@ -1,3 +1,4 @@
+import java.io.IOException;
 import java.util.Scanner;
 
 public class Hoadon {
@@ -8,7 +9,7 @@ public class Hoadon {
         s = 0;
     }
 
-    public void Xuat_hoa_don(List_phieudatphong arrs) {
+    public void Xuat_hoa_don(List_phieudatphong arrs) throws IOException {
         System.out.print("\nMoi ban nhap cmnd : ");
         String cmnd = sc.nextLine();
         for (Phieudatphong arr : arrs.arrBooked) {

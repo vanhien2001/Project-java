@@ -1,14 +1,16 @@
 import java.util.Scanner;
+import java.io.IOException;
+import java.io.Serializable;
 import java.util.Arrays;
 
-public class Phieudatphong {
+public class Phieudatphong implements Serializable {
     List_rooms arrRoom;
     Customer customer;
     String tenphong, tendichvu;
     int solan;
     Dichvu[] arr_dichvu = new Dichvu[0];;
     int s = 0, x, n = 0;
-    Scanner sc = new Scanner(System.in);
+    transient Scanner sc = new Scanner(System.in);
 
     public Phieudatphong(List_rooms arrRoom) {
         this.arrRoom = arrRoom;
@@ -21,7 +23,7 @@ public class Phieudatphong {
         customer.nhap_thontin();
     }
 
-    public void Dat_phong(List_rooms arrRoom, List_dichvu dichvu) {
+    public void Dat_phong(List_rooms arrRoom, List_dichvu dichvu) throws IOException {
         boolean kt = false;
         arrRoom.Xuatdsphongtrong();
         while (true) {
@@ -46,7 +48,7 @@ public class Phieudatphong {
         this.arrRoom = arrRoom;
     }
 
-    public void Su_dung_dichvu(List_dichvu dichvu) {
+    public void Su_dung_dichvu(List_dichvu dichvu) throws IOException {
         boolean kt = false;
         dichvu.Xuatdsdichvu();
         System.out.print("Moi ban chon dich vu : ");
@@ -69,7 +71,7 @@ public class Phieudatphong {
         }
     }
 
-    public int Tongtien() {
+    public int Tongtien() throws IOException {
         for (Dichvu dv : arr_dichvu) {
             s += dv.gia;
         }

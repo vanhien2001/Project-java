@@ -1,10 +1,11 @@
+import java.io.Serializable;
 import java.util.Scanner;
 
-public class Dichvu {
+public class Dichvu implements Serializable {
     String tendichvu;
     int gia;
     boolean booked = false;
-    Scanner sc = new Scanner(System.in);
+    transient Scanner sc = new Scanner(System.in);
 
     public Dichvu() {
         tendichvu = null;

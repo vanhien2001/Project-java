@@ -316,7 +316,7 @@ public class Menu {
         }
     }
 
-    public void setup() {
+    public void setup() throws IOException {
         hotel = new Hotel("Lotus Cental", 5, new Address("102", "Le Thi Hong Gam", "Nguyen Thai Binh", "1", "Tp.HCM"));
         a.setup();
         b.setup();
