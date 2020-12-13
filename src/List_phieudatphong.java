@@ -84,7 +84,7 @@ public class List_phieudatphong implements Filehandle {
                 new Dichvu("Nha hang", 200), new Dichvu("Fitness center", 200));
         arrBooked[2] = new Phieudatphong(arrRoom,
                 new Customer("Phung Duy C", "0969696969", "784513548965", "29", "Au co", "1", "Tan Phu", "Tp.HCM"),
-                "104", new Dichvu("Bar", 200), new Dichvu("Trong tre", 200));
+                "203", new Dichvu("Bar", 200), new Dichvu("Trong tre", 200));
         write();
     }
 }

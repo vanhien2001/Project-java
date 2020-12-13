@@ -26,7 +26,8 @@ public class Phieudatphong implements Serializable {
         arr_dichvu[0] = a;
         arr_dichvu[1] = b;
         try {
-            arrRoom.Timkiemphong(tenphong).setBooked(true);
+            arrRoom.Timkiemphong(tenphong).booked = true;
+            arrRoom.write();
             System.out.println("work");
         } catch (IOException e) {
             e.printStackTrace();
