@@ -19,14 +19,19 @@ public class Phieudatphong implements Serializable {
         tendichvu = null;
     }
 
-    public Phieudatphong(List_rooms arrRoom, Customer customer, String tenphong, Dichvu a, Dichvu b)
-            throws IOException {
+    public Phieudatphong(List_rooms arrRoom, Customer customer, String tenphong, Dichvu a, Dichvu b) {
         this.customer = customer;
         this.tenphong = tenphong;
         arr_dichvu = new Dichvu[2];
         arr_dichvu[0] = a;
         arr_dichvu[1] = b;
-        arrRoom.Timkiemphong(tenphong).booked = true;
+        try {
+            arrRoom.Timkiemphong(tenphong).setBooked(true);
+            System.out.println("work");
+        } catch (IOException e) {
+            e.printStackTrace();
+            System.out.println("hello");
+        }
     }
 
     public void ThongtinKhachhang() {
