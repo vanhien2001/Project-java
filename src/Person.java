@@ -1,7 +1,7 @@
 import java.io.Serializable;
 import java.util.Scanner;
 
-public class Person implements Serializable {
+public abstract class Person implements Serializable {
   protected String id;
   protected String name, pass;
   protected Time dayBegin;
@@ -9,109 +9,33 @@ public class Person implements Serializable {
 
   transient Scanner sc = new Scanner(System.in);
 
-  public Person() {
-    id = null;
-    name = null;
-    dayBegin = new Time();
-  }
+  abstract public String getId();
 
-  public Person(String id, String name, String pass, Time dayBegin, int salary) {
-    this.id = id;
-    this.name = name;
-    this.pass = pass;
-    this.dayBegin = dayBegin;
-    this.salary = salary;
-  }
+  abstract public void setId(String id);
 
-  public String getId() {
-    return id;
-  }
+  abstract public void setName(String name);
 
-  public void setId(String id) {
-    this.id = id;
-  }
+  abstract public String getName();
 
-  public void setName(String name) {
-    this.name = name;
-  }
+  abstract public void setDayBegin(Time dayBegin);
 
-  public String getName() {
-    return name;
-  }
+  abstract public Time getDayBegin();
 
-  public void setDayBegin(Time dayBegin) {
-    this.dayBegin = dayBegin;
-  }
+  abstract public void setId();
 
-  public Time getDayBegin() {
-    return dayBegin;
-  }
+  abstract public void setName();
 
-  public void setId() {
-    System.out.print("Id : ");
-    id = sc.nextLine();
-  }
+  abstract public void setDayBegin();
 
-  public void setName() {
-    System.out.print("Ho va ten : ");
-    name = sc.nextLine();
-  }
+  abstract public void setSalary();
 
-  public void setDayBegin() {
-    System.out.println("Thoi diem bat dau lam viec : ");
-    dayBegin.setTime();
-  }
+  abstract public String getPass();
 
-  public void setSalary() {
-    while (true) {
-      try {
-        System.out.print("Luong : ");
-        salary = Integer.parseInt(sc.nextLine());
-        break;
-      } catch (Exception ex) {
-        System.out.println("Cu phap ko chinh xac moi ban nhap lai !!! \n");
-      }
-    }
-  }
+  abstract public void setPass(String pass);
 
-  public String getPass() {
-    return pass;
-  }
+  abstract public void setPass();
 
-  public void setPass(String pass) {
-    this.pass = pass;
-  }
+  abstract public void Nhapthongtin();
 
-  public void setPass() {
-    while (true) {
-      System.out.print("Nhap mat khau : ");
-      String a = sc.nextLine();
-      if (pass.equals(a)) {
-        System.out.print("Nhap mat khau moi : ");
-        String b = sc.nextLine();
-        this.pass = b;
-        break;
-      } else if (!pass.equals(a) && !a.isEmpty()) {
-        System.out.println("Mat khau khong chinh xac !!!");
-      } else {
-        break;
-      }
-    }
-  }
-
-  public void Nhapthongtin() {
-    setId();
-    setName();
-    setDayBegin();
-    setSalary();
-  }
-
-  public void Xuat_thong_tin() {
-    System.out.printf("%-20s-20s%-25s%-20s%-20s%15d000 d\n", "Chuc vu", "Id", "Ho ten", "Cong viec", "Ngay vao lam",
-        "Luong");
-  }
-
-  public int Tinh_luong() {
-    return salary;
-  }
+  abstract public void Xuat_thong_tin();
 }

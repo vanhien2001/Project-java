@@ -63,6 +63,7 @@ public class Menu {
                             kt = 1;
                             System.out.print("\033[H\033[2J");
                             menu1(ql);
+                            c.write();
                             break;
                         }
                     }
