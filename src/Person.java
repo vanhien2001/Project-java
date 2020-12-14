@@ -51,7 +51,7 @@ public class Person implements Serializable {
 
       System.out.print("Ho ten : ");
       this.name = sc.nextLine();
-      if (this.name != null) {
+      if (!this.name.isEmpty()) {
         break;
       } else {
         System.out.println("xin vui long khong de trong!");

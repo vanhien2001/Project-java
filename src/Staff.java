@@ -95,9 +95,9 @@ public class Staff extends Person {
 
   public void setPass() {
     while (true) {
-      System.out.println("Mat khau : ");
+      System.out.print("Mat khau : ");
       pass = sc.nextLine();
-      if (pass != null) {
+      if (!pass.isEmpty()) {
         break;
       } else {
         System.out.println("xin vui long khong de trong");

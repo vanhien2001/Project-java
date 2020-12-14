@@ -19,8 +19,16 @@ public class Service_staff extends Staff {
     }
 
     public void setPosition() {
-        System.out.print("Cong viec : ");
-        posision = sc.nextLine();
+        while (true) {
+
+            System.out.print("Cong viec : ");
+            posision = sc.nextLine();
+            if (!posision.isEmpty()) {
+                break;
+            } else {
+                System.out.println("vui long khong de trong");
+            }
+        }
     }
 
     public void Thang_cap() {

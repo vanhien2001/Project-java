@@ -66,63 +66,28 @@ public class Address implements Serializable {
     }
 
     public void setDuong() {
-        while (true) {
-            System.out.print("Duong : ");
-            this.duong = sc.nextLine();
-            if (phuong != null) {
-                break;
-            } else {
-                System.out.println("vui long khong de trong!");
-            }
-        }
+        System.out.print("Duong : ");
+        duong = sc.nextLine();
     }
 
     public void setPhuong() {
-        while (true) {
-            System.out.print("Phuong : ");
-            this.phuong = sc.nextLine();
-            if (phuong != null) {
-                break;
-            } else {
-                System.out.println("vui long khong de trong!");
-            }
-        }
+        System.out.print("Phuong : ");
+        phuong = sc.nextLine();
     }
 
     public void setQuan() {
-        while (true) {
-            System.out.print("Quan : ");
-            this.quan = sc.nextLine();
-            if (phuong != null) {
-                break;
-            } else {
-                System.out.println("vui long khong de trong!");
-            }
-        }
+        System.out.print("Quan : ");
+        quan = sc.nextLine();
     }
 
     public void setSo_nha() {
-        while (true) {
-            System.out.print("So nha : ");
-            this.so_nha = sc.nextLine();
-            if (phuong != null) {
-                break;
-            } else {
-                System.out.println("vui long khong de trong!");
-            }
-        }
+        System.out.print("So nha : ");
+        so_nha = sc.nextLine();
     }
 
     public void setTinh() {
-        while (true) {
-            System.out.print("Tinh : ");
-            this.tinh = sc.nextLine();
-            if (phuong != null) {
-                break;
-            } else {
-                System.out.println("vui long khong de trong!");
-            }
-        }
+        System.out.print("Tinh : ");
+        tinh = sc.nextLine();
     }
 
     public void nhap_thontin() {
