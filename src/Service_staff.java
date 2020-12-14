@@ -1,39 +1,49 @@
 import java.util.Scanner;
 
-public class Manager extends Staff {
+public class Service_staff extends Staff {
     transient Scanner sc = new Scanner(System.in);
 
-    public Manager() {
+    public Service_staff(String name, String sdt, String cmnd, String so_nha, String duong, String phuong, String quan,
+            String tinh, String id, String pass, Time dayBegin, int salary, String posision) {
+        super(name, sdt, cmnd, so_nha, duong, phuong, quan, tinh, id, pass, dayBegin, salary, posision);
+        chucvu = "Nhan vien";
+    }
+
+    public Service_staff() {
         super();
-        manager = true;
+        chucvu = "Nhan vien";
+    }
+
+    public String getPosition() {
+        return posision;
+    }
+
+    public void setPosition() {
+        System.out.print("Cong viec : ");
+        posision = sc.nextLine();
+    }
+
+    public void Thang_cap() {
         chucvu = "Quan ly";
+        manager = true;
         posision = "Quan ly khach san";
     }
 
-    public void Giang_cap() {
-        manager = false;
-        System.out.print("Cong viec : ");
-        posision = sc.nextLine();
-        chucvu = "Nhan vien";
+    public void setposision(String posision) {
+        this.posision = posision;
     }
 
-    public Manager(String name, String sdt, String cmnd, String so_nha, String duong, String phuong, String quan,
-            String tinh, String id, String pass, Time dayBegin, int salary) {
-        super(name, sdt, cmnd, so_nha, duong, phuong, quan, tinh, id, pass, dayBegin, salary, "Quan ly khach san");
-        manager = true;
-        chucvu = "Nhan vien";
+    public void Xuat_thong_tin() {
+        System.out.printf("| %-15s%-15s%-25s%-25s%-15s%15d000d |\n", chucvu, id, name, posision, dayBegin, salary);
     }
 
     public void Nhapthongtin() {
         nhap_thontin();
         setId();
         setName();
+        setPosition();
         setDayBegin();
         setSalary();
-    }
-
-    public void Xuat_thong_tin() {
-        System.out.printf("| %-15s%-15s%-25s%-25s%-15s%15d000d |\n", chucvu, id, name, posision, dayBegin, salary);
     }
 
     public void Xuat_thong_tin_chi_tiet() {

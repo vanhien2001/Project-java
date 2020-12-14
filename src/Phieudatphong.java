@@ -100,7 +100,7 @@ public class Phieudatphong implements Serializable {
     }
 
     public void Xuat_thong_tin_khachhang() {
-        customer.xuatthongtin();
+        customer.Xuat_thong_tin();
     }
 
     public String getTenphong() {

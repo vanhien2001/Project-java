@@ -5,7 +5,7 @@ public class Menu {
     Hotel hotel;
     List_rooms a = new List_rooms();
     List_dichvu b = new List_dichvu();
-    listPerson c = new listPerson();
+    List_staff c = new List_staff();
     List_phieudatphong d = new List_phieudatphong();
     Hoadon f = new Hoadon();
     Scanner sc = new Scanner(System.in);
@@ -57,7 +57,7 @@ public class Menu {
                     String id = sc.nextLine();
                     System.out.print("Pass : ");
                     String pass = sc.nextLine();
-                    for (Person ql : c.arrPerson) {
+                    for (Staff ql : c.arrPerson) {
                         if (ql.id.equalsIgnoreCase(id) && ql instanceof Manager && ql.pass.equals(pass)) {
                             kt = 1;
                             System.out.print("\033[H\033[2J");
@@ -85,7 +85,7 @@ public class Menu {
         }
     }
 
-    public void menu1(Person ql) throws IOException {
+    public void menu1(Staff ql) throws IOException {
         System.out.print("\033[H\033[2J");
         while (true) {
             System.out.println();

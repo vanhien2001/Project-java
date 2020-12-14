@@ -6,13 +6,13 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 
-public class listPerson implements Filehandle {
+public class List_staff implements Filehandle {
   int n;
-  Person[] arrPerson;
+  Staff[] arrPerson;
 
   transient Scanner sc = new Scanner(System.in);
 
-  public listPerson() {
+  public List_staff() {
     n = 0;
     arrPerson = null;
   }
@@ -22,7 +22,7 @@ public class listPerson implements Filehandle {
     ObjectInputStream oi = null;
     try {
       oi = new ObjectInputStream(new FileInputStream(file_staff));
-      arrPerson = (Person[]) oi.readObject();
+      arrPerson = (Staff[]) oi.readObject();
 
     } catch (IOException ex) {
       System.out.println(ex.toString());
@@ -56,7 +56,7 @@ public class listPerson implements Filehandle {
         System.out.println("Cu phap ko chinh xac moi ban nhap lai !!! \n");
       }
     }
-    arrPerson = new Person[n];
+    arrPerson = new Staff[n];
     for (int i = 0; i < n; i++) {
       int x;
       while (true) {
@@ -73,7 +73,7 @@ public class listPerson implements Filehandle {
         arrPerson[i] = new Manager();
         arrPerson[i].Nhapthongtin();
       } else if (x >= 2) {
-        arrPerson[i] = new Staff();
+        arrPerson[i] = new Service_staff();
         arrPerson[i].Nhapthongtin();
       }
     }
@@ -131,7 +131,7 @@ public class listPerson implements Filehandle {
   }
 
   public boolean timNv(String id) {
-    for (Person person : arrPerson) {
+    for (Staff person : arrPerson) {
       if (person.getId().equalsIgnoreCase(id)) {
         return true;
       }
@@ -172,7 +172,7 @@ public class listPerson implements Filehandle {
 
   public void Them_nv() throws IOException {
     read();
-    Person nv = new Staff();
+    Staff nv = new Service_staff();
     nv.Nhapthongtin();
     arrPerson = Arrays.copyOf(arrPerson, arrPerson.length + 1);
     arrPerson[arrPerson.length - 1] = nv;
@@ -181,7 +181,7 @@ public class listPerson implements Filehandle {
 
   public void Them_quanly() throws IOException {
     read();
-    Person nv = new Manager();
+    Staff nv = new Manager();
     nv.Nhapthongtin();
     arrPerson = Arrays.copyOf(arrPerson, arrPerson.length + 1);
     arrPerson[arrPerson.length - 1] = nv;
@@ -191,7 +191,7 @@ public class listPerson implements Filehandle {
   public void Xoa_nv_id(String a) throws IOException {
     read();
     int kt = 0;
-    Person[] arr = new Person[arrPerson.length - 1];
+    Staff[] arr = new Staff[arrPerson.length - 1];
     for (int i = 0; i <= arr.length; i++) {
       if (arrPerson[i].id.equalsIgnoreCase(a)) {
         for (int j = i; j < arrPerson.length - 1; j++) {
@@ -207,18 +207,22 @@ public class listPerson implements Filehandle {
     if (kt == 0) {
       System.out.println("Ko tim thay nhan vien !");
     } else if (kt == 1) {
-      arrPerson = new Person[arr.length];
+      arrPerson = new Staff[arr.length];
       arrPerson = arr;
     }
     write();
   }
 
   public void setup() throws IOException {
-    arrPerson = new Person[4];
-    arrPerson[0] = new Manager("3119560017", "Nguyen Van Hien", "vanhien2001", new Time(1, 12, 2020), 50000);
-    arrPerson[1] = new Staff("3119560007", "Huynh Lam Khanh Duy", "123", new Time(1, 12, 2020), 20000, "Lao cong");
-    arrPerson[2] = new Staff("3119560029", "Phung Duy Khang", "123", new Time(1, 12, 2020), 30000, "Tiep tan");
-    arrPerson[3] = new Staff("3119560018", "Nguyen Thai Phuong", "123", new Time(1, 12, 2020), 25000, "Bao ve");
+    arrPerson = new Staff[4];
+    arrPerson[0] = new Manager("Nguyen Van Hien", "0936642182", "049201000116", "25/27", "Son Ky", "Son Ky", "Tan Phu",
+        "Tp.HCM", "3119560017", "vanhien2001", new Time(1, 11, 2020), 50000);
+    arrPerson[1] = new Service_staff("Huynh Lam Khanh Duy", "0936642182", "049201000116", "25/27", "Son Ky", "Son Ky",
+        "Tan Phu", "Tp.HCM", "3119560007", "123", new Time(1, 11, 2020), 30000, "Tiep tan");
+    arrPerson[2] = new Service_staff("Phung Duy Khang", "0936642182", "049201000116", "25/27", "Son Ky", "Son Ky",
+        "Tan Phu", "Tp.HCM", "3119560029", "pdk3107", new Time(1, 11, 2020), 30000, "Tiep tan");
+    arrPerson[3] = new Service_staff("Nguyen Thai Phuong", "0936642182", "049201000116", "25/27", "Son Ky", "Son Ky",
+        "Tan Phu", "Tp.HCM", "3119560029", "123", new Time(1, 11, 2020), 30000, "Tiep tan");
     write();
   }
 }
