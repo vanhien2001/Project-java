@@ -59,19 +59,31 @@ public class Staff extends Person {
     return salary;
   }
 
-  public void setId() {
+  public boolean checkId(String[] arr, String id) {
+    for (String item : arr) {
+      if (item.equalsIgnoreCase(id)) {
+        return false;
+      }
+    }
+    return true;
+  }
+
+  public void setId(String[] arr) {
     while (true) {
       System.out.print("Id : ");
       String input = sc.nextLine();
-      double inputValue = 0;
+      long inputValue = 0;
       try {
-        inputValue = Double.parseDouble(input);
-        id = Double.toString(inputValue);
-        break;
+        inputValue = Long.parseLong(input);
+        id = Long.toString(inputValue);
+        if (checkId(arr, id)) {
+          break;
+        }
       } catch (NumberFormatException e) {
         System.out.println("ban nhap sai cu phap xin moi ban nhap lai!");
       }
     }
+
   }
 
   public void setDayBegin() {
@@ -81,7 +93,7 @@ public class Staff extends Person {
 
   public void setPass() {
     System.out.println("Mat khau : ");
-    dayBegin.setTime();
+    pass = sc.nextLine();
   }
 
   public void setSalary() {
@@ -113,10 +125,10 @@ public class Staff extends Person {
     }
   }
 
-  public void Nhapthongtin() {
+  public void Nhapthongtin(String[] arr) {
     nhap_thontin();
-    setId();
-    setName();
+    setId(arr);
+    setPass();
     setDayBegin();
     setSalary();
   }

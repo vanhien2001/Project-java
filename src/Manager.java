@@ -24,12 +24,9 @@ public class Manager extends Staff {
         chucvu = "Quan ly";
     }
 
-    public void Nhapthongtin() {
-        nhap_thontin();
-        setId();
-        setName();
-        setDayBegin();
-        setSalary();
+    @Override
+    public void Nhapthongtin(String[] arr) {
+        super.Nhapthongtin(arr);
     }
 
     public void Xuat_thong_tin() {

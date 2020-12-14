@@ -37,13 +37,10 @@ public class Service_staff extends Staff {
         System.out.printf("| %-15s%-15s%-25s%-25s%-15s%15d000d |\n", chucvu, id, name, posision, dayBegin, salary);
     }
 
-    public void Nhapthongtin() {
-        nhap_thontin();
-        setId();
-        setName();
+    @Override
+    public void Nhapthongtin(String[] arr) {
+        super.Nhapthongtin(arr);
         setPosition();
-        setDayBegin();
-        setSalary();
     }
 
     public void Xuat_thong_tin_chi_tiet() {

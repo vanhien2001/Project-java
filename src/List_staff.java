@@ -71,10 +71,10 @@ public class List_staff implements Filehandle {
       }
       if (x <= 1) {
         arrPerson[i] = new Manager();
-        arrPerson[i].Nhapthongtin();
+        arrPerson[i].Nhapthongtin(shortArr(arrPerson));
       } else if (x >= 2) {
         arrPerson[i] = new Service_staff();
-        arrPerson[i].Nhapthongtin();
+        arrPerson[i].Nhapthongtin(shortArr(arrPerson));
       }
     }
     write();
@@ -170,10 +170,18 @@ public class List_staff implements Filehandle {
     }
   }
 
+  public static String[] shortArr(Staff[] arr) {
+    String[] arr2 = new String[arr.length];
+    for (int i = 0; i < arr.length; i++) {
+      arr2[i] = arr[i].id;
+    }
+    return arr2;
+  }
+
   public void Them_nv() throws IOException {
     read();
     Staff nv = new Service_staff();
-    nv.Nhapthongtin();
+    nv.Nhapthongtin(shortArr(arrPerson));
     arrPerson = Arrays.copyOf(arrPerson, arrPerson.length + 1);
     arrPerson[arrPerson.length - 1] = nv;
     write();
@@ -182,7 +190,7 @@ public class List_staff implements Filehandle {
   public void Them_quanly() throws IOException {
     read();
     Staff nv = new Manager();
-    nv.Nhapthongtin();
+    nv.Nhapthongtin(shortArr(arrPerson));
     arrPerson = Arrays.copyOf(arrPerson, arrPerson.length + 1);
     arrPerson[arrPerson.length - 1] = nv;
     write();
