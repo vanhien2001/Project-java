@@ -48,6 +48,7 @@ public class Menu {
                     break;
                 case 3:
                     System.out.print("\033[H\033[2J");
+
                     f.Xuat_hoa_don(d);
                     break;
                 case 4:
