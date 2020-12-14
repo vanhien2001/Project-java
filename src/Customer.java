@@ -10,9 +10,9 @@ public class Customer extends Person {
     }
 
     public Customer(String name, String sdt, String cmnd, String so_nha, String duong, String phuong, String quan,
-            String tinh,Time dayBooking){
-        super(name,sdt,cmnd,so_nha,duong,phuong,quan,tinh);
-        this.dayBooking=dayBooking;
+            String tinh, Time dayBooking) {
+        super(name, sdt, cmnd, so_nha, duong, phuong, quan, tinh);
+        this.dayBooking = dayBooking;
     }
 
     public void setdayBooking() {
