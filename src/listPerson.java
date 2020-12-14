@@ -130,6 +130,15 @@ public class listPerson implements Filehandle {
     }
   }
 
+  public boolean timNv(String id) {
+    for (Person person : arrPerson) {
+      if (person.getId().equalsIgnoreCase(id)) {
+        return true;
+      }
+    }
+    return false;
+  }
+
   public void Tim_nv_id(String id) throws IOException {
     read();
     int kt = 0;

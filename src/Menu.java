@@ -52,7 +52,6 @@ public class Menu {
                     break;
                 case 4:
                     int kt = 0;
-                    sc.nextLine();
                     System.out.println("\nNhap id va password cua ban ");
                     System.out.print("Id : ");
                     String id = sc.nextLine();
@@ -123,10 +122,12 @@ public class Menu {
             switch (x) {
                 case 1:
                     System.out.print("\033[H\033[2J");
+                    System.out.flush();
                     a.Xuatdsphong();
                     break;
                 case 2:
                     System.out.print("\033[H\033[2J");
+                    System.out.flush();
                     a.Xuatdsphongtrong();
                     break;
                 case 3:
@@ -140,6 +141,7 @@ public class Menu {
                     break;
                 case 5:
                     System.out.print("\033[H\033[2J");
+                    System.out.flush();
                     b.Xuatdsdichvu();
                     break;
                 case 6:

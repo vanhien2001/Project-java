@@ -7,35 +7,123 @@ public abstract class Person implements Serializable {
   protected Time dayBegin;
   protected int salary;
 
+  public Person(String id, String name, String pass, Time dayBegin, int salary) {
+    this.id = id;
+    this.name = name;
+    this.pass = pass;
+    this.dayBegin = dayBegin;
+    this.salary = salary;
+  }
+
+  public Person() {
+    id = null;
+    name = null;
+    dayBegin = new Time();
+  }
+
   transient Scanner sc = new Scanner(System.in);
 
-  abstract public String getId();
+  public String getId() {
+    return id;
+  }
 
-  abstract public void setId(String id);
+  public void setId(String id) {
+    this.id = id;
+  }
 
-  abstract public void setName(String name);
+  public void setName(String name) {
+    this.name = name;
+  }
 
-  abstract public String getName();
+  public String getName() {
+    return name;
+  }
 
-  abstract public void setDayBegin(Time dayBegin);
+  public void setPass(String pass) {
+    this.pass = pass;
+  }
 
-  abstract public Time getDayBegin();
+  public String getPass() {
+    return pass;
+  }
 
-  abstract public void setId();
+  public void setDayBegin(Time dayBegin) {
+    this.dayBegin = dayBegin;
+  }
 
-  abstract public void setName();
+  public Time getDayBegin() {
+    return dayBegin;
+  }
 
-  abstract public void setDayBegin();
+  public void setSalary(int salary) {
+    this.salary = salary;
+  }
 
-  abstract public void setSalary();
+  public int getSalary() {
+    return salary;
+  }
 
-  abstract public String getPass();
+  public void setId() {
+    while (true) {
+      System.out.print("Id : ");
+      String input = sc.nextLine();
+      double inputValue = 0;
+      try {
+        inputValue = Double.parseDouble(input);
+        id = Double.toString(inputValue);
+        break;
+      } catch (NumberFormatException e) {
+        System.out.println("ban nhap sai cu phap xin moi ban nhap lai!");
+      }
+    }
 
-  abstract public void setPass(String pass);
+  }
 
-  abstract public void setPass();
+  public void setName() {
+    System.out.print("Ho va ten : ");
+    name = sc.nextLine();
+  }
 
-  abstract public void Nhapthongtin();
+  public void setDayBegin() {
+    System.out.println("Thoi diem bat dau lam viec : ");
+    dayBegin.setTime();
+  }
+
+  public void setSalary() {
+    while (true) {
+      try {
+        System.out.print("Luong : ");
+        salary = Integer.parseInt(sc.nextLine());
+        break;
+      } catch (Exception ex) {
+        System.out.println("Cu phap ko chinh xac moi ban nhap lai !!! \n");
+      }
+    }
+  }
+
+  public void setPass() {
+    while (true) {
+      System.out.print("Nhap mat khau : ");
+      String a = sc.nextLine();
+      if (pass.equals(a)) {
+        System.out.print("Nhap mat khau moi : ");
+        String b = sc.nextLine();
+        this.pass = b;
+        break;
+      } else if (!pass.equals(a) && !a.isEmpty()) {
+        System.out.println("Mat khau khong chinh xac !!!");
+      } else {
+        break;
+      }
+    }
+  }
+
+  public void Nhapthongtin() {
+    setId();
+    setName();
+    setDayBegin();
+    setSalary();
+  }
 
   abstract public void Xuat_thong_tin();
 }
