@@ -46,6 +46,7 @@ public class Phieudatphong implements Serializable {
             for (int i = 0; i < arrRoom.arrRooms.length; i++) {
                 if (arrRoom.arrRooms[i].tenphong.equalsIgnoreCase(tenphong) && !arrRoom.arrRooms[i].booked) {
                     arrRoom.arrRooms[i].booked = true;
+                    arrRoom.write();
                     kt = true;
                     ThongtinKhachhang();
                     Su_dung_dichvu(dichvu);
