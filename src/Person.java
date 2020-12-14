@@ -47,8 +47,16 @@ public class Person implements Serializable {
   }
 
   public void setName() {
-    System.out.print("Ho ten : ");
-    this.name = sc.nextLine();
+    while (true) {
+
+      System.out.print("Ho ten : ");
+      this.name = sc.nextLine();
+      if (this.name != null) {
+        break;
+      } else {
+        System.out.println("xin vui long khong de trong!");
+      }
+    }
   }
 
   public boolean checkSdt(String sdt) {

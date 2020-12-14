@@ -66,28 +66,63 @@ public class Address implements Serializable {
     }
 
     public void setDuong() {
-        System.out.print("Duong : ");
-        this.duong = sc.nextLine();
+        while (true) {
+            System.out.print("Duong : ");
+            this.duong = sc.nextLine();
+            if (phuong != null) {
+                break;
+            } else {
+                System.out.println("vui long khong de trong!");
+            }
+        }
     }
 
     public void setPhuong() {
-        System.out.print("Phuong : ");
-        this.phuong = sc.nextLine();
+        while (true) {
+            System.out.print("Phuong : ");
+            this.phuong = sc.nextLine();
+            if (phuong != null) {
+                break;
+            } else {
+                System.out.println("vui long khong de trong!");
+            }
+        }
     }
 
     public void setQuan() {
-        System.out.print("Quan : ");
-        this.quan = sc.nextLine();
+        while (true) {
+            System.out.print("Quan : ");
+            this.quan = sc.nextLine();
+            if (phuong != null) {
+                break;
+            } else {
+                System.out.println("vui long khong de trong!");
+            }
+        }
     }
 
     public void setSo_nha() {
-        System.out.print("So nha : ");
-        this.so_nha = sc.nextLine();
+        while (true) {
+            System.out.print("So nha : ");
+            this.so_nha = sc.nextLine();
+            if (phuong != null) {
+                break;
+            } else {
+                System.out.println("vui long khong de trong!");
+            }
+        }
     }
 
     public void setTinh() {
-        System.out.print("Tinh : ");
-        this.tinh = sc.nextLine();
+        while (true) {
+            System.out.print("Tinh : ");
+            this.tinh = sc.nextLine();
+            if (phuong != null) {
+                break;
+            } else {
+                System.out.println("vui long khong de trong!");
+            }
+        }
     }
 
     public void nhap_thontin() {

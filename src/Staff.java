@@ -78,6 +78,8 @@ public class Staff extends Person {
         id = Long.toString(inputValue);
         if (checkId(arr, id)) {
           break;
+        } else {
+          System.out.println("id hien da co trong he thong xin vui long nhap id khac");
         }
       } catch (NumberFormatException e) {
         System.out.println("ban nhap sai cu phap xin moi ban nhap lai!");
@@ -92,8 +94,15 @@ public class Staff extends Person {
   }
 
   public void setPass() {
-    System.out.println("Mat khau : ");
-    pass = sc.nextLine();
+    while (true) {
+      System.out.println("Mat khau : ");
+      pass = sc.nextLine();
+      if (pass != null) {
+        break;
+      } else {
+        System.out.println("xin vui long khong de trong");
+      }
+    }
   }
 
   public void setSalary() {
@@ -126,11 +135,12 @@ public class Staff extends Person {
   }
 
   public void Nhapthongtin(String[] arr) {
-    nhap_thontin();
+    System.out.println("thiet lap id va mat khau:");
     setId(arr);
     setPass();
-    setDayBegin();
+    nhap_thontin();
     setSalary();
+    setDayBegin();
   }
 
   public void Xuat_thong_tin() {
