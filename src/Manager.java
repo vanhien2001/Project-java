@@ -43,8 +43,18 @@ public class Manager extends Person {
     }
 
     public void setId() {
-        System.out.print("Id : ");
-        id = sc.nextLine();
+        while (true) {
+            System.out.print("Id : ");
+            String input = sc.nextLine();
+            double inputValue = 0;
+            try {
+                inputValue = Double.parseDouble(input);
+                id = Double.toString(inputValue);
+                break;
+            } catch (NumberFormatException e) {
+                System.out.println("ban nhap sai cu phap xin moi ban nhap lai");
+            }
+        }
     }
 
     public void setName() {
