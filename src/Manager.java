@@ -21,7 +21,7 @@ public class Manager extends Staff {
             String tinh, String id, String pass, Time dayBegin, int salary) {
         super(name, sdt, cmnd, so_nha, duong, phuong, quan, tinh, id, pass, dayBegin, salary, "Quan ly khach san");
         manager = true;
-        chucvu = "Nhan vien";
+        chucvu = "Quan ly";
     }
 
     public void Nhapthongtin() {

@@ -51,6 +51,7 @@ public class Person implements Serializable {
         this.name = sc.nextLine();
     }
 
+    // ! them rang buoc 10 so vs sdt vs cmnd
     public void setSdt() {
         while (true) {
             System.out.print("sdt : ");
@@ -73,7 +74,7 @@ public class Person implements Serializable {
             double inputValue = 0;
             try {
                 inputValue = Double.parseDouble(input);
-                this.sdt = Double.toString(inputValue);
+                this.cmnd = Double.toString(inputValue);
                 break;
             } catch (NumberFormatException e) {
                 System.out.println("ban nhap sai cu phap xin moi ban nhap lai!");
