@@ -1,10 +1,11 @@
+import java.io.IOException;
 import java.util.Scanner;
 
-public class Staff extends Person {
+public class Staff extends Person implements Salary {
   String id, chucvu, posision;
   String pass;
   Time dayBegin;
-  int salary;
+  int salary, d;
   boolean manager = false;
   transient Scanner sc = new Scanner(System.in);
 
@@ -148,4 +149,8 @@ public class Staff extends Person {
 
   public void Xuat_thong_tin_chi_tiet() {
   }
+
+  public int tinh_luong(int k, Hotel hotel) throws IOException {
+    return salary;
+  };
 }

@@ -3,11 +3,6 @@ import java.util.Scanner;
 
 public class Menu {
     Hotel hotel;
-    List_rooms a = new List_rooms();
-    List_dichvu b = new List_dichvu();
-    List_staff c = new List_staff();
-    List_phieudatphong d = new List_phieudatphong();
-    Hoadon f = new Hoadon();
     Scanner sc = new Scanner(System.in);
 
     public Menu() {
@@ -49,13 +44,13 @@ public class Menu {
                     String id = sc.nextLine();
                     System.out.print("Pass : ");
                     String pass = sc.nextLine();
-                    for (Staff nv : c.arrPerson) {
+                    for (Staff nv : hotel.c.arrPerson) {
                         if (nv.id.equalsIgnoreCase(id) && nv.manager == false && nv.pass.equals(pass)) {
                             kt = 1;
                             System.out.print("\033[H\033[2J");
                             System.out.flush();
                             menu(nv);
-                            c.write();
+                            hotel.c.write();
                             break;
                         }
                     }
@@ -71,13 +66,13 @@ public class Menu {
                     String id1 = sc.nextLine();
                     System.out.print("Pass : ");
                     String pass1 = sc.nextLine();
-                    for (Staff ql : c.arrPerson) {
+                    for (Staff ql : hotel.c.arrPerson) {
                         if (ql.id.equalsIgnoreCase(id1) && ql.manager == true && ql.pass.equals(pass1)) {
                             kt1 = 1;
                             System.out.print("\033[H\033[2J");
                             System.out.flush();
                             menu1(ql);
-                            c.write();
+                            hotel.c.write();
                             break;
                         }
                     }
@@ -132,13 +127,13 @@ public class Menu {
                 case 2:
                     System.out.print("\033[H\033[2J");
                     System.out.flush();
-                    d.Dat_phong(a, b, nv);
+                    hotel.d.Dat_phong(hotel.a, hotel.b, nv);
                     break;
                 case 3:
                     System.out.print("\033[H\033[2J");
                     System.out.flush();
 
-                    f.Xuat_hoa_don(d, a);
+                    hotel.f.Xuat_hoa_don(hotel.d, hotel.a);
                     break;
                 case 4:
                     System.out.print("\033[H\033[2J");
@@ -167,8 +162,9 @@ public class Menu {
             System.out.println("|                                                            |");
             System.out.println("|     1. Xem thong tin ban than                              |");
             System.out.println("|     2. Sua thong tin                                       |");
-            System.out.println("|     3. Thay doi password                                   |");
-            System.out.println("|     4. Quay lai                                            |");
+            System.out.println("|     3. Xem luong                                           |");
+            System.out.println("|     4. Thay doi password                                   |");
+            System.out.println("|     5. Quay lai                                            |");
             System.out.println("|                                                            |");
             System.out.println("*------------------------------------------------------------*");
             int x;
@@ -195,15 +191,20 @@ public class Menu {
                 case 3:
                     System.out.print("\033[H\033[2J");
                     System.out.flush();
-                    nv.resetPass();
+                    hotel.c.Xem_luong(nv, hotel);
                     break;
                 case 4:
+                    System.out.print("\033[H\033[2J");
+                    System.out.flush();
+                    nv.resetPass();
+                    break;
+                case 5:
                     break;
                 default:
                     System.out.println("\nLua chon khong hop le !!!\n");
                     break;
             }
-            if (x == 4) {
+            if (x == 5) {
                 break;
             }
         }
@@ -243,7 +244,7 @@ public class Menu {
                     System.out.println("Nhap sdt moi");
                     nv.setSdt();
                     System.out.println("Da luu thay doi !");
-                    c.write();
+                    hotel.c.write();
                     break;
                 case 3:
                     System.out.print("\033[H\033[2J");
@@ -252,7 +253,7 @@ public class Menu {
                     System.out.println("Nhap dia chi moi");
                     nv.setDiachi();
                     System.out.println("Da luu thay doi !");
-                    c.write();
+                    hotel.c.write();
                     break;
                 default:
                     System.out.println("\nLua chon khong hop le !!!\n");
@@ -297,13 +298,17 @@ public class Menu {
                 case 2:
                     System.out.print("\033[H\033[2J");
                     System.out.flush();
-                    d.Dat_phong(a, b, ql);
+                    hotel.d.Dat_phong(hotel.a, hotel.b, ql);
                     break;
                 case 3:
                     System.out.print("\033[H\033[2J");
                     System.out.flush();
+<<<<<<< HEAD
                     a.Xuatdsphong();
                     f.Xuat_hoa_don(d, a);
+=======
+                    hotel.f.Xuat_hoa_don(hotel.d, hotel.a);
+>>>>>>> 92ce2087cac362d54a51722186dd8b00b97dc4a2
                     break;
                 case 4:
                     System.out.print("\033[H\033[2J");
@@ -374,7 +379,7 @@ public class Menu {
                 case 4:
                     System.out.print("\033[H\033[2J");
                     System.out.flush();
-                    d.Xuatdsphieu(a);
+                    hotel.d.Xuatdsphieu(hotel.a);
                     break;
                 case 5:
                     System.out.print("\033[H\033[2J");
@@ -421,18 +426,18 @@ public class Menu {
                 case 1:
                     System.out.print("\033[H\033[2J");
                     System.out.flush();
-                    a.Xuatdsphong();
+                    hotel.a.Xuatdsphong();
                     break;
                 case 2:
                     System.out.print("\033[H\033[2J");
                     System.out.flush();
-                    a.Xuatdsphongtrong();
+                    hotel.a.Xuatdsphongtrong();
                     break;
                 case 3:
-                    a.Them_room();
+                    hotel.a.Them_room();
                     break;
                 case 4:
-                    a.Xoa_room();
+                    hotel.a.Xoa_room();
                     break;
                 case 5:
                     System.out.print("\033[H\033[2J");
@@ -476,16 +481,16 @@ public class Menu {
             }
             switch (x) {
                 case 1:
-                    a.Suaten_phong();
+                    hotel.a.Suaten_phong();
                     break;
                 case 2:
-                    a.Sualoai_phong();
+                    hotel.a.Sualoai_phong();
                     break;
                 case 3:
-                    a.Suasogiuong_phong();
+                    hotel.a.Suasogiuong_phong();
                     break;
                 case 4:
-                    a.Suagia_phong();
+                    hotel.a.Suagia_phong();
                     break;
                 case 5:
                     break;
@@ -528,7 +533,7 @@ public class Menu {
                 case 1:
                     System.out.print("\033[H\033[2J");
                     System.out.flush();
-                    c.Xuat_ds_nv();
+                    hotel.c.Xuat_ds_nv();
                     break;
                 case 2:
                     System.out.print("\033[H\033[2J");
@@ -541,13 +546,13 @@ public class Menu {
                     Them_nv();
                     break;
                 case 4:
-                    c.Xoa_nv_id();
+                    hotel.c.Xoa_nv_id();
                     break;
                 case 5:
-                    c.Thangcap_nv();
+                    hotel.c.Thangcap_nv();
                     break;
                 case 6:
-                    c.Giangcap_nv();
+                    hotel.c.Giangcap_nv();
                     break;
                 case 7:
                     break;
@@ -588,13 +593,13 @@ public class Menu {
                 case 1:
                     System.out.print("\033[H\033[2J");
                     System.out.flush();
-                    b.Xuatdsdichvu();
+                    hotel.b.Xuatdsdichvu();
                     break;
                 case 2:
-                    b.Them_dv();
+                    hotel.b.Them_dv();
                     break;
                 case 3:
-                    b.Xoa_dv();
+                    hotel.b.Xoa_dv();
                     break;
                 case 4:
                     dichvu1();
@@ -634,10 +639,10 @@ public class Menu {
             }
             switch (x) {
                 case 1:
-                    b.Suaten_dv();
+                    hotel.b.Suaten_dv();
                     break;
                 case 2:
-                    b.Suagia_dv();
+                    hotel.b.Suagia_dv();
                     break;
                 case 3:
                     break;
@@ -676,10 +681,10 @@ public class Menu {
             }
             switch (x) {
                 case 1:
-                    c.Tim_nv_id();
+                    hotel.c.Tim_nv_id();
                     break;
                 case 2:
-                    c.Tim_nv_name();
+                    hotel.c.Tim_nv_name();
                     break;
                 case 3:
                     break;
@@ -719,11 +724,11 @@ public class Menu {
             switch (x) {
                 case 1:
                     System.out.println("Nhap thong tin quan ly  ");
-                    c.Them_quanly();
+                    hotel.c.Them_quanly();
                     break;
                 case 2:
                     System.out.println("Nhap thong tin nhan vien  ");
-                    c.Them_nv();
+                    hotel.c.Them_nv();
                     break;
                 case 3:
                     break;
@@ -762,10 +767,10 @@ public class Menu {
             }
             switch (x) {
                 case 1:
-                    b.Suaten_dv();
+                    hotel.b.Suaten_dv();
                     break;
                 case 2:
-                    b.Suagia_dv();
+                    hotel.b.Suagia_dv();
                     break;
                 case 3:
                     break;
@@ -781,10 +786,10 @@ public class Menu {
 
     public void setup() throws IOException {
         hotel = new Hotel("Lotus Cental", 5, new Address("102", "Le Thi Hong Gam", "Nguyen Thai Binh", "1", "Tp.HCM"));
-        a.setup();
-        b.setup();
-        c.setup();
-        d.setup(a, b, c);
+        hotel.a.setup();
+        hotel.b.setup();
+        hotel.c.setup();
+        hotel.d.setup(hotel.a, hotel.b, hotel.c);
     }
 
     public void Thong_ke() throws IOException {
@@ -795,34 +800,34 @@ public class Menu {
             k = 0;
             System.out.println("|                                                              |");
             System.out.printf("| %-60s |\n", "Thang " + i + " :");
-            for (Room room : a.arrRooms) {
+            for (Room room : hotel.a.arrRooms) {
                 room.dem = 0;
             }
-            for (Dichvu dv : b.arrs) {
+            for (Dichvu dv : hotel.b.arrs) {
                 dv.dem = 0;
             }
-            for (Phieudatphong phieu : d.arrBooked) {
+            for (Phieudatphong phieu : hotel.d.arrBooked) {
                 if (phieu.customer.dayBooking.getMonth() == i) {
-                    a.Timkiemphong(phieu.tenphong).dem++;
+                    hotel.a.Timkiemphong(phieu.tenphong).dem++;
                     for (Dichvu dv1 : phieu.arr_dichvu) {
-                        b.Timkiemdichvu(dv1.tendichvu).dem++;
+                        hotel.b.Timkiemdichvu(dv1.tendichvu).dem++;
                     }
                 }
-                a.write();
-                b.write();
+                hotel.a.write();
+                hotel.b.write();
             }
             System.out.println("|                                                              |");
             System.out.printf("| %-20s%20s%20s |\n", "Ten phong", "So lan duoc dat", "Doanh thu");
-            a.read();
-            for (Room room : a.arrRooms) {
+            hotel.a.read();
+            for (Room room : hotel.a.arrRooms) {
                 s = room.gia * room.dem * 1000;
                 k += s;
                 System.out.printf("| %-30s%10d%19dd |\n", room.tenphong, room.dem, s);
             }
             System.out.println("|                                                              |");
             System.out.printf("| %-20s%20s%20s |\n", "Ten dich vu", "So lan duoc su dung", "Doanh thu");
-            b.read();
-            for (Dichvu dv : b.arrs) {
+            hotel.b.read();
+            for (Dichvu dv : hotel.b.arrs) {
                 s = dv.gia * dv.dem * 1000;
                 k += s;
                 System.out.printf("| %-30s%10d%19dd |\n", dv.tendichvu, dv.dem, s);
