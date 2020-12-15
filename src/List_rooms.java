@@ -72,7 +72,7 @@ public class List_rooms implements Filehandle, Serializable {
         for (int i = 0; i < n; i++) {
             System.out.println("Nhap thong tin phong thu " + (i + 1));
             arrRooms[i] = new Room();
-            arrRooms[i].nhap_thontin();
+            arrRooms[i].nhap_thontin(ArrayOfRoomName(arrRooms));
         }
         write();
     }
@@ -113,10 +113,18 @@ public class List_rooms implements Filehandle, Serializable {
         return null;
     }
 
+    public static String[] ArrayOfRoomName(Room[] arr) {
+        String[] arr2 = new String[arr.length];
+        for (int i = 0; i < arr.length; i++) {
+            arr2[i] = arr[i].tenphong;
+        }
+        return arr2;
+    }
+
     public void Them_room() throws IOException {
         read();
         Room a = new Room();
-        a.nhap_thontin();
+        a.nhap_thontin(ArrayOfRoomName(arrRooms));
         arrRooms = Arrays.copyOf(arrRooms, arrRooms.length + 1);
         arrRooms[arrRooms.length - 1] = a;
         System.out.println("Them phong thanh cong !");

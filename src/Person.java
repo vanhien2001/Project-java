@@ -85,7 +85,7 @@ public class Person implements Serializable {
       long inputValue = 0;
       try {
         inputValue = Long.parseLong(input);
-        this.sdt = Long.toString(inputValue);
+        this.sdt = input;
         if (checkSdt(sdt)) {
           break;
         } else {
@@ -105,7 +105,7 @@ public class Person implements Serializable {
       long inputValue = 0;
       try {
         inputValue = Long.parseLong(input);
-        this.cmnd = Long.toString(inputValue);
+        this.cmnd = input;
         if (checkCmnd(cmnd)) {
           break;
         } else {

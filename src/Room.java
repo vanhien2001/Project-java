@@ -53,13 +53,24 @@ public class Room implements Serializable {
         this.tenphong = tenphong;
     }
 
-    public void setTenphong() {
-        while (true) {
+    public boolean checkTenPhong(String[] arrayOfRoomName) {
 
+        for (String item : arrayOfRoomName) {
+            if (this.tenphong.equalsIgnoreCase(item)) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public void setTenphong(String[] arrayOfRoomName) {
+        while (true) {
             System.out.print("Ten phong : ");
             this.tenphong = sc.nextLine();
             if (tenphong.isEmpty()) {
                 System.out.println("xin vui long khong bo trong");
+            } else if (!checkTenPhong(arrayOfRoomName)) {
+                System.out.println("ten phong da bi trung xin vui long chon ten phong khac");
             } else {
                 break;
             }
@@ -79,6 +90,7 @@ public class Room implements Serializable {
             try {
                 System.out.print("So giuong : ");
                 this.so_giuong = Integer.parseInt(sc.nextLine());
+                break;
             } catch (Exception ex) {
                 System.out.println("Cu phap ko chinh xac moi ban nhap lai !!! \n");
             }
@@ -97,8 +109,8 @@ public class Room implements Serializable {
         }
     }
 
-    public void nhap_thontin() {
-        setTenphong();
+    public void nhap_thontin(String[] arrayOfRoomName) {
+        setTenphong(arrayOfRoomName);
         setSo_giuong();
         setGia();
     }
