@@ -303,12 +303,7 @@ public class Menu {
                 case 3:
                     System.out.print("\033[H\033[2J");
                     System.out.flush();
-<<<<<<< HEAD
-                    a.Xuatdsphong();
-                    f.Xuat_hoa_don(d, a);
-=======
                     hotel.f.Xuat_hoa_don(hotel.d, hotel.a);
->>>>>>> 92ce2087cac362d54a51722186dd8b00b97dc4a2
                     break;
                 case 4:
                     System.out.print("\033[H\033[2J");

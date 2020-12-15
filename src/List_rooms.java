@@ -119,7 +119,6 @@ public class List_rooms implements Filehandle, Serializable {
     public Room Timkiemphong(String a) throws IOException {
         read();
         for (Room room : arrRooms) {
-            System.out.println(room.tenphong);
             if (room.tenphong.equalsIgnoreCase(a))
                 System.out.println("got in");
             return room;
