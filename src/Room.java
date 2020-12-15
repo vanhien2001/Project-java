@@ -104,7 +104,8 @@ public class Room implements Serializable {
     }
 
     public void xuatthongtin() {
-        System.out.printf("| %-20s%-20s%-15s%15d000d |\n", tenphong, loai, so_giuong, gia);
+        System.out.printf("| %-20s%-20s%-15s%-15s%15d000d%15s |\n", tenphong, loai, so_giuong, boardPackage, gia,
+                booked == true ? "da dat" : "con trong");
     }
 
 }

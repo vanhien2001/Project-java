@@ -141,11 +141,13 @@ public class Menu {
                     f.Xuat_hoa_don(d);
                     break;
                 case 4:
+                    System.out.print("\033[H\033[2J");
+                    System.out.flush();
                     taikhoan(nv);
                     break;
 
                 case 5:
-                    System.out.println("\nDa thoat chuong trinh\n\n");
+                    System.out.println("\nDang xuat thanh cong !\n\n");
                     break;
                 default:
                     System.out.println("\nLua chon khong hop le !!!\n");
@@ -213,10 +215,9 @@ public class Menu {
             System.out.println("*------------------------------------------------------------*");
             System.out.println("|                   SUA THONG TIN TAI KHOAN                  |");
             System.out.println("|                                                            |");
-            System.out.println("|     1. Thay doi ten                                        |");
-            System.out.println("|     2. Thay doi sdt                                        |");
-            System.out.println("|     3. Thay doi dia chi                                    |");
-            System.out.println("|     4. Quay lai                                            |");
+            System.out.println("|     1. Thay doi sdt                                        |");
+            System.out.println("|     2. Thay doi dia chi                                    |");
+            System.out.println("|     3. Quay lai                                            |");
             System.out.println("|                                                            |");
             System.out.println("*------------------------------------------------------------*");
             int x;
@@ -233,25 +234,31 @@ public class Menu {
                 case 1:
                     System.out.print("\033[H\033[2J");
                     System.out.flush();
-                    // ! zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz
+
                     break;
                 case 2:
                     System.out.print("\033[H\033[2J");
                     System.out.flush();
-                    // ! zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz
+                    nv.Xuat_thong_tin_chi_tiet();
+                    System.out.println("Nhap sdt moi");
+                    nv.setSdt();
+                    System.out.println("Da luu thay doi !");
+                    c.write();
                     break;
                 case 3:
                     System.out.print("\033[H\033[2J");
                     System.out.flush();
-                    // ! zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz
-                    break;
-                case 4:
+                    nv.Xuat_thong_tin_chi_tiet();
+                    System.out.println("Nhap dia chi moi");
+                    nv.setDiachi();
+                    System.out.println("Da luu thay doi !");
+                    c.write();
                     break;
                 default:
                     System.out.println("\nLua chon khong hop le !!!\n");
                     break;
             }
-            if (x == 4) {
+            if (x == 3) {
                 break;
             }
         }
@@ -372,7 +379,7 @@ public class Menu {
                 case 5:
                     System.out.print("\033[H\033[2J");
                     System.out.flush();
-                    // !
+                    // ! ------------------------------------------------------------
                     break;
                 case 6:
                     break;
@@ -469,16 +476,16 @@ public class Menu {
             }
             switch (x) {
                 case 1:
-                    // !
+                    a.Suaten_phong();
                     break;
                 case 2:
-                    // !
+                    a.Sualoai_phong();
                     break;
                 case 3:
-                    // !
+                    a.Suasogiuong_phong();
                     break;
                 case 4:
-                    // !
+                    a.Suagia_phong();
                     break;
                 case 5:
                     break;
@@ -537,10 +544,10 @@ public class Menu {
                     c.Xoa_nv_id();
                     break;
                 case 5:
-                    // !;
+                    c.Thangcap_nv();
                     break;
                 case 6:
-                    // !
+                    c.Giangcap_nv();
                     break;
                 case 7:
                     break;
@@ -669,16 +676,10 @@ public class Menu {
             }
             switch (x) {
                 case 1:
-                    sc.nextLine();
-                    System.out.print("Nhap id nhan vien ban can tim : ");
-                    String id = sc.nextLine();
-                    c.Tim_nv_id(id);
+                    c.Tim_nv_id();
                     break;
                 case 2:
-                    sc.nextLine();
-                    System.out.print("Nhap ten nhan vien ban can tim : ");
-                    String name = sc.nextLine();
-                    c.Tim_nv_name(name);
+                    c.Tim_nv_name();
                     break;
                 case 3:
                     break;
