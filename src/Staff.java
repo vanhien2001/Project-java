@@ -135,7 +135,7 @@ public class Staff extends Person {
   }
 
   public void Nhapthongtin(String[] arr) {
-    System.out.println("thiet lap id va mat khau:");
+    System.out.println("Thiet lap id va mat khau:");
     setId(arr);
     setPass();
     nhap_thontin();
@@ -145,4 +145,7 @@ public class Staff extends Person {
 
   public void Xuat_thong_tin() {
   };
+
+  public void Xuat_thong_tin_chi_tiet() {
+  }
 }

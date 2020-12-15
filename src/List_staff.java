@@ -196,8 +196,10 @@ public class List_staff implements Filehandle {
     write();
   }
 
-  public void Xoa_nv_id(String a) throws IOException {
+  public void Xoa_nv_id() throws IOException {
     read();
+    System.out.print("Id nhan vien can xoa : ");
+    String a = sc.nextLine();
     int kt = 0;
     Staff[] arr = new Staff[arrPerson.length - 1];
     for (int i = 0; i <= arr.length; i++) {

@@ -13,18 +13,104 @@ public class Menu {
     public Menu() {
     }
 
-    public void menu() throws IOException {
+    public void Login() throws IOException {
         setup();
         while (true) {
             System.out.println();
             System.out.println("*------------------------------------------------------------*");
-            System.out.println("|                 KHACH SAN XIN CHA0 QUY KHACH               |");
+            System.out.println("|                         XIN CHAO                           |");
+            System.out.println("|                                                            |");
+            System.out.println("|     1. Xem thong tin khach san.                            |");
+            System.out.println("|     2. Truy cap voi quyen nhan vien.                       |");
+            System.out.println("|     3. Truy cap voi quyen quan ly.                         |");
+            System.out.println("|     4. Thoat chuong trinh.                                 |");
+            System.out.println("|                                                            |");
+            System.out.println("*------------------------------------------------------------*");
+            int x;
+            while (true) {
+                try {
+                    System.out.print("\n\nLua chon cua ban : ");
+                    x = Integer.parseInt(sc.nextLine());
+                    break;
+                } catch (Exception ex) {
+                    System.out.print("Cu phap ko chinh xac moi ban nhap lai !!! ");
+                }
+            }
+            switch (x) {
+                case 1:
+                    System.out.print("\033[H\033[2J");
+                    System.out.flush();
+                    hotel.xuatthongtin();
+                    break;
+                case 2:
+                    int kt = 0;
+                    System.out.println("\nNhap id va password cua ban ");
+                    System.out.print("Id : ");
+                    String id = sc.nextLine();
+                    System.out.print("Pass : ");
+                    String pass = sc.nextLine();
+                    for (Staff nv : c.arrPerson) {
+                        if (nv.id.equalsIgnoreCase(id) && nv.manager == false && nv.pass.equals(pass)) {
+                            kt = 1;
+                            System.out.print("\033[H\033[2J");
+                            System.out.flush();
+                            menu(nv);
+                            c.write();
+                            break;
+                        }
+                    }
+                    if (kt == 0) {
+                        System.out.println("Sai thong tin dang nhap !");
+
+                    }
+                    break;
+                case 3:
+                    int kt1 = 0;
+                    System.out.println("\nNhap id va password cua ban ");
+                    System.out.print("Id : ");
+                    String id1 = sc.nextLine();
+                    System.out.print("Pass : ");
+                    String pass1 = sc.nextLine();
+                    for (Staff ql : c.arrPerson) {
+                        if (ql.id.equalsIgnoreCase(id1) && ql.manager == true && ql.pass.equals(pass1)) {
+                            kt1 = 1;
+                            System.out.print("\033[H\033[2J");
+                            System.out.flush();
+                            menu1(ql);
+                            c.write();
+                            break;
+                        }
+                    }
+                    if (kt1 == 0) {
+                        System.out.println("Sai thong tin dang nhap !");
+
+                    }
+                    break;
+
+                case 4:
+                    System.out.println("\nDa thoat chuong trinh\n\n");
+                    break;
+                default:
+                    System.out.println("\nLua chon khong hop le !!!\n");
+                    break;
+            }
+            if (x == 4) {
+                break;
+            }
+        }
+    }
+
+    public void menu(Staff nv) throws IOException {
+        while (true) {
+            System.out.println();
+            System.out.println("*------------------------------------------------------------*");
+            System.out.println("|                         XIN CHAO                           |");
             System.out.println("|                                                            |");
             System.out.println("|     1. Xem thong tin khach san                             |");
             System.out.println("|     2. Dat phong                                           |");
             System.out.println("|     3. Tra phong                                           |");
-            System.out.println("|     4. Muc danh cho quan ly                                |");
-            System.out.println("|     5. Thoat chuong trinh                                  |");
+            System.out.println("|     4. Cai dat tai khoan                                   |");
+            System.out.println("|     5. Dang xuat                                           |");
             System.out.println("|                                                            |");
             System.out.println("*------------------------------------------------------------*");
             int x;
@@ -55,26 +141,7 @@ public class Menu {
                     f.Xuat_hoa_don(d);
                     break;
                 case 4:
-                    int kt = 0;
-                    System.out.println("\nNhap id va password cua ban ");
-                    System.out.print("Id : ");
-                    String id = sc.nextLine();
-                    System.out.print("Pass : ");
-                    String pass = sc.nextLine();
-                    for (Staff ql : c.arrPerson) {
-                        if (ql.id.equalsIgnoreCase(id) && ql instanceof Manager && ql.pass.equals(pass)) {
-                            kt = 1;
-                            System.out.print("\033[H\033[2J");
-                            System.out.flush();
-                            menu1(ql);
-                            c.write();
-                            break;
-                        }
-                    }
-                    if (kt == 0) {
-                        System.out.println("Ban khong phai la quan ly !");
-
-                    }
+                    taikhoan(nv);
                     break;
 
                 case 5:
@@ -90,29 +157,247 @@ public class Menu {
         }
     }
 
+    public void taikhoan(Staff nv) throws IOException {
+        while (true) {
+            System.out.println();
+            System.out.println("*------------------------------------------------------------*");
+            System.out.println("|                        TAI KHOAN                           |");
+            System.out.println("|                                                            |");
+            System.out.println("|     1. Xem thong tin ban than                              |");
+            System.out.println("|     2. Sua thong tin                                       |");
+            System.out.println("|     3. Thay doi password                                   |");
+            System.out.println("|     4. Quay lai                                            |");
+            System.out.println("|                                                            |");
+            System.out.println("*------------------------------------------------------------*");
+            int x;
+            while (true) {
+                try {
+                    System.out.print("\n\nLua chon cua ban : ");
+                    x = Integer.parseInt(sc.nextLine());
+                    break;
+                } catch (Exception ex) {
+                    System.out.print("Cu phap ko chinh xac moi ban nhap lai !!! ");
+                }
+            }
+            switch (x) {
+                case 1:
+                    System.out.print("\033[H\033[2J");
+                    System.out.flush();
+                    nv.Xuat_thong_tin_chi_tiet();
+                    break;
+                case 2:
+                    System.out.print("\033[H\033[2J");
+                    System.out.flush();
+                    Change(nv);
+                    break;
+                case 3:
+                    System.out.print("\033[H\033[2J");
+                    System.out.flush();
+                    nv.resetPass();
+                    break;
+                case 4:
+                    break;
+                default:
+                    System.out.println("\nLua chon khong hop le !!!\n");
+                    break;
+            }
+            if (x == 4) {
+                break;
+            }
+        }
+    }
+
+    public void Change(Staff nv) throws IOException {
+        while (true) {
+            System.out.println();
+            System.out.println("*------------------------------------------------------------*");
+            System.out.println("|                   SUA THONG TIN TAI KHOAN                  |");
+            System.out.println("|                                                            |");
+            System.out.println("|     1. Thay doi ten                                        |");
+            System.out.println("|     2. Thay doi sdt                                        |");
+            System.out.println("|     3. Thay doi dia chi                                    |");
+            System.out.println("|     4. Quay lai                                            |");
+            System.out.println("|                                                            |");
+            System.out.println("*------------------------------------------------------------*");
+            int x;
+            while (true) {
+                try {
+                    System.out.print("\n\nLua chon cua ban : ");
+                    x = Integer.parseInt(sc.nextLine());
+                    break;
+                } catch (Exception ex) {
+                    System.out.print("Cu phap ko chinh xac moi ban nhap lai !!! ");
+                }
+            }
+            switch (x) {
+                case 1:
+                    System.out.print("\033[H\033[2J");
+                    System.out.flush();
+                    // ! zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz
+                    break;
+                case 2:
+                    System.out.print("\033[H\033[2J");
+                    System.out.flush();
+                    // ! zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz
+                    break;
+                case 3:
+                    System.out.print("\033[H\033[2J");
+                    System.out.flush();
+                    // ! zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz
+                    break;
+                case 4:
+                    break;
+                default:
+                    System.out.println("\nLua chon khong hop le !!!\n");
+                    break;
+            }
+            if (x == 4) {
+                break;
+            }
+        }
+    }
+
     public void menu1(Staff ql) throws IOException {
-        System.out.print("\033[H\033[2J");
-        System.out.flush();
         while (true) {
             System.out.println();
             System.out.println("*------------------------------------------------------------*");
             System.out.println("|                     XIN CHAO QUAN LY                       |");
             System.out.println("|                                                            |");
-            System.out.println("|     1.  Xem danh sach phong                                |");
-            System.out.println("|     2.  Xem danh sach phong trong                          |");
-            System.out.println("|     3.  Them phong                                         |");
-            System.out.println("|     4.  Xoa phong                                          |");
-            System.out.println("|     5.  Xem danh sach dich vu                              |");
-            System.out.println("|     6.  Sua thong tin dich vu                              |");
-            System.out.println("|     7.  Them dich vu                                       |");
-            System.out.println("|     8.  Xoa dich vu                                        |");
-            System.out.println("|     9.  Xem danh sach nhan vien                            |");
-            System.out.println("|     10. Tim thong tin nhan vien                            |");
-            System.out.println("|     11. Them nhan vien                                     |");
-            System.out.println("|     12. Xoa nhan vien                                      |");
-            System.out.println("|     13. Xem danh sach khach hang                           |");
-            System.out.println("|     14. Thay doi password                                  |");
-            System.out.println("|     15. Quay lai                                           |");
+            System.out.println("|     1. Xem thong tin khach san                             |");
+            System.out.println("|     2. Dat phong                                           |");
+            System.out.println("|     3. Tra phong                                           |");
+            System.out.println("|     4. Quan ly thong tin khach san                         |");
+            System.out.println("|     5. Cai dat tai khoan                                   |");
+            System.out.println("|     6. Dang xuat                                           |");
+            System.out.println("|                                                            |");
+            System.out.println("*------------------------------------------------------------*");
+            int x;
+            while (true) {
+                try {
+                    System.out.print("\n\nLua chon cua ban : ");
+                    x = Integer.parseInt(sc.nextLine());
+                    break;
+                } catch (Exception ex) {
+                    System.out.print("Cu phap ko chinh xac moi ban nhap lai !!! ");
+                }
+            }
+            switch (x) {
+                case 1:
+                    System.out.print("\033[H\033[2J");
+                    System.out.flush();
+                    hotel.xuatthongtin();
+                    break;
+                case 2:
+                    System.out.print("\033[H\033[2J");
+                    System.out.flush();
+                    d.Dat_phong(a, b);
+                    break;
+                case 3:
+                    System.out.print("\033[H\033[2J");
+                    System.out.flush();
+
+                    f.Xuat_hoa_don(d);
+                    break;
+                case 4:
+                    System.out.print("\033[H\033[2J");
+                    System.out.flush();
+                    menu2(ql);
+                    break;
+                case 5:
+                    System.out.print("\033[H\033[2J");
+                    System.out.flush();
+                    taikhoan(ql);
+                    break;
+
+                case 6:
+                    System.out.println("\nDang xuat thanh cong !\n\n");
+                    break;
+                default:
+                    System.out.println("\nLua chon khong hop le !!!\n");
+                    break;
+            }
+            if (x == 6) {
+                break;
+            }
+        }
+    }
+
+    public void menu2(Staff ql) throws IOException {
+        System.out.print("\033[H\033[2J");
+        System.out.flush();
+        while (true) {
+            System.out.println();
+            System.out.println("*------------------------------------------------------------*");
+            System.out.println("|                QUAN LY THONG TIN KHACH SAN                 |");
+            System.out.println("|                                                            |");
+            System.out.println("|     1. Quan ly thong tin phong                             |");
+            System.out.println("|     2. Quan ly thong tin dich vu                           |");
+            System.out.println("|     3. Quan ly thong tin nhan vien                         |");
+            System.out.println("|     4. Quan ly thong tin khach hang                        |");
+            System.out.println("|     5. Thong ke khach san                                  |");
+            System.out.println("|     6. Quay lai                                            |");
+            System.out.println("|                                                            |");
+            System.out.println("*------------------------------------------------------------*");
+            int x;
+            while (true) {
+                try {
+                    System.out.print("\n\nLua chon cua ban : ");
+                    x = Integer.parseInt(sc.nextLine());
+                    break;
+                } catch (Exception ex) {
+                    System.out.print("Cu phap ko chinh xac moi ban nhap lai !!! ");
+                }
+            }
+            switch (x) {
+                case 1:
+                    System.out.print("\033[H\033[2J");
+                    System.out.flush();
+                    room();
+                    break;
+                case 2:
+                    System.out.print("\033[H\033[2J");
+                    System.out.flush();
+                    dichvu();
+                    break;
+                case 3:
+                    System.out.print("\033[H\033[2J");
+                    System.out.flush();
+                    staff();
+                    break;
+                case 4:
+                    System.out.print("\033[H\033[2J");
+                    System.out.flush();
+                    d.Xuatdsphieu(a);
+                    break;
+                case 5:
+                    System.out.print("\033[H\033[2J");
+                    System.out.flush();
+                    // !
+                    break;
+                case 6:
+                    break;
+                default:
+                    System.out.println("\nLua chon khong hop le !!!\n");
+                    break;
+            }
+            if (x == 6) {
+                break;
+            }
+        }
+    }
+
+    public void room() throws IOException {
+        while (true) {
+            System.out.println();
+            System.out.println("*------------------------------------------------------------*");
+            System.out.println("|                   QUAN LY THONG TIN PHONG                  |");
+            System.out.println("|                                                            |");
+            System.out.println("|     1. Xuat danh sach phong                                |");
+            System.out.println("|     2. Xuat danh sach phong trong                          |");
+            System.out.println("|     3. Them phong                                          |");
+            System.out.println("|     4. Xoa phong                                           |");
+            System.out.println("|     5. Sua thong tin phong                                 |");
+            System.out.println("|     6. Quay lai                                            |");
             System.out.println("|                                                            |");
             System.out.println("*------------------------------------------------------------*");
             int x;
@@ -140,60 +425,220 @@ public class Menu {
                     a.Them_room();
                     break;
                 case 4:
-                    sc.nextLine();
-                    System.out.print("Nhap ten phong muon xoa : ");
-                    String e = sc.nextLine();
-                    a.Xoa_room(e);
+                    a.Xoa_room();
                     break;
                 case 5:
                     System.out.print("\033[H\033[2J");
                     System.out.flush();
-                    b.Xuatdsdichvu();
+                    room1();
                     break;
                 case 6:
-                    Sua_dv();
-                    break;
-                case 7:
-                    b.Them_dv();
-                    break;
-                case 8:
-                    sc.nextLine();
-                    System.out.print("Nhap ten dich vu muon xoa : ");
-                    String g = sc.nextLine();
-                    b.Xoa_dv(g);
-                    break;
-                case 9:
-                    System.out.print("\033[H\033[2J");
-                    System.out.flush();
-                    c.Xuat_ds_nv();
-                    break;
-                case 10:
-                    Tim_nv();
-                    break;
-                case 11:
-                    Them_nv();
-                    break;
-                case 12:
-                    sc.nextLine();
-                    System.out.print("Nhap id nhan vien ban can xoa : ");
-                    String id = sc.nextLine();
-                    c.Xoa_nv_id(id);
-                    break;
-                case 13:
-                    System.out.print("\033[H\033[2J");
-                    System.out.flush();
-                    d.Xuatdsphieu(a);
-                    break;
-                case 14:
-                    ql.setPass();
-                    break;
-                case 15:
                     break;
                 default:
                     System.out.println("\nLua chon khong hop le !!!\n");
                     break;
             }
-            if (x == 15) {
+            if (x == 6) {
+                break;
+            }
+        }
+    }
+
+    public void room1() throws IOException {
+        while (true) {
+            System.out.println();
+            System.out.println("*------------------------------------------------------------*");
+            System.out.println("|                     SUA THONG TIN PHONG                    |");
+            System.out.println("|                                                            |");
+            System.out.println("|     1. Thay doi ten phong                                  |");
+            System.out.println("|     2. Thay doi loai phong                                 |");
+            System.out.println("|     3. Thay doi so giuong                                  |");
+            System.out.println("|     4. Thay doi so gia                                     |");
+            System.out.println("|     5. Quay lai                                            |");
+            System.out.println("|                                                            |");
+            System.out.println("*------------------------------------------------------------*");
+            int x;
+            while (true) {
+                try {
+                    System.out.print("\n\nLua chon cua ban : ");
+                    x = Integer.parseInt(sc.nextLine());
+                    break;
+                } catch (Exception ex) {
+                    System.out.print("Cu phap ko chinh xac moi ban nhap lai !!! ");
+                }
+            }
+            switch (x) {
+                case 1:
+                    // !
+                    break;
+                case 2:
+                    // !
+                    break;
+                case 3:
+                    // !
+                    break;
+                case 4:
+                    // !
+                    break;
+                case 5:
+                    break;
+                default:
+                    System.out.println("\nLua chon khong hop le !!!\n");
+                    break;
+            }
+            if (x == 5) {
+                break;
+            }
+        }
+    }
+
+    public void staff() throws IOException {
+        while (true) {
+            System.out.println();
+            System.out.println("*------------------------------------------------------------*");
+            System.out.println("|                 QUAN LY THONG TIN NHAN VIEN                |");
+            System.out.println("|                                                            |");
+            System.out.println("|     1. Xuat danh sach nhan vien                            |");
+            System.out.println("|     2. Tim thong tin nhan vien                             |");
+            System.out.println("|     3. Them nhan vien                                      |");
+            System.out.println("|     4. Xoa nhan vien                                       |");
+            System.out.println("|     5. Thang cap                                           |");
+            System.out.println("|     6. Giang cap                                           |");
+            System.out.println("|     7. Quay lai                                            |");
+            System.out.println("|                                                            |");
+            System.out.println("*------------------------------------------------------------*");
+            int x;
+            while (true) {
+                try {
+                    System.out.print("\n\nLua chon cua ban : ");
+                    x = Integer.parseInt(sc.nextLine());
+                    break;
+                } catch (Exception ex) {
+                    System.out.print("Cu phap ko chinh xac moi ban nhap lai !!! ");
+                }
+            }
+            switch (x) {
+                case 1:
+                    System.out.print("\033[H\033[2J");
+                    System.out.flush();
+                    c.Xuat_ds_nv();
+                    break;
+                case 2:
+                    System.out.print("\033[H\033[2J");
+                    System.out.flush();
+                    Tim_nv();
+                    break;
+                case 3:
+                    System.out.print("\033[H\033[2J");
+                    System.out.flush();
+                    Them_nv();
+                    break;
+                case 4:
+                    c.Xoa_nv_id();
+                    break;
+                case 5:
+                    // !;
+                    break;
+                case 6:
+                    // !
+                    break;
+                case 7:
+                    break;
+                default:
+                    System.out.println("\nLua chon khong hop le !!!\n");
+                    break;
+            }
+            if (x == 7) {
+                break;
+            }
+        }
+    }
+
+    public void dichvu() throws IOException {
+        while (true) {
+            System.out.println();
+            System.out.println("*------------------------------------------------------------*");
+            System.out.println("|                 QUAN LY THONG TIN DICH VU                  |");
+            System.out.println("|                                                            |");
+            System.out.println("|     1. Xuat danh sach dich vu                              |");
+            System.out.println("|     2. Them dich vu                                        |");
+            System.out.println("|     3. Xoa dich vu                                         |");
+            System.out.println("|     4. Sua thong tin dich vu                               |");
+            System.out.println("|     5. Quay lai                                            |");
+            System.out.println("|                                                            |");
+            System.out.println("*------------------------------------------------------------*");
+            int x;
+            while (true) {
+                try {
+                    System.out.print("\n\nLua chon cua ban : ");
+                    x = Integer.parseInt(sc.nextLine());
+                    break;
+                } catch (Exception ex) {
+                    System.out.print("Cu phap ko chinh xac moi ban nhap lai !!! ");
+                }
+            }
+            switch (x) {
+                case 1:
+                    System.out.print("\033[H\033[2J");
+                    System.out.flush();
+                    b.Xuatdsdichvu();
+                    break;
+                case 2:
+                    b.Them_dv();
+                    break;
+                case 3:
+                    b.Xoa_dv();
+                    break;
+                case 4:
+                    dichvu1();
+                    break;
+                case 5:
+                    break;
+                default:
+                    System.out.println("\nLua chon khong hop le !!!\n");
+                    break;
+            }
+            if (x == 5) {
+                break;
+            }
+        }
+    }
+
+    public void dichvu1() throws IOException {
+        while (true) {
+            System.out.println();
+            System.out.println("*------------------------------------------------------------*");
+            System.out.println("|                    SUA THONG TIN DICH VU                   |");
+            System.out.println("|                                                            |");
+            System.out.println("|     1. Thay doi ten dich vu                                |");
+            System.out.println("|     2. Thay doi so gia                                     |");
+            System.out.println("|     3. Quay lai                                            |");
+            System.out.println("|                                                            |");
+            System.out.println("*------------------------------------------------------------*");
+            int x;
+            while (true) {
+                try {
+                    System.out.print("\n\nLua chon cua ban : ");
+                    x = Integer.parseInt(sc.nextLine());
+                    break;
+                } catch (Exception ex) {
+                    System.out.print("Cu phap ko chinh xac moi ban nhap lai !!! ");
+                }
+            }
+            switch (x) {
+                case 1:
+                    b.Suaten_dv();
+                    break;
+                case 2:
+                    b.Suagia_dv();
+                    break;
+                case 3:
+                    break;
+                default:
+                    System.out.println("\nLua chon khong hop le !!!\n");
+                    break;
+            }
+            if (x == 3) {
                 break;
             }
         }
