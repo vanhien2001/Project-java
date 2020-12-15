@@ -123,8 +123,10 @@ public class List_rooms implements Filehandle, Serializable {
         write();
     }
 
-    public void Xoa_room(String a) throws IOException {
+    public void Xoa_room() throws IOException {
         read();
+        System.out.print("Nhap ten phong can xoa : ");
+        String a = sc.nextLine();
         int kt = 0;
         Room[] arr = new Room[arrRooms.length - 1];
         for (int i = 0; i <= arr.length; i++) {

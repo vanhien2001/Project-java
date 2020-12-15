@@ -107,8 +107,10 @@ public class List_dichvu implements Filehandle {
         write();
     }
 
-    public void Xoa_dv(String a) throws IOException {
+    public void Xoa_dv() throws IOException {
         read();
+        System.out.print("Nhap ten dich vu can xoa : ");
+        String a = sc.nextLine();
         int kt = 0;
         Dichvu[] arr = new Dichvu[arrs.length - 1];
         for (int i = 0; i <= arr.length; i++) {
