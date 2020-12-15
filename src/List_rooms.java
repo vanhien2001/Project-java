@@ -46,15 +46,15 @@ public class List_rooms implements Filehandle, Serializable {
 
     public void setup() throws IOException {
         arrRooms = new Room[9];
-        arrRooms[0] = new RegularRoom("101", 1, 100);
-        arrRooms[1] = new RegularRoom("102", 2, 150);
-        arrRooms[2] = new RegularRoom("103", 3, 200);
-        arrRooms[3] = new RegularRoom("201", 1, 100);
-        arrRooms[4] = new RegularRoom("202", 2, 150);
-        arrRooms[5] = new RegularRoom("203", 3, 200);
-        arrRooms[6] = new VipRoom("301", 1, 200);
-        arrRooms[7] = new VipRoom("302", 2, 250);
-        arrRooms[8] = new VipRoom("303", 3, 300);
+        arrRooms[0] = new RegularRoom("101", 1, 200);
+        arrRooms[1] = new RegularRoom("102", 2, 250);
+        arrRooms[2] = new RegularRoom("103", 3, 300);
+        arrRooms[3] = new RegularRoom("201", 1, 300);
+        arrRooms[4] = new RegularRoom("202", 2, 350);
+        arrRooms[5] = new RegularRoom("203", 3, 400);
+        arrRooms[6] = new VipRoom("301", 1, 400);
+        arrRooms[7] = new VipRoom("302", 2, 450);
+        arrRooms[8] = new VipRoom("303", 3, 500);
         write();
     }
 
@@ -119,8 +119,10 @@ public class List_rooms implements Filehandle, Serializable {
     public Room Timkiemphong(String a) throws IOException {
         read();
         for (Room room : arrRooms) {
+            System.out.println(room.tenphong);
             if (room.tenphong.equalsIgnoreCase(a))
-                return room;
+                System.out.println("got in");
+            return room;
         }
         return null;
     }

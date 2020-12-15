@@ -7,7 +7,7 @@ public class Phieudatphong implements Serializable {
     List_rooms arrRoom;
     Customer customer;
     String tenphong, tendichvu;
-    int solan;
+    Staff nv = new Staff();
     Dichvu[] arr_dichvu = new Dichvu[0];;
     int s = 0, x, n = 0;
     transient Scanner sc = new Scanner(System.in);
@@ -19,9 +19,10 @@ public class Phieudatphong implements Serializable {
         tendichvu = null;
     }
 
-    public Phieudatphong(List_rooms arrRoom, Customer customer, String tenphong, Dichvu a, Dichvu b) {
+    public Phieudatphong(List_rooms arrRoom, Customer customer, String tenphong, Dichvu a, Dichvu b, Staff nv) {
         this.customer = customer;
         this.tenphong = tenphong;
+        this.nv = nv;
         arr_dichvu = new Dichvu[2];
         arr_dichvu[0] = a;
         arr_dichvu[1] = b;
@@ -39,7 +40,7 @@ public class Phieudatphong implements Serializable {
 
     public void Dat_phong(List_rooms arrRoom, List_dichvu dichvu) throws IOException {
         boolean kt = false;
-        arrRoom.Xuatdsphongtrong();
+        arrRoom.Xuatdsphong();
         while (true) {
             System.out.print("Moi ban chon phong : ");
             tenphong = sc.nextLine();
@@ -55,7 +56,7 @@ public class Phieudatphong implements Serializable {
                 }
             }
             if (!kt) {
-                System.out.println("Ten phong khong dung moi ban nhap lai !");
+                System.out.println("Phong khong hop le moi ban nhap lai !");
             } else {
                 break;
             }
@@ -86,13 +87,21 @@ public class Phieudatphong implements Serializable {
         }
     }
 
+    // !not fixing yet :((((((((
     public int Tongtien() throws IOException {
         for (Dichvu dv : arr_dichvu) {
             s += dv.gia;
         }
-        s += arrRoom.Timkiemphong(tenphong).gia;
+
+        // !not fixing yet :((((((((
+        // System.out.println(arrRoom.Timkiemphong(tenphong) == null ? "null" : "deo
+        // null");
+
+        // int priceRoom = arrRoom.Timkiemphong(tenphong).gia;
+        // s += priceRoom;
         return s;
     }
+    // !not fixing yet :((((((((
 
     public void Xuat_thong_tin_dichvu() {
         for (Dichvu arr : arr_dichvu) {
@@ -121,7 +130,7 @@ public class Phieudatphong implements Serializable {
                 a += arr_dichvu[i].tendichvu + ",";
             }
         }
-        System.out.printf("| %-25s%-15s%-60s%-15s%-60s |\n", customer.name, customer.cmnd, customer.address, tenphong,
-                a);
+        System.out.printf("| %-25s%-15s%-60s%-15s%-40s%-15s%-25s%15s |\n", customer.name, customer.cmnd,
+                customer.address, tenphong, a, customer.dayBooking, nv.name, nv.id);
     }
 }

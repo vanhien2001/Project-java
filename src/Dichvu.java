@@ -3,7 +3,7 @@ import java.util.Scanner;
 
 public class Dichvu implements Serializable {
     String tendichvu;
-    int gia;
+    int gia, dem;
     boolean booked = false;
     transient Scanner sc = new Scanner(System.in);
 
