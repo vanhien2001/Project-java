@@ -52,8 +52,7 @@ public class Service_staff extends Staff {
     }
 
     public void Xuat_thong_tin_chi_tiet() {
-        System.out.println("\n*------------------------------------------------------------*");
-        System.out.println("|                   THONG TIN NHAN VIEN                      |");
+
         System.out.println("|                                                            |");
         System.out.printf("|%-40s%-20s|\n", " Nhan vien : " + name, "cmnd: " + cmnd);
         System.out.printf("|%-60s|\n", " Sdt : " + sdt);
@@ -62,6 +61,5 @@ public class Service_staff extends Staff {
         System.out.printf("|%-40s%-20s|\n", " Cong viec : " + posision, "luong : " + String.valueOf(salary));
         System.out.printf("|%-60s|\n", " Thoi diem bat dau lam viec : " + dayBegin);
         System.out.println("|                                                            |");
-        System.out.println("*------------------------------------------------------------*\n");
     }
 }
