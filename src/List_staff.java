@@ -232,7 +232,7 @@ public class List_staff implements Filehandle {
     arrPerson[2] = new Service_staff("Phung Duy Khang", "0936642182", "049201000116", "25/27", "Son Ky", "Son Ky",
         "Tan Phu", "Tp.HCM", "3119560029", "pdk3107", new Time(1, 11, 2020), 30000, "Tiep tan");
     arrPerson[3] = new Service_staff("Nguyen Thai Phuong", "0936642182", "049201000116", "25/27", "Son Ky", "Son Ky",
-        "Tan Phu", "Tp.HCM", "3119560029", "123", new Time(1, 11, 2020), 30000, "Tiep tan");
+        "Tan Phu", "Tp.HCM", "3119560058", "123", new Time(1, 11, 2020), 30000, "Tiep tan");
     write();
   }
 }
