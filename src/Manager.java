@@ -1,3 +1,4 @@
+import java.io.IOException;
 import java.util.Scanner;
 
 public class Manager extends Staff {
@@ -30,7 +31,7 @@ public class Manager extends Staff {
     }
 
     public void Xuat_thong_tin() {
-        System.out.printf("| %-15s%-15s%-25s%-25s%-15s%15d000d |\n", chucvu, id, name, posision, dayBegin, salary);
+        System.out.printf("| %-15s%-15s%-25s%-25s%-15s%18dd |\n", chucvu, id, name, posision, dayBegin, salary * 1000);
     }
 
     public void Xuat_thong_tin_chi_tiet() {
@@ -39,8 +40,12 @@ public class Manager extends Staff {
         System.out.printf("|%-60s|\n", " Sdt : " + sdt);
         System.out.printf("|%-60s|\n", " Dia chi : " + address);
         System.out.printf("|%-30s%-30s|\n", " Id : " + id, "pass: " + pass);
-        System.out.printf("|%-40s%-20s|\n", " Cong viec : " + posision, "luong : " + String.valueOf(salary));
+        System.out.printf("|%-40s%-20s|\n", " Cong viec : " + posision, "luong : " + salary * 1000);
         System.out.printf("|%-60s|\n", " Thoi diem bat dau lam viec : " + dayBegin);
         System.out.println("|                                                            |");
     }
+
+    public int tinh_luong(int k, Hotel hotel) throws IOException {
+        return hotel.getDoanhthu(k) >= doanhthu ? salary * 40 / 100 + salary : salary;
+    };
 }

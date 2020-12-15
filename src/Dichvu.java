@@ -56,6 +56,6 @@ public class Dichvu implements Serializable {
     }
 
     public void xuatthongtin() {
-        System.out.printf("|  %-30s%15d000d |\n", tendichvu, gia);
+        System.out.printf("|  %-30s%18dd |\n", tendichvu, gia * 1000);
     }
 }
