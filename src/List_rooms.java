@@ -46,15 +46,15 @@ public class List_rooms implements Filehandle, Serializable {
 
     public void setup() throws IOException {
         arrRooms = new Room[9];
-        arrRooms[0] = new Room("101", "normal", 1, 100);
-        arrRooms[1] = new Room("102", "normal", 2, 150);
-        arrRooms[2] = new Room("103", "normal", 3, 200);
-        arrRooms[3] = new Room("201", "normal", 1, 100);
-        arrRooms[4] = new Room("202", "normal", 2, 150);
-        arrRooms[5] = new Room("203", "normal", 3, 200);
-        arrRooms[6] = new Room("301", "vip", 1, 200);
-        arrRooms[7] = new Room("302", "vip", 2, 250);
-        arrRooms[8] = new Room("303", "vip", 3, 300);
+        arrRooms[0] = new Room("101", 1, 100);
+        arrRooms[1] = new Room("102", 2, 150);
+        arrRooms[2] = new Room("103", 3, 200);
+        arrRooms[3] = new Room("201", 1, 100);
+        arrRooms[4] = new Room("202", 2, 150);
+        arrRooms[5] = new Room("203", 3, 200);
+        arrRooms[6] = new Room("301", 1, 200);
+        arrRooms[7] = new Room("302", 2, 250);
+        arrRooms[8] = new Room("303", 3, 300);
         write();
     }
 

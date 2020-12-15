@@ -6,18 +6,17 @@ public class Room implements Serializable {
     String loai;
     int so_giuong, gia;
     boolean booked = false;
+    String boardPackage;
     transient Scanner sc = new Scanner(System.in);
 
     public Room() {
         tenphong = null;
-        loai = null;
         so_giuong = 0;
         gia = 0;
     }
 
-    public Room(String tenphong, String loai, int so_giuong, int gia) {
+    public Room(String tenphong, int so_giuong, int gia) {
         this.tenphong = tenphong;
-        this.loai = loai;
         this.so_giuong = so_giuong;
         this.gia = gia;
     }
@@ -55,13 +54,16 @@ public class Room implements Serializable {
     }
 
     public void setTenphong() {
-        System.out.print("Ten phong : ");
-        this.tenphong = sc.nextLine();
-    }
+        while (true) {
 
-    public void setLoai() {
-        System.out.print("Loai : ");
-        this.loai = sc.nextLine();
+            System.out.print("Ten phong : ");
+            this.tenphong = sc.nextLine();
+            if (tenphong.isEmpty()) {
+                System.out.println("xin vui long khong bo trong");
+            } else {
+                break;
+            }
+        }
     }
 
     public void setBooked(boolean booked) {
@@ -77,7 +79,6 @@ public class Room implements Serializable {
             try {
                 System.out.print("So giuong : ");
                 this.so_giuong = Integer.parseInt(sc.nextLine());
-                break;
             } catch (Exception ex) {
                 System.out.println("Cu phap ko chinh xac moi ban nhap lai !!! \n");
             }
@@ -98,7 +99,6 @@ public class Room implements Serializable {
 
     public void nhap_thontin() {
         setTenphong();
-        setLoai();
         setSo_giuong();
         setGia();
     }
