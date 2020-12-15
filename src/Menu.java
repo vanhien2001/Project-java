@@ -132,13 +132,13 @@ public class Menu {
                 case 2:
                     System.out.print("\033[H\033[2J");
                     System.out.flush();
-                    d.Dat_phong(a, b);
+                    d.Dat_phong(a, b, nv);
                     break;
                 case 3:
                     System.out.print("\033[H\033[2J");
                     System.out.flush();
 
-                    f.Xuat_hoa_don(d);
+                    f.Xuat_hoa_don(d, a);
                     break;
                 case 4:
                     System.out.print("\033[H\033[2J");
@@ -297,13 +297,13 @@ public class Menu {
                 case 2:
                     System.out.print("\033[H\033[2J");
                     System.out.flush();
-                    d.Dat_phong(a, b);
+                    d.Dat_phong(a, b, ql);
                     break;
                 case 3:
                     System.out.print("\033[H\033[2J");
                     System.out.flush();
 
-                    f.Xuat_hoa_don(d);
+                    f.Xuat_hoa_don(d, a);
                     break;
                 case 4:
                     System.out.print("\033[H\033[2J");
@@ -379,7 +379,7 @@ public class Menu {
                 case 5:
                     System.out.print("\033[H\033[2J");
                     System.out.flush();
-                    // ! ------------------------------------------------------------
+                    Thong_ke();
                     break;
                 case 6:
                     break;
@@ -784,6 +784,54 @@ public class Menu {
         a.setup();
         b.setup();
         c.setup();
-        d.setup(a);
+        d.setup(a, b, c);
+    }
+
+    public void Thong_ke() throws IOException {
+        int s, k;
+        System.out.println("\n*--------------------------------------------------------------*");
+        System.out.println("|                         THONG KE                             |");
+        for (int i = 11; i <= 12; i++) {
+            k = 0;
+            System.out.println("|                                                              |");
+            System.out.printf("| %-60s |\n", "Thang " + i + " :");
+            for (Room room : a.arrRooms) {
+                room.dem = 0;
+            }
+            for (Dichvu dv : b.arrs) {
+                dv.dem = 0;
+            }
+            for (Phieudatphong phieu : d.arrBooked) {
+                if (phieu.customer.dayBooking.getMonth() == i) {
+                    a.Timkiemphong(phieu.tenphong).dem++;
+                    for (Dichvu dv1 : phieu.arr_dichvu) {
+                        b.Timkiemdichvu(dv1.tendichvu).dem++;
+                    }
+                }
+                a.write();
+                b.write();
+            }
+            System.out.println("|                                                              |");
+            System.out.printf("| %-20s%20s%20s |\n", "Ten phong", "So lan duoc dat", "Doanh thu");
+            a.read();
+            for (Room room : a.arrRooms) {
+                s = room.gia * room.dem * 1000;
+                k += s;
+                System.out.printf("| %-30s%10d%19dd |\n", room.tenphong, room.dem, s);
+            }
+            System.out.println("|                                                              |");
+            System.out.printf("| %-20s%20s%20s |\n", "Ten dich vu", "So lan duoc su dung", "Doanh thu");
+            b.read();
+            for (Dichvu dv : b.arrs) {
+                s = dv.gia * dv.dem * 1000;
+                k += s;
+                System.out.printf("| %-30s%10d%19dd |\n", dv.tendichvu, dv.dem, s);
+            }
+            System.out.println("|                                                              |");
+            System.out.printf("| %-60s |\n", "Tong doanh thu : " + k + "d");
+
+        }
+        System.out.println("|                                                              |");
+        System.out.println("*--------------------------------------------------------------*\n");
     }
 }

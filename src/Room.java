@@ -4,7 +4,7 @@ import java.util.Scanner;
 public class Room implements Serializable {
     String tenphong;
     String loai;
-    int so_giuong, gia;
+    int so_giuong, gia, dem;
     boolean booked = false;
     String boardPackage;
     transient Scanner sc = new Scanner(System.in);

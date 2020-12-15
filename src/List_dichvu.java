@@ -91,7 +91,7 @@ public class List_dichvu implements Filehandle {
     public Dichvu Timkiemdichvu(String a) throws IOException {
         read();
         for (Dichvu arr : arrs) {
-            if (arr.tendichvu == a)
+            if (arr.tendichvu.equalsIgnoreCase(a))
                 return arr;
         }
         return null;
