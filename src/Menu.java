@@ -2,14 +2,14 @@ import java.io.IOException;
 import java.util.Scanner;
 
 public class Menu {
-    Hotel hotel;
+    Hotel hotel = new Hotel("Lotus Cental", 5,
+            new Address("102", "Le Thi Hong Gam", "Nguyen Thai Binh", "1", "Tp.HCM"));;
     Scanner sc = new Scanner(System.in);
 
     public Menu() {
     }
 
     public void Login() throws IOException {
-        setup();
         hotel.read_All();
         while (true) {
             System.out.println();
@@ -776,7 +776,6 @@ public class Menu {
     }
 
     public void setup() throws IOException {
-        hotel = new Hotel("Lotus Cental", 5, new Address("102", "Le Thi Hong Gam", "Nguyen Thai Binh", "1", "Tp.HCM"));
         hotel.a.setup();
         hotel.b.setup();
         hotel.c.setup();
