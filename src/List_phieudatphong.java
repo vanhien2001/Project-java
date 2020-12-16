@@ -81,8 +81,8 @@ public class List_phieudatphong implements Filehandle {
                 "1", "Tan Phu", "Tp.HCM", new Time(1, 11, 2020)), "102", b.arrs[3], b.arrs[5], c.arrPerson[1]);
         arrBooked[1] = new Phieudatphong(a, new Customer("Le Thi B", "0969696969", "451258746231", "25", "Au co", "1",
                 "Tan Phu", "Tp.HCM", new Time(3, 11, 2020)), "103", b.arrs[1], b.arrs[2], c.arrPerson[2]);
-        arrBooked[2] = new Phieudatphong(a, new Customer("Phung Duy C", "0969696969", "784513548965", "29", "Au co",
-                "1", "Tan Phu", "Tp.HCM", new Time(5, 11, 2020)), "203", b.arrs[4], b.arrs[6], c.arrPerson[3]);
+        arrBooked[2] = new Phieudatphong(a, new Customer("Phung Duy C", "0969696969", "123456789", "29", "Au co", "1",
+                "Tan Phu", "Tp.HCM", new Time(5, 11, 2020)), "203", b.arrs[4], b.arrs[6], c.arrPerson[3]);
         write();
     }
 }

@@ -119,8 +119,9 @@ public class List_rooms implements Filehandle, Serializable {
     public Room Timkiemphong(String a) throws IOException {
         read();
         for (Room room : arrRooms) {
-            if (room.tenphong.equalsIgnoreCase(a))
+            if (room.tenphong.equalsIgnoreCase(a)) {
                 return room;
+            }
         }
         return null;
     }
@@ -136,10 +137,32 @@ public class List_rooms implements Filehandle, Serializable {
     public void Them_room() throws IOException {
         read();
         Room a = new Room();
-        a.nhap_thontin(ArrayOfRoomName(arrRooms));
-        arrRooms = Arrays.copyOf(arrRooms, arrRooms.length + 1);
-        arrRooms[arrRooms.length - 1] = a;
-        System.out.println("Them phong thanh cong !");
+        int x;
+        while (true) {
+            try {
+                System.out.print(
+                        "Nhap thong tin phong (Nhan 1 de them phong vip, nhan lon hon 2 de them phong thuong): ");
+                x = Integer.parseInt(sc.nextLine());
+                break;
+            } catch (Exception ex) {
+                System.out.println("Cu phap ko chinh xac moi ban nhap lai !!! \n");
+            }
+        }
+        if (x == 1) {
+            a = new VipRoom();
+            a.nhap_thontin(ArrayOfRoomName(arrRooms));
+            arrRooms = Arrays.copyOf(arrRooms, arrRooms.length + 1);
+            arrRooms[arrRooms.length - 1] = a;
+            System.out.println("Them phong thanh cong !");
+        } else if (x == 2) {
+            a = new RegularRoom();
+            a.nhap_thontin(ArrayOfRoomName(arrRooms));
+            arrRooms = Arrays.copyOf(arrRooms, arrRooms.length + 1);
+            arrRooms[arrRooms.length - 1] = a;
+            System.out.println("Them phong thanh cong !");
+        } else {
+            System.out.println("Lua chon ko hop le !");
+        }
         write();
     }
 
