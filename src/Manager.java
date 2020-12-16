@@ -49,6 +49,8 @@ public class Manager extends Staff {
     }
 
     public int tinh_luong(int k, Hotel hotel) throws IOException {
-        return hotel.getDoanhthu(k) >= doanhthu ? salary * 40 / 100 + salary : salary;
-    };
+        return hotel.getDoanhthu(k) >= doanhthu ? salary * 50 / 100 + salary
+                : hotel.getDoanhthu(k) >= doanhthu1 ? salary * 20 / 100 + salary
+                        : hotel.getDoanhthu(k) >= doanhthu2 ? salary * 10 / 100 + salary : salary;
+    }
 }

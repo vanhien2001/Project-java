@@ -9,6 +9,7 @@ import java.io.ObjectOutputStream;
 public class List_staff extends Filehandle {
     int n;
     Staff[] arrPerson;
+    Staff[] arrLogin = new Staff[1];
 
     transient Scanner sc = new Scanner(System.in);
 
@@ -39,6 +40,33 @@ public class List_staff extends Filehandle {
         try {
             oo = new ObjectOutputStream(new FileOutputStream(file_staff));
             oo.writeObject(arrPerson);
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        } finally {
+            oo.close();
+        }
+    }
+
+    public void read1() throws IOException {
+        ObjectInputStream oi = null;
+        try {
+            oi = new ObjectInputStream(new FileInputStream(file_login));
+            arrLogin = (Staff[]) oi.readObject();
+
+        } catch (IOException ex) {
+            System.out.println(ex.toString());
+        } catch (ClassNotFoundException ex) {
+            System.out.println(ex.toString());
+        } finally {
+            oi.close();
+        }
+    }
+
+    public void write1() throws IOException {
+        ObjectOutputStream oo = null;
+        try {
+            oo = new ObjectOutputStream(new FileOutputStream(file_login));
+            oo.writeObject(arrLogin);
         } catch (IOException ex) {
             ex.printStackTrace();
         } finally {
@@ -283,5 +311,25 @@ public class List_staff extends Filehandle {
         }
         System.out.println("|                                          |");
         System.out.println("|------------------------------------------|\n");
+    }
+
+    public void Lich_su(Staff nv) throws IOException {
+        read1();
+        arrLogin = Arrays.copyOf(arrLogin, arrLogin.length + 1);
+        arrLogin[arrLogin.length - 1] = nv;
+        write1();
+    }
+
+    public void Xuat_login() throws IOException {
+        read1();
+        System.out.println("\n*--------------------------------------------------------------*");
+        System.out.println("|                       LICH SU DANG NHAP                      |");
+        System.out.println("|                                                              |");
+        System.out.printf("| %-30s%-30s |\n", "Id", "Ten nhan vien");
+        for (Staff staff : arrLogin) {
+            System.out.printf("| %-30s%-30s |\n", staff.id, staff.name);
+        }
+        System.out.println("|                                                              |");
+        System.out.println("|--------------------------------------------------------------|\n");
     }
 }

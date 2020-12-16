@@ -97,6 +97,7 @@ public class Menu {
     }
 
     public void menu(Staff nv) throws IOException {
+        hotel.c.Lich_su(nv);
         while (true) {
             System.out.println();
             System.out.println("*------------------------------------------------------------*");
@@ -262,6 +263,7 @@ public class Menu {
     }
 
     public void menu1(Staff ql) throws IOException {
+        hotel.c.Lich_su(ql);
         while (true) {
             System.out.println();
             System.out.println("*------------------------------------------------------------*");
@@ -338,7 +340,8 @@ public class Menu {
             System.out.println("|     3. Quan ly thong tin nhan vien                         |");
             System.out.println("|     4. Quan ly thong tin khach hang                        |");
             System.out.println("|     5. Thong ke khach san                                  |");
-            System.out.println("|     6. Quay lai                                            |");
+            System.out.println("|     6. Xem lich su dang nhap                               |");
+            System.out.println("|     7. Quay lai                                            |");
             System.out.println("|                                                            |");
             System.out.println("*------------------------------------------------------------*");
             int x;
@@ -378,12 +381,17 @@ public class Menu {
                     Thong_ke();
                     break;
                 case 6:
+                    System.out.print("\033[H\033[2J");
+                    System.out.flush();
+                    hotel.c.Xuat_login();
+                    break;
+                case 7:
                     break;
                 default:
                     System.out.println("\nLua chon khong hop le !!!\n");
                     break;
             }
-            if (x == 6) {
+            if (x == 7) {
                 break;
             }
         }
