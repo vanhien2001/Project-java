@@ -6,7 +6,7 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 
-public class List_dichvu implements Filehandle {
+public class List_dichvu extends Filehandle {
     Dichvu[] arrs;
     private int n;
     transient Scanner sc = new Scanner(System.in);

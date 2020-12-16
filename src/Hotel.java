@@ -114,4 +114,11 @@ public class Hotel {
         }
         return k;
     }
+
+    public void read_All() throws IOException {
+        a.read();
+        b.read();
+        c.read();
+        d.read();
+    }
 }

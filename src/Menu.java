@@ -10,6 +10,7 @@ public class Menu {
 
     public void Login() throws IOException {
         setup();
+        hotel.read_All();
         while (true) {
             System.out.println();
             System.out.println("*------------------------------------------------------------*");

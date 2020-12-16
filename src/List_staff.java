@@ -6,7 +6,7 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 
-public class List_staff implements Filehandle {
+public class List_staff extends Filehandle {
     int n;
     Staff[] arrPerson;
 
@@ -143,14 +143,11 @@ public class List_staff implements Filehandle {
             }
         }
         if (kt == 1) {
-            System.out.println("\n*------------------------------------------------------------*");
-            System.out.println("|                   THONG TIN NHAN VIEN                      |");
             for (int i = 0; i < arrPerson.length; i++) {
                 if (arrPerson[i].getId().equalsIgnoreCase(id)) {
                     arrPerson[i].Xuat_thong_tin_chi_tiet();
                 }
             }
-            System.out.println("*------------------------------------------------------------*\n");
         } else if (kt == 0) {
             System.out.println("Khong tim thay nhan vien !");
         }
@@ -218,7 +215,7 @@ public class List_staff implements Filehandle {
         arrPerson[2] = new Service_staff("Phung Duy Khang", "0936642182", "049201000116", "25/27", "Son Ky", "Son Ky",
                 "Tan Phu", "Tp.HCM", "3119560029", "pdk3107", new Time(1, 11, 2020), 30000, "Tiep tan");
         arrPerson[3] = new Service_staff("Nguyen Thai Phuong", "0936642182", "049201000116", "25/27", "Son Ky",
-                "Son Ky", "Tan Phu", "Tp.HCM", "3119560058", "123", new Time(1, 11, 2020), 30000, "Tiep tan");
+                "Son Ky", "Tan Phu", "Tp.HCM", "3119560053", "123", new Time(1, 11, 2020), 30000, "Tiep tan");
         write();
     }
 
@@ -280,7 +277,7 @@ public class List_staff implements Filehandle {
         for (Staff staff : arrPerson) {
             if (staff == nv) {
                 for (int i = nv.dayBegin.getMonth(); i <= 12; i++) {
-                    System.out.printf("| %-40s |\n", "Thang " + i + " : " + nv.tinh_luong(i, hotel) + "d");
+                    System.out.printf("| %-40s |\n", "Thang " + i + " : " + nv.tinh_luong(i, hotel) * 1000 + "d");
                 }
             }
         }

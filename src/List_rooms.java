@@ -7,7 +7,7 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
 
-public class List_rooms implements Filehandle, Serializable {
+public class List_rooms extends Filehandle implements Serializable {
     Room[] arrRooms;
     private int n;
     transient Scanner sc = new Scanner(System.in);

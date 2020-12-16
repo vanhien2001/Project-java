@@ -17,5 +17,4 @@ public class VipRoom extends Room {
     // TODO Auto-generated method stub
     super.xuatthongtin();
   }
-
 }
