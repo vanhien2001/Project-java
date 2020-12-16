@@ -80,10 +80,10 @@ public class Staff extends Person implements Salary {
         if (checkId(arr, id)) {
           break;
         } else {
-          System.out.println("id hien da co trong he thong xin vui long nhap id khac");
+          System.out.println("Id hien da co trong he thong xin vui long nhap id khac");
         }
       } catch (NumberFormatException e) {
-        System.out.println("ban nhap sai cu phap xin moi ban nhap lai!");
+        System.out.println("Ban nhap sai cu phap xin moi ban nhap lai!");
       }
     }
 
@@ -101,7 +101,7 @@ public class Staff extends Person implements Salary {
       if (!pass.isEmpty()) {
         break;
       } else {
-        System.out.println("xin vui long khong de trong");
+        System.out.println("Xin vui long khong de trong");
       }
     }
   }
@@ -126,6 +126,7 @@ public class Staff extends Person implements Salary {
         System.out.print("Nhap mat khau moi : ");
         String b = sc.nextLine();
         this.pass = b;
+        System.out.println("Thay doi mat khau thanh cong !");
         break;
       } else if (!pass.equals(a) && !a.isEmpty()) {
         System.out.println("Mat khau khong chinh xac !!!");

@@ -35,14 +35,17 @@ public class Manager extends Staff {
     }
 
     public void Xuat_thong_tin_chi_tiet() {
+        System.out.println("\n*------------------------------------------------------------*");
+        System.out.println("|                    THONG TIN CA NHAN                       |");
         System.out.println("|                                                            |");
         System.out.printf("|%-40s%-20s|\n", " Nhan vien : " + name, "cmnd: " + cmnd);
         System.out.printf("|%-60s|\n", " Sdt : " + sdt);
         System.out.printf("|%-60s|\n", " Dia chi : " + address);
         System.out.printf("|%-30s%-30s|\n", " Id : " + id, "pass: " + pass);
-        System.out.printf("|%-40s%-20s|\n", " Cong viec : " + posision, "luong : " + salary * 1000);
+        System.out.printf("|%-40s%-20s|\n", " Cong viec : " + posision, "luong : " + salary * 1000 + "d");
         System.out.printf("|%-60s|\n", " Thoi diem bat dau lam viec : " + dayBegin);
         System.out.println("|                                                            |");
+        System.out.println("*------------------------------------------------------------*\n");
     }
 
     public int tinh_luong(int k, Hotel hotel) throws IOException {

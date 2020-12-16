@@ -133,7 +133,7 @@ public class Menu {
                     System.out.print("\033[H\033[2J");
                     System.out.flush();
 
-                    hotel.f.Xuat_hoa_don(hotel.d, hotel.a);
+                    hotel.f.Xuat_hoa_don(hotel.d, hotel.a, nv);
                     break;
                 case 4:
                     System.out.print("\033[H\033[2J");
@@ -194,8 +194,6 @@ public class Menu {
                     hotel.c.Xem_luong(nv, hotel);
                     break;
                 case 4:
-                    System.out.print("\033[H\033[2J");
-                    System.out.flush();
                     nv.resetPass();
                     break;
                 case 5:
@@ -235,18 +233,13 @@ public class Menu {
                 case 1:
                     System.out.print("\033[H\033[2J");
                     System.out.flush();
-
-                    break;
-                case 2:
-                    System.out.print("\033[H\033[2J");
-                    System.out.flush();
                     nv.Xuat_thong_tin_chi_tiet();
                     System.out.println("Nhap sdt moi");
                     nv.setSdt();
                     System.out.println("Da luu thay doi !");
                     hotel.c.write();
                     break;
-                case 3:
+                case 2:
                     System.out.print("\033[H\033[2J");
                     System.out.flush();
                     nv.Xuat_thong_tin_chi_tiet();
@@ -254,6 +247,8 @@ public class Menu {
                     nv.setDiachi();
                     System.out.println("Da luu thay doi !");
                     hotel.c.write();
+                    break;
+                case 3:
                     break;
                 default:
                     System.out.println("\nLua chon khong hop le !!!\n");
@@ -303,7 +298,7 @@ public class Menu {
                 case 3:
                     System.out.print("\033[H\033[2J");
                     System.out.flush();
-                    hotel.f.Xuat_hoa_don(hotel.d, hotel.a);
+                    hotel.f.Xuat_hoa_don(hotel.d, hotel.a, ql);
                     break;
                 case 4:
                     System.out.print("\033[H\033[2J");
@@ -806,6 +801,7 @@ public class Menu {
                     hotel.a.Timkiemphong(phieu.tenphong).dem++;
                     for (Dichvu dv1 : phieu.arr_dichvu) {
                         hotel.b.Timkiemdichvu(dv1.tendichvu).dem++;
+                        hotel.b.write();
                     }
                 }
                 hotel.a.write();

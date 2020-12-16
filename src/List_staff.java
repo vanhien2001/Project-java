@@ -274,17 +274,17 @@ public class List_staff implements Filehandle {
     }
 
     public void Xem_luong(Staff nv, Hotel hotel) throws IOException {
-        System.out.println("\n*--------------------------------------*");
-        System.out.println("|             LUONG CUA BAN            |");
-        System.out.println("|                                      |");
+        System.out.println("\n*------------------------------------------*");
+        System.out.println("|               LUONG CUA BAN              |");
+        System.out.println("|                                          |");
         for (Staff staff : arrPerson) {
             if (staff == nv) {
                 for (int i = nv.dayBegin.getMonth(); i <= 12; i++) {
-                    System.out.printf("| %-40s |\n", "Thang " + i + " : " + nv.tinh_luong(i, hotel)+"d");
+                    System.out.printf("| %-40s |\n", "Thang " + i + " : " + nv.tinh_luong(i, hotel) + "d");
                 }
             }
         }
-        System.out.println("|                                      |");
-        System.out.println("|--------------------------------------|");
+        System.out.println("|                                          |");
+        System.out.println("|------------------------------------------|\n");
     }
 }

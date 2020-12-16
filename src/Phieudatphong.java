@@ -87,11 +87,11 @@ public class Phieudatphong implements Serializable {
         }
     }
 
-    public int Tongtien() throws IOException {
+    public int Tongtien(List_rooms aRooms) throws IOException {
         for (Dichvu dv : arr_dichvu) {
             s += dv.gia;
         }
-        s += arrRoom.Timkiemphong(tenphong).gia;
+        s += aRooms.Timkiemphong(tenphong).gia;
         return s;
     }
 
