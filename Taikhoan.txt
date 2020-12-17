@@ -2,3 +2,15 @@ Tài khoản quản lý :
 
 Id  : 3119560017
 Pass: vanhien2001
+
+
+Tài khoản nhân viên :
+
+Id  : 3119560007
+Pass: 123
+
+Id  : 3119560029
+Pass: pdk3107
+
+Id  : 3119560053
+Pass: 123

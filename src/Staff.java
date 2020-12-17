@@ -119,17 +119,19 @@ public class Staff extends Person implements Salary {
     }
 
     public void resetPass(List_staff staff) throws IOException {
+        Scanner newSC = new Scanner(System.in);
+        String a;
         while (true) {
             System.out.print("Nhap mat khau : ");
-            String a = sc.nextLine();
-            if (pass.equals(a)) {
+            a = newSC.nextLine();
+            if (pass.equalsIgnoreCase(a)) {
                 System.out.print("Nhap mat khau moi : ");
-                String b = sc.nextLine();
+                String b = newSC.nextLine();
                 this.pass = b;
                 System.out.println("Thay doi mat khau thanh cong !");
                 staff.Tracking("Thay doi password");
                 break;
-            } else if (!pass.equals(a) && !a.isEmpty()) {
+            } else if (!pass.equalsIgnoreCase(a) && !a.isEmpty()) {
                 System.out.println("Mat khau khong chinh xac !!!");
             } else {
                 break;
