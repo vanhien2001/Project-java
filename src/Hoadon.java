@@ -9,7 +9,8 @@ public class Hoadon {
         s = 0;
     }
 
-    public void Xuat_hoa_don(List_phieudatphong arrs, List_rooms arrRoom, Staff nv) throws IOException {
+    public void Xuat_hoa_don(List_phieudatphong arrs, List_rooms arrRoom, List_staff staff, Staff nv)
+            throws IOException {
         int kt = 0;
         arrs.read();
         arrRoom.read();
@@ -40,6 +41,7 @@ public class Hoadon {
                     arrRoom.Timkiemphong(arrs.arrBooked[i].tenphong).booked = false;
                     System.out.println("*----------------------------- -------------------------------*\n");
                     kt = 1;
+                    staff.Tracking("Tra phong " + tenphong);
                     break;
 
                 } else {

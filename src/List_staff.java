@@ -195,6 +195,7 @@ public class List_staff extends Filehandle {
         nv.Nhapthongtin(shortArr(arrPerson));
         arrPerson = Arrays.copyOf(arrPerson, arrPerson.length + 1);
         arrPerson[arrPerson.length - 1] = nv;
+        Tracking("Them nhan vien " + nv.name);
         write();
     }
 
@@ -204,6 +205,7 @@ public class List_staff extends Filehandle {
         nv.Nhapthongtin(shortArr(arrPerson));
         arrPerson = Arrays.copyOf(arrPerson, arrPerson.length + 1);
         arrPerson[arrPerson.length - 1] = nv;
+        Tracking("Them quan ly " + nv.name);
         write();
     }
 
@@ -215,6 +217,7 @@ public class List_staff extends Filehandle {
         Staff[] arr = new Staff[arrPerson.length - 1];
         for (int i = 0; i <= arr.length; i++) {
             if (arrPerson[i].id.equalsIgnoreCase(a)) {
+                Tracking("Xoa nhan vien " + arrPerson[i].name);
                 for (int j = i; j < arrPerson.length - 1; j++) {
                     arr[i] = arrPerson[j + 1];
                     i++;
@@ -261,6 +264,7 @@ public class List_staff extends Filehandle {
                     dv.chucvu = "Nhan vien";
                     System.out.println("Sua thong tin thanh cong !");
                     kt = 1;
+                    Tracking("Giang cap nhan vien " + dv.name);
                     break;
                 } else {
                     System.out.println("Da la nhan vien khong the giang cap !");
@@ -286,6 +290,7 @@ public class List_staff extends Filehandle {
                     dv.posision = "Quan ly khach san";
                     System.out.println("Sua thong tin thanh cong !");
                     kt = 1;
+                    Tracking("Thang cap nhan vien " + dv.name);
                     break;
                 } else {
                     System.out.println("Da la quan lyn khong the thang cap !");
@@ -310,26 +315,39 @@ public class List_staff extends Filehandle {
             }
         }
         System.out.println("|                                          |");
-        System.out.println("|------------------------------------------|\n");
+        System.out.println("*------------------------------------------*\n");
     }
 
     public void Lich_su(Staff nv) throws IOException {
+        arrLogin[0] = arrPerson[0];
+        write1();
         read1();
+        nv.thaotac = "";
         arrLogin = Arrays.copyOf(arrLogin, arrLogin.length + 1);
         arrLogin[arrLogin.length - 1] = nv;
         write1();
     }
 
+    public void Tracking(String a) throws IOException {
+        arrLogin[arrLogin.length - 1].thaotac += a + ",";
+        write1();
+    }
+
     public void Xuat_login() throws IOException {
         read1();
-        System.out.println("\n*--------------------------------------------------------------*");
-        System.out.println("|                       LICH SU DANG NHAP                      |");
-        System.out.println("|                                                              |");
-        System.out.printf("| %-30s%-30s |\n", "Id", "Ten nhan vien");
+        System.out.println(
+                "\n*--------------------------------------------------------------------------------------------------------------------------*");
+        System.out.println(
+                "|                                                      LICH SU DANG NHAP                                                   |");
+        System.out.println(
+                "|                                                                                                                          |");
+        System.out.printf("| %-30s%-30s%-60s |\n", "Id", "Ten nhan vien", "Cac hanh dong");
         for (Staff staff : arrLogin) {
-            System.out.printf("| %-30s%-30s |\n", staff.id, staff.name);
+            System.out.printf("| %-30s%-30s%-60s |\n", staff.id, staff.name, staff.thaotac);
         }
-        System.out.println("|                                                              |");
-        System.out.println("|--------------------------------------------------------------|\n");
+        System.out.println(
+                "|                                                                                                                          |");
+        System.out.println(
+                "*--------------------------------------------------------------------------------------------------------------------------*\n");
     }
 }

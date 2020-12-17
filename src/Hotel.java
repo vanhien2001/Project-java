@@ -120,5 +120,6 @@ public class Hotel {
         b.read();
         c.read();
         d.read();
+        c.read1();
     }
 }

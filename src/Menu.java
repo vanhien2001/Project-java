@@ -10,6 +10,7 @@ public class Menu {
     }
 
     public void Login() throws IOException {
+        setup();
         hotel.read_All();
         while (true) {
             System.out.println();
@@ -129,13 +130,13 @@ public class Menu {
                 case 2:
                     System.out.print("\033[H\033[2J");
                     System.out.flush();
-                    hotel.d.Dat_phong(hotel.a, hotel.b, nv);
+                    hotel.d.Dat_phong(hotel.a, hotel.b, hotel.c, nv);
                     break;
                 case 3:
                     System.out.print("\033[H\033[2J");
                     System.out.flush();
 
-                    hotel.f.Xuat_hoa_don(hotel.d, hotel.a, nv);
+                    hotel.f.Xuat_hoa_don(hotel.d, hotel.a, hotel.c, nv);
                     break;
                 case 4:
                     System.out.print("\033[H\033[2J");
@@ -196,7 +197,7 @@ public class Menu {
                     hotel.c.Xem_luong(nv, hotel);
                     break;
                 case 4:
-                    nv.resetPass();
+                    nv.resetPass(hotel.c);
                     break;
                 case 5:
                     break;
@@ -238,6 +239,7 @@ public class Menu {
                     nv.Xuat_thong_tin_chi_tiet();
                     System.out.println("Nhap sdt moi");
                     nv.setSdt();
+                    hotel.c.Tracking("Thay doi sdt");
                     System.out.println("Da luu thay doi !");
                     hotel.c.write();
                     break;
@@ -247,6 +249,7 @@ public class Menu {
                     nv.Xuat_thong_tin_chi_tiet();
                     System.out.println("Nhap dia chi moi");
                     nv.setDiachi();
+                    hotel.c.Tracking("Thay doi dia chi");
                     System.out.println("Da luu thay doi !");
                     hotel.c.write();
                     break;
@@ -296,12 +299,12 @@ public class Menu {
                 case 2:
                     System.out.print("\033[H\033[2J");
                     System.out.flush();
-                    hotel.d.Dat_phong(hotel.a, hotel.b, ql);
+                    hotel.d.Dat_phong(hotel.a, hotel.b, hotel.c, ql);
                     break;
                 case 3:
                     System.out.print("\033[H\033[2J");
                     System.out.flush();
-                    hotel.f.Xuat_hoa_don(hotel.d, hotel.a, ql);
+                    hotel.f.Xuat_hoa_don(hotel.d, hotel.a, hotel.c, ql);
                     break;
                 case 4:
                     System.out.print("\033[H\033[2J");
@@ -433,10 +436,10 @@ public class Menu {
                     hotel.a.Xuatdsphongtrong();
                     break;
                 case 3:
-                    hotel.a.Them_room();
+                    hotel.a.Them_room(hotel.c);
                     break;
                 case 4:
-                    hotel.a.Xoa_room();
+                    hotel.a.Xoa_room(hotel.c);
                     break;
                 case 5:
                     System.out.print("\033[H\033[2J");
@@ -480,16 +483,16 @@ public class Menu {
             }
             switch (x) {
                 case 1:
-                    hotel.a.Suaten_phong();
+                    hotel.a.Suaten_phong(hotel.c);
                     break;
                 case 2:
-                    hotel.a.Sualoai_phong();
+                    hotel.a.Sualoai_phong(hotel.c);
                     break;
                 case 3:
-                    hotel.a.Suasogiuong_phong();
+                    hotel.a.Suasogiuong_phong(hotel.c);
                     break;
                 case 4:
-                    hotel.a.Suagia_phong();
+                    hotel.a.Suagia_phong(hotel.c);
                     break;
                 case 5:
                     break;
@@ -595,10 +598,10 @@ public class Menu {
                     hotel.b.Xuatdsdichvu();
                     break;
                 case 2:
-                    hotel.b.Them_dv();
+                    hotel.b.Them_dv(hotel.c);
                     break;
                 case 3:
-                    hotel.b.Xoa_dv();
+                    hotel.b.Xoa_dv(hotel.c);
                     break;
                 case 4:
                     dichvu1();
@@ -638,10 +641,10 @@ public class Menu {
             }
             switch (x) {
                 case 1:
-                    hotel.b.Suaten_dv();
+                    hotel.b.Suaten_dv(hotel.c);
                     break;
                 case 2:
-                    hotel.b.Suagia_dv();
+                    hotel.b.Suagia_dv(hotel.c);
                     break;
                 case 3:
                     break;
@@ -766,10 +769,10 @@ public class Menu {
             }
             switch (x) {
                 case 1:
-                    hotel.b.Suaten_dv();
+                    hotel.b.Suaten_dv(hotel.c);
                     break;
                 case 2:
-                    hotel.b.Suagia_dv();
+                    hotel.b.Suagia_dv(hotel.c);
                     break;
                 case 3:
                     break;

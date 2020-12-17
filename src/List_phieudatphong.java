@@ -46,13 +46,14 @@ public class List_phieudatphong extends Filehandle {
         }
     }
 
-    public void Dat_phong(List_rooms arrRoom, List_dichvu dichvu, Staff nv) throws IOException {
+    public void Dat_phong(List_rooms arrRoom, List_dichvu dichvu, List_staff staff, Staff nv) throws IOException {
         read();
         a = new Phieudatphong(arrRoom);
         a.Dat_phong(arrRoom, dichvu);
         a.nv = nv;
         arrBooked = Arrays.copyOf(arrBooked, arrBooked.length + 1);
         arrBooked[arrBooked.length - 1] = a;
+        staff.Tracking("Dat phong "+a.tenphong);
         write();
     }
 

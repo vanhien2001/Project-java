@@ -134,7 +134,7 @@ public class List_rooms extends Filehandle implements Serializable {
         return arr2;
     }
 
-    public void Them_room() throws IOException {
+    public void Them_room(List_staff staff) throws IOException {
         read();
         Room a = new Room();
         int x;
@@ -153,12 +153,14 @@ public class List_rooms extends Filehandle implements Serializable {
             a.nhap_thontin(ArrayOfRoomName(arrRooms));
             arrRooms = Arrays.copyOf(arrRooms, arrRooms.length + 1);
             arrRooms[arrRooms.length - 1] = a;
+            staff.Tracking("Them phong vip " + a.tenphong);
             System.out.println("Them phong thanh cong !");
         } else if (x == 2) {
             a = new RegularRoom();
             a.nhap_thontin(ArrayOfRoomName(arrRooms));
             arrRooms = Arrays.copyOf(arrRooms, arrRooms.length + 1);
             arrRooms[arrRooms.length - 1] = a;
+            staff.Tracking("Them phong thuong " + a.tenphong);
             System.out.println("Them phong thanh cong !");
         } else {
             System.out.println("Lua chon ko hop le !");
@@ -166,7 +168,7 @@ public class List_rooms extends Filehandle implements Serializable {
         write();
     }
 
-    public void Xoa_room() throws IOException {
+    public void Xoa_room(List_staff staff) throws IOException {
         read();
         System.out.print("Nhap ten phong can xoa : ");
         String a = sc.nextLine();
@@ -179,6 +181,7 @@ public class List_rooms extends Filehandle implements Serializable {
                     i++;
                 }
                 kt = 1;
+                staff.Tracking("Xoa phong " + a);
                 System.out.println("Phong da duoc xoa !");
                 break;
             }
@@ -193,7 +196,7 @@ public class List_rooms extends Filehandle implements Serializable {
         write();
     }
 
-    public void Suaten_phong() throws IOException {
+    public void Suaten_phong(List_staff staff) throws IOException {
         read();
         System.out.print("Nhap ten phong muon sua : ");
         String a = sc.nextLine();
@@ -203,6 +206,7 @@ public class List_rooms extends Filehandle implements Serializable {
         for (Room dv : arrRooms) {
             if (dv.tenphong.equalsIgnoreCase(a)) {
                 dv.setTenphong(b);
+                staff.Tracking("Thay doi ten phong " + a + " thanh " + b);
                 System.out.println("Sua thong tin thanh cong !");
                 kt = 1;
                 break;
@@ -214,7 +218,7 @@ public class List_rooms extends Filehandle implements Serializable {
         write();
     }
 
-    public void Suasogiuong_phong() throws IOException {
+    public void Suasogiuong_phong(List_staff staff) throws IOException {
         read();
         System.out.print("Nhap ten phong muon sua : ");
         String a = sc.nextLine();
@@ -232,6 +236,7 @@ public class List_rooms extends Filehandle implements Serializable {
         for (Room dv : arrRooms) {
             if (dv.tenphong.equalsIgnoreCase(a)) {
                 dv.setSo_giuong(b);
+                staff.Tracking("Thay doi so giuong cua phong " + a + " thanh " + b);
                 System.out.println("Sua thong tin thanh cong !");
                 kt = 1;
                 break;
@@ -243,7 +248,7 @@ public class List_rooms extends Filehandle implements Serializable {
         write();
     }
 
-    public void Suagia_phong() throws IOException {
+    public void Suagia_phong(List_staff staff) throws IOException {
         read();
         System.out.print("Nhap ten phong muon sua : ");
         String a = sc.nextLine();
@@ -261,6 +266,7 @@ public class List_rooms extends Filehandle implements Serializable {
         for (Room dv : arrRooms) {
             if (dv.tenphong.equalsIgnoreCase(a)) {
                 dv.setGia(b);
+                staff.Tracking("Thay doi gia cua phong " + a + " thanh " + b);
                 System.out.println("Sua thong tin thanh cong !");
                 kt = 1;
                 break;
@@ -272,7 +278,7 @@ public class List_rooms extends Filehandle implements Serializable {
         write();
     }
 
-    public void Sualoai_phong() throws IOException {
+    public void Sualoai_phong(List_staff staff) throws IOException {
         read();
         System.out.print("Nhap ten phong muon sua : ");
         String a = sc.nextLine();
@@ -293,10 +299,12 @@ public class List_rooms extends Filehandle implements Serializable {
                     case 1:
                         dv.loai = "Vip";
                         dv.boardPackage = "full";
+                        staff.Tracking("Thay doi phong " + dv.tenphong + " thanh phong vip");
                         break;
                     case 2:
                         dv.loai = "Thuong";
                         dv.boardPackage = "half";
+                        staff.Tracking("Thay doi phong " + dv.tenphong + " thanh phong thuong");
                         break;
                     case 5:
                         break;

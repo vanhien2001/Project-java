@@ -97,17 +97,18 @@ public class List_dichvu extends Filehandle {
         return null;
     }
 
-    public void Them_dv() throws IOException {
+    public void Them_dv(List_staff staff) throws IOException {
         read();
         Dichvu dv = new Dichvu();
         dv.nhap_thontin();
         arrs = Arrays.copyOf(arrs, arrs.length + 1);
         arrs[arrs.length - 1] = dv;
         System.out.println("Them dich vu thanh cong");
+        staff.Tracking("Them dich vu " + dv.tendichvu);
         write();
     }
 
-    public void Xoa_dv() throws IOException {
+    public void Xoa_dv(List_staff staff) throws IOException {
         read();
         System.out.print("Nhap ten dich vu can xoa : ");
         String a = sc.nextLine();
@@ -115,6 +116,7 @@ public class List_dichvu extends Filehandle {
         Dichvu[] arr = new Dichvu[arrs.length - 1];
         for (int i = 0; i <= arr.length; i++) {
             if (arrs[i].tendichvu.equalsIgnoreCase(a)) {
+                staff.Tracking("Xoa dich vu " + arrs[i].tendichvu);
                 for (int j = i; j < arrs.length - 1; j++) {
                     arr[i] = arrs[j + 1];
                     i++;
@@ -134,7 +136,7 @@ public class List_dichvu extends Filehandle {
         write();
     }
 
-    public void Suaten_dv() throws IOException {
+    public void Suaten_dv(List_staff staff) throws IOException {
         read();
         System.out.print("Nhap ten dich vu muon sua : ");
         String a = sc.nextLine();
@@ -146,6 +148,7 @@ public class List_dichvu extends Filehandle {
                 dv.settendichvu(b);
                 System.out.println("Sua thong tin thanh cong !");
                 kt = 1;
+                staff.Tracking("Thay doi ten dich vu " + a + " thanh " + b);
                 break;
             }
         }
@@ -155,7 +158,7 @@ public class List_dichvu extends Filehandle {
         write();
     }
 
-    public void Suagia_dv() throws IOException {
+    public void Suagia_dv(List_staff staff) throws IOException {
         read();
         System.out.print("Nhap ten dich vu muon sua : ");
         String a = sc.nextLine();
@@ -167,6 +170,7 @@ public class List_dichvu extends Filehandle {
                 dv.setGia(b);
                 System.out.println("Sua thong tin thanh cong !");
                 kt = 1;
+                staff.Tracking("Thay doi gia cua phong " + a + " thanh " + b);
                 break;
             }
         }
